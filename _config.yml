@@ -1,7 +1,7 @@
 # Site settings
 name: GoDaddy OSS
 email: opensource@godaddy.com
-description: > # this means to ignore newlines until "baseurl:"
+description: > # this means to ignore newlines until the next key
   Official GoDaddy open source engineering page, showcasing
   open source libraries and projects created by GoDaddy 
   engineering teams. 
