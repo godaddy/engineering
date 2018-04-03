@@ -16,7 +16,7 @@ However, as translators or application developers add and remove messages, or cr
  
 Manually verifying updates is error-prone, because it's tedious to inspect large translation files and there are many sources of issues. For example, it's easy for a developer or translator to inadvertently introduce file formatting syntax errors (e.g. JSON), malformed or missing message keys, or invalid message syntax (e.g. Format.js / ICU Message Format). If you use JSON as your translation file format, then you might want to be able to cross check the keys of each locales's translation file to ensure they all match and also check that the message syntax for each translation is valid.
  
-Now these issues might seem small, but they have the potential to affect real users of your application. Here's what could happen when the syntax for a message is accidentially malformed:
+Now these issues might seem small, but they have the potential to affect real users of your application. Here's what could happen when the syntax for a message is accidentally malformed:
  
 <p align="center"><b>Before</b> 😸</p>
 <p align="center">
