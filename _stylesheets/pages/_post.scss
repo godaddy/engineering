@@ -3,10 +3,16 @@
 // -----------------------------------------------------------------------------
 
 .page-post {
-  line-height: 2em;
-  max-width: 700px;
-
   h1 {
     font-size: 2em;
+  }
+
+  .container {
+    line-height: 2em;
+    max-width: 700px;
+  }
+
+  .post {
+    margin-bottom: 1em;
   }
 }
