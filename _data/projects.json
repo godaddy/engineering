@@ -4,7 +4,7 @@
   "links": [{
     "title": "kubernetes-client on GitHub",
     "type": "source",
-    "url": "https://www.npmjs.com/package/kubernetes-client"
+    "url": "https://github.com/godaddy/kubernetes-client"
   }, {
     "title": "kubernetes-client on npm",
     "type": "package",
