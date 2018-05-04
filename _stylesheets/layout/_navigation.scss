@@ -10,15 +10,14 @@
 
   a:not(.btn),
   ul a:not(.btn) {
-    color: $godaddy-dark-grey;
+    color: $grey-dark;
 
     &:hover {
-      color: #111;
+      color: $black-base;
     }
   }
 
   .brand-logo {
-    left: 15px;
-    color: #181818;
+    left: $spacing-default;
   }
 }
