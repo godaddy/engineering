@@ -12,6 +12,10 @@ h3 {
   text-align: justify;
 }
 
+.text-grey-midrange {
+  color: $grey-midrange;
+}
+
 // TODO(chrisvogt): factor out the #content selector since these
 // seem intended for the majority of the site content — some list
 // styles are nearly duplicated in other page stylesheets
