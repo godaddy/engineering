@@ -7,6 +7,7 @@
 @import 'abstracts/variables';
 
 /* Base */
+@import 'base/fonts';
 @import 'base/reset';
 @import 'base/typography';
 
@@ -16,6 +17,7 @@
 @import 'layout/navigation';
 
 /* Components */
+@import 'components/masthead';
 @import 'components/project-card';
 
 /* Pages */

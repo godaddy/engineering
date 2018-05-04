@@ -8,6 +8,10 @@ body {
   min-height: 100vh;
 }
 
+img {
+  max-width: 100%;
+}
+
 .container {
   flex: 1 0 auto;
 }

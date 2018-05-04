@@ -2,29 +2,31 @@
 <html lang="en">
   {% include block/head.html %}
 
-  <body class="page-post">
+  <body class="page--post">
     {% include component/navigation.html %}
+    {% capture headline %}<h1>{{ page.title }}</h1>{% endcapture %}
+    {% include component/masthead.html headline=headline %}
 
     <div class="container">
       <div class="post">
-        <h1>{{ page.title }}</h1>
-
-        {% for author in page.authors %}
-        <div class="chip">
-          <img src="{{ author.photo }}" alt="{{ author.name }}">
-          <a target="_blank" href="{{ author.url }}">{{ author.name }}</a>
-        </div>
-        {% endfor %}
-
-        <div class="chip twitter">
-          <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.twitter_username }}">Share on Twitter</a>
-        </div>
-
         <div id="content">
+          <div class="authors">
+            {% for author in page.authors %}
+            <div class="chip">
+              <img src="{{ author.photo }}" alt="{{ author.name }}">
+              <a target="_blank" href="{{ author.url }}">{{ author.name }}</a>
+            </div>
+            {% endfor %}
+
+            <div class="chip twitter">
+              <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.twitter_username }}">Share on Twitter</a>
+            </div>
+          </div>
+
           {{content}}
         </div>
 
-        <div class="center">
+        <div class="widgets center">
           <a class="twitter-follow-button" href="https://twitter.com/GodaddyOSS" data-size="large">Follow @GodaddyOSS</a>
         </div>
       </div>
@@ -54,7 +56,7 @@
         </div>
       </div>
       <div class="footer-copyright">
-        <div class="container">
+        <div class="container center-align">
           Copyright © 1999 - 2018 GoDaddy Operating Company, LLC. All Rights Reserved.
         </div>
       </div>

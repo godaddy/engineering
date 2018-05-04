@@ -3,13 +3,22 @@
 // -----------------------------------------------------------------------------
 
 .navigation {
-  background: $godaddy-deep-green;
-  border-top: 3px solid #008934;
-  font-weight: 800;
+  background: white;
+  box-shadow: none;
+
+  font-family: $text-headline-stack;
+
+  a:not(.btn),
+  ul a:not(.btn) {
+    color: $godaddy-dark-grey;
+
+    &:hover {
+      color: #111;
+    }
+  }
 
   .brand-logo {
-    @include respond-to(handhelds) {
-      font-size: 1.5rem;
-    }
+    left: 15px;
+    color: #181818;
   }
 }

@@ -11,4 +11,11 @@ $break-small: 560px;
 $break-large: 1024px;
 
 /* Font Stacks */
-$text-font-stack: 'Raleway', sans-serif;
+$text-body-stack: 'Raleway', sans-serif;
+$text-headline-stack: gdsherpa, Helvetica, Arial, sans-serif;
+
+$text-font-weight-thin: 300;
+
+/* Spacing */
+$spacing-default: 1em;
+$spacing-double: $spacing-default * 2;
