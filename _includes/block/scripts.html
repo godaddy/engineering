@@ -12,7 +12,7 @@
   ga('send', 'pageview');
   {% endif %}
 
-  {% if page.widgets contains 'twitter' %}
+  {% if page.widgets contains 'twitter' or layout.widgets contains 'twitter' %}
   window.twttr = (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0],
       t = window.twttr || {};
