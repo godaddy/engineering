@@ -1,19 +1,18 @@
-{% if site.analytics_id %}
-<script async src="https://www.google-analytics.com/analytics.js"></script>
-<script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-{% endif %}
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
+{% if site.analytics_id %}
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script>
-  {% if site.analytics_id %}
   window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
   ga('create', '{{ site.analytics_id }}', 'auto');
   ga('require', 'outboundLinkTracker');
   ga('send', 'pageview');
-  {% endif %}
+</script>
+{% endif %}
 
+<script>
   {% if page.widgets contains 'twitter' or layout.widgets contains 'twitter' %}
   window.twttr = (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0],
