@@ -1,59 +1,32 @@
-<div class="navbar">
-  <nav class="navigation">
-    <div class="nav-wrapper">
-      <a href="{{ site.url }}" title="GoDaddy Open Source" class="left brand-logo">
-        GoDaddy Open Source
-      </a>
-      <a href="#" data-activates="mobile-demo" class="right button-collapse" title="Home">
-        <i class="material-icons">menu</i>
-      </a>
-      <ul class="right hide-on-med-and-down" id="nav-mobile">
-        <li>
-          <a href="/featured-projects" title="Featured projects">
-            Featured projects
-          </a>
-        </li>
-        <li>
-          <a href="/blog-posts" title="Blog posts">
-            Blog posts
-          </a>
-        </li>
-        <li>
-          <a href="/code-of-conduct" title="Code of Conduct">
-            Code of Conduct
-          </a>
-        </li>
-        <li>
-          <a href="https://careers.godaddy.com/?source=APPLICANT_SOURCE-3-118&utm_source=godaddy-oss" class="waves-effect waves-light btn inverse" title="Join us!">
-            Join us!
-          </a>
-        </li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li>
-          <a href="/" title="Home">Home</a>
-        </li>
-        <li>
-          <a href="/featured-projects" title="Featured projects">
-            Featured projects
-          </a>
-        </li>
-        <li>
-          <a href="/blog-posts" title="Blog posts">
-            Blog posts
-          </a>
-        </li>
-        <li>
-          <a href="/code-of-conduct" title="Code of Conduct">
-            Code of Conduct
-          </a>
-        </li>
-        <li>
-          <a href="https://careers.godaddy.com/?source=APPLICANT_SOURCE-3-118&utm_source=godaddy-oss" class="waves-effect waves-light btn inverse" title="Work at GoDaddy">
-            Join us!
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</div>
+<nav class="navbar navbar-expand-md navbar-light bg-white">
+  <a class="navbar-brand" href="{{ site.url }}" title="GoDaddy Open Source">
+    GoDaddy Open Source
+  </a>
+
+  <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/featured-projects" title="Featured projects">
+          Featured projects
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/blog-posts" title="Blog posts">
+          Blog posts
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/code-of-conduct" title="Code of Conduct">
+          Code of Conduct
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
