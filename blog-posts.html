@@ -4,25 +4,25 @@ slug: blog-posts
 title: Blog posts
 ---
 
-<div class="blog-posts">
-  <div class="row">
+<div class="blog-posts container py-3">
+  <div class="card-deck">
   {% for post in site.posts %}
-    <div class="col s12 m6">
-      <div class="card hoverable medium">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="{{ post.cover }}">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">{{ post.title }}<i class="material-icons right">more_vert</i></span>
-          <p><a href="{{ post.url }}">Read the article</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">{{ post.title }}<i class="material-icons right">close</i></span>
-          <p>{{ post.excerpt }}</p>
-          <p><a href="{{ post.url }}">Read the article</a></p>
-        </div>
+    {% assign mod2 = forloop.index | modulo: 2 %}
+    {% assign mod3 = forloop.index | modulo: 3 %}
+    <div class="card mb-3 shadow hoverable border-0">
+      <img class="card-img-top" src="{{ post.cover }}" alt="Featured image">
+      <div class="card-body">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <p class="card-text">{{ post.excerpt }}</p>
+        <p class="card-text"><small class="text-muted">Posted {{ post.date | date: '%B %d, %Y' }}</small></p>
       </div>
     </div>
+    {% if mod2 == 0 %}
+    <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
+    {% endif %}
+    {% if mod3 == 0 %}
+    <div class="w-100 d-none d-md-block"><!-- wrap every 3 on md--></div>
+    {% endif %}
   {% endfor %}
   </div>
 </div>

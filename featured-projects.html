@@ -4,10 +4,12 @@ slug: featured-projects
 title: Featured projects
 ---
 
-<div class="row">
-  {% for project in site.data.projects %}
-  <div class="col col s12 m6">
-    {% include component/project-card.html project=project %}
+<div class="container py-3">
+  <div class="row">
+    <div class="card-columns">
+      {% for project in site.data.projects %}
+      {% include component/project-card.html project=project %}
+      {% endfor %}
+    </div>
   </div>
-  {% endfor %}
 </div>
