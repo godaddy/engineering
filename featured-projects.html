@@ -4,16 +4,14 @@ slug: featured-projects
 title: Featured projects
 ---
 
-<div class="container py-3">
-  <div class="card-deck">
-    {% for project in site.data.projects %}
-      {% assign mod = forloop.index | modulo: 3 %}
+<div class="card-deck">
+  {% for project in site.data.projects %}
+    {% assign mod = forloop.index | modulo: 3 %}
 
-      {% include component/project-card.html project=project %}
+    {% include component/project-card.html project=project %}
 
-      {% if mod == 0 %}
-      <div class="w-100 d-none d-sm-block"><!-- wrap every 3 on md--></div>
-      {% endif %}
-    {% endfor %}
-  </div>
+    {% if mod == 0 %}
+    <div class="w-100 d-none d-sm-block"><!-- wrap every 3 on md--></div>
+    {% endif %}
+  {% endfor %}
 </div>
