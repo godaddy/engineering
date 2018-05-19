@@ -7,21 +7,17 @@ title: Blog posts
 <div class="blog-posts container py-3">
   <div class="card-deck">
   {% for post in site.posts %}
-    {% assign mod2 = forloop.index | modulo: 2 %}
-    {% assign mod3 = forloop.index | modulo: 3 %}
+    {% assign mod = forloop.index | modulo: 3 %}
     <div class="card mb-3 shadow hoverable border-0">
       <img class="card-img-top" src="{{ post.cover }}" alt="Featured image">
       <div class="card-body">
-        <h5 class="card-title">{{ post.title }}</h5>
+        <h5 class="card-title text-font-headline">{{ post.title }}</h5>
         <p class="card-text">{{ post.excerpt }}</p>
         <p class="card-text"><small class="text-muted">Posted {{ post.date | date: '%B %d, %Y' }}</small></p>
       </div>
     </div>
-    {% if mod2 == 0 %}
-    <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-    {% endif %}
-    {% if mod3 == 0 %}
-    <div class="w-100 d-none d-md-block"><!-- wrap every 3 on md--></div>
+    {% if mod == 0 %}
+    <div class="w-100 d-none d-sm-block"><!-- wrap every 3 on md--></div>
     {% endif %}
   {% endfor %}
   </div>
