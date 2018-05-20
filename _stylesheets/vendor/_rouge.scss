@@ -7,10 +7,10 @@ pre.highlight {
 }
 
 .highlight {
-  background: #282C34; //DONE
+  background: #282C34;
   color: #cecece;
-  .lineno { color: #4B5363;}
 
+  .lineno { color: #4B5363;}
   .c     { color: #667689; font-style: italic } // Comment
   .err   { color: #a61717; background-color: #e3d2d2 } // Error
   .k     { font-weight: bold } // Keyword
