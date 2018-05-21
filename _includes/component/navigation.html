@@ -9,7 +9,8 @@
 
   <div class="collapse navbar-collapse" id="topnav">
     <ul class="navbar-nav ml-auto">
-      {% for item in site.pages %}
+      {% assign items = site.pages | sort: 'order' %}
+      {% for item in items %}
       {% if item.title and item.hide != true %}
       <li class="nav-item{% if item.url == page.url %} active{% endif %}">
         <a class="nav-link" href="{{ item.url }}" title="{{ item.title }}">
