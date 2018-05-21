@@ -1,6 +1,6 @@
 <nav class="navbar navbar-top navbar-expand-md navbar-light bg-white">
-  <a class="navbar-brand text-font-headline" href="{{ site.url }}" title="GoDaddy Open Source">
-    GoDaddy Open Source
+  <a class="navbar-brand text-font-headline" href="{{ '/' | absolute_url }}" title="GoDaddy Open Source">
+    {{ site.theme_settings.title | default: site.title }}
   </a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topnav" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,9 +9,6 @@
 
   <div class="collapse navbar-collapse" id="topnav">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
-      </li>
       <li class="nav-item">
         <a class="nav-link" href="/featured-projects" title="Featured projects">
           Featured Projects
