@@ -1,15 +1,12 @@
 // -----------------------------------------------------------------------------
-// This file contains all styles related to common accent elements
+// This file contains styles for the button component
 // -----------------------------------------------------------------------------
 
-.bg-twitter {
-  background: #1b95e0;
-}
-
-.bg-product-base {
-  background-color: $product-base;
-}
-
-.bg-secondary-base {
+.btn.btn-primary {
   background-color: $secondary-base;
+
+  &:hover {
+    background-color: $secondary-midrange;
+    border-color: $secondary-highlight;
+  }
 }
