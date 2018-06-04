@@ -53,7 +53,7 @@ members.
 
 ### You should use declarative pipeline
 
-Declarative configuration tells a system what to do, but not how do do it, shifting
+Declarative configuration tells a system what to do, but not how to do it, shifting
 a lot of complexity to the system. Examples you may be familiar with include:
 - Kubernetes, which uses configuration files to indicate how many instances an application needs, leaving
 the details of creating them to Kubernetes
@@ -67,7 +67,7 @@ Jenkins supports declarative configuration via
 - are easier for both human and machine to read.
 - are more portable.
 - discourage you from using too many scripts, which leads to simpler pipelines.
-- force you to provide a strict stage/step structure for you jobs.
+- force you to provide a strict stage/step structure for your jobs.
 - is where the Jenkins community is putting the most effort, so will benefit more from new features.
 
 **How we put it into practice:** We have converted most of our Jenkins jobs to declarative pipeline, and
@@ -151,10 +151,10 @@ stage('deploy') {
 
 ### Pay attention to unit test code coverage and run unit tests as part of your pipeline
 
-**Why it's important:** High coverage alone doesn't guarantee code quality; however
+**Why it's important:** High coverage alone doesn't guarantee code quality; however,
 areas of the code where coverage is low or missing is a red flag that the development
 team isn't paying enough attention to testing those areas. Surfacing code coverage
-numbers helps ensure your engineers pay attention to unit testin.
+numbers helps ensure your engineers pay attention to unit testing.
 
 **How we put it into practice:** We publish code coverage reports in Jenkins as
 part of our builds. Jenkins provides a trend coverage chart so you can see if
