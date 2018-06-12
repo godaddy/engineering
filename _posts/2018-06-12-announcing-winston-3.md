@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Announcing winston@3.0.0!"
-date: 2018-06-12 08:53:01 -0800
+date: 2018-06-12 05:53:01 -0800
 cover: /assets/images/typeset-cover.jpg
-excerpt: Learn about the latest version of winston – the most popular logging library for Node.js.
+excerpt: After several years the winston team is happy to announce the latest version – 3.0.0! Learn more about the latest version of the most popular logging library for Node.js along with what Node.js LTS means to maintainers of popular npm packages.
 authors:
   - name: Charlie Robbins
     url: https://www.github.com/indexzero
