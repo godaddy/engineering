@@ -186,7 +186,7 @@ for large teams & enterprises as Node.js itself.
 This LTS goal is a core reason why this release took three years to ship.
 Let's look at a recent release chart for Node.js LTS:
 
-![](nodejs-lts-releases.png)
+![](/assets/images/nodejs-lts-releases.png)
 
 As you can see `node@4` entered "end of life" in April 2019. Until then it was
 in the active support matrix for `winston` releases. Since ES6 features
