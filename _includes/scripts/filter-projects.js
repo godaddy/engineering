@@ -3,7 +3,7 @@ $(function () {
   if (!Fuse || typeof Fuse !== 'function') return;
 
   var $searchInput = $('.control-project-search');
-  var $cards = $('.card');
+  var $cards = $('.project-cards .card');
 
   var fuseOptions = {
     findAllMatches: true,
