@@ -5,6 +5,15 @@ layout: default
 order: 1
 ---
 
+<div class="project-search">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="label-search-projects">Search</span>
+    </div>
+    <input type="text" class="form-control control-project-search" placeholder='examples: "Node.js", "API", "Silas"' aria-label="Search projects" aria-describedby="label-search-projects">
+  </div>
+</div>
+
 <div class="card-deck">
   {% for project in site.data.projects %}
     {% assign mod = forloop.index | modulo: 3 %}
@@ -16,3 +25,7 @@ order: 1
     {% endif %}
   {% endfor %}
 </div>
+
+<script>
+  var projects = {{ site.data.projects | jsonify }};
+</script>
