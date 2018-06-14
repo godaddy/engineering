@@ -79,7 +79,7 @@
   "id": "asset-system"
 }, {
   "name": "Warehouse",
-  "description": "Storage and developer workflow engine for enforcing arbitrary checks on ontologies of npm packages.",
+  "description": "Storage and developer workflow engine for enforcing arbitrary checks on ontologies of npm packages",
   "links": [{
     "title": "warehouse.ai on GitHub",
     "type": "source",
