@@ -10,10 +10,6 @@
     "type": "package",
     "url": "https://www.npmjs.com/package/kubernetes-client"
   }],
-  "maintainer": {
-    "name": "Silas Boyd-Wickizer",
-    "link": "https://github.com/silasbw"
-  },
   "id": "kubernetes-client"
 },
 {
@@ -28,10 +24,6 @@
     "type": "package",
     "url": "https://www.npmjs.com/package/datastar"
   }],
-  "maintainer": {
-    "name": "Jarrett Cruger",
-    "link": "https://github.com/jcrugzz"
-  },
   "id": "datastar"
 },
 {
@@ -42,10 +34,6 @@
     "type": "source",
     "url": "https://github.com/godaddy/procfilter"
   }],
-  "maintainer": {
-    "name": "Emerson R. Wiley",
-    "link": "https://github.com/ewil"
-  },
   "id": "procfilter"
 }, {
   "name": "terminus",
@@ -59,10 +47,6 @@
     "type": "package",
     "url": "https://www.npmjs.com/package/@godaddy/terminus"
   }],
-  "maintainer": {
-    "name": "Gergely Nemeth",
-    "link": "https://github.com/gergelyke"
-  },
   "id": "terminus"
 }, {
   "name": "Asset System",
@@ -72,10 +56,6 @@
     "type": "source",
     "url": "https://github.com/godaddy/asset-system"
   }],
-  "maintainer": {
-    "name": "Arnout Kazemier",
-    "link": "https://github.com/3rd-Eden"
-  },
   "id": "asset-system"
 }, {
   "name": "Warehouse",
