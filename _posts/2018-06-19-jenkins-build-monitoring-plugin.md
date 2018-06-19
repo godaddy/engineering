@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A build monitoring plugin for Jenkins"
-date: 2018-06-19 08:53:01 -0800
+date: 2018-06-19 05:16:01 -0800
 cover: /assets/images/jenkmagic.png
 excerpt: We recently built a plugin to automatically monitor the health of our Jenkins builds. This article talks about how and why the plugin was built, and describes how it works at a high level.
 authors:
