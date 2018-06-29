@@ -3,6 +3,8 @@ layout: post
 title: "GoDaddy and Amazon EKS"
 date: 2018-06-28 11:16:01 -0800
 cover: /assets/images/ekscover.jpg
+options:
+  - full-bleed-cover
 excerpt: GoDaddy's engineering teams need a robust solution for running container-based workloads. Amazon EKS gives us a shared responsibility service model that minimizes operational complexity and delivers the powerful benefits of running on Kubernetes.
 authors:
   - name: Edward Abrams
