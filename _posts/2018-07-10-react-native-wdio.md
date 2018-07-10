@@ -3,7 +3,7 @@ layout: post
 title: "React Native Application UI testing using WebDriverIO and Appium"
 date: 2018-07-09 22:58:15 -0800
 cover: /assets/images/react-native-wdio/cover-wdio.png
-excerpt: We recently adopted WebDriverIO based UI testing for our React Native application. Benefits of using WebDriverIO include allowing us to write UI tests just as we wrote tests for the web. WebDriverIO configuration allows us to plugin SauceLabs Emulators or Real Devices for cloud-based testing.
+excerpt: We recently adopted WebDriverIO based UI testing for our React Native application. Benefits of using WebDriverIO include allowing us to write UI tests just as we wrote tests for the web. WebDriverIO configuration allows us to plugin Sauce Labs Emulators or Real Devices for cloud-based testing.
 authors:
   - name: Raja Panidepu
     url: https://www.linkedin.com/in/rpanidepu/
@@ -164,11 +164,11 @@ $ wdio wdio.conf.js
 Now you have a WebdriverIO UI test running against the local emulator. Explore [WebDriverIO Mobile API](http://webdriver.io/api.html) to write some solid UI tests.
 
 
-## Part 2: Running UI tests using cloud service: SauceLabs
+## Part 2: Running UI tests using cloud service: Sauce Labs
 
-WebDriverIO officially supports some of the popular cloud services like SauceLabs and BrowserStack by providing a service plugin. Here at GoDaddy, we use SauceLabs for performing mobile UI testing on emulators and real devices.
+WebDriverIO officially supports some of the popular cloud services like Sauce Labs and BrowserStack by providing a service plugin. Here at GoDaddy, we use Sauce Labs for performing mobile UI testing on emulators and real devices.
 
-Let's configure our current WebDriverIO test to run using the SauceLabs simulators.
+Let's configure our current WebDriverIO test to run using the Sauce Labs simulators.
 
 **Step 1:** Install [WDIO Sauce Service](http://webdriver.io/guide/services/sauce.html)
 
@@ -188,7 +188,7 @@ $ npm install wdio-sauce-service --save-dev
 + key: SAUCE_ACCESS_KEY
 ```
 
-Use [Platform configurator by SauceLabs](https://wiki.saucelabs.com/display/DOCS/Platform+Configurator) to update your capabilities if needed.
+Use [Platform configurator by Sauce Labs](https://wiki.saucelabs.com/display/DOCS/Platform+Configurator) to update your capabilities if needed.
 
 **Step 3:** Upload your `.app` or `.apk` file to SauceStorage or any other accessible endpoint. Follow the documentation here: [Uploading Mobile Applications to Sauce Storage for Testing](https://wiki.saucelabs.com/display/DOCS/Uploading+Mobile+Applications+to+Sauce+Storage+for+Testing)
 
@@ -203,15 +203,15 @@ Use [Platform configurator by SauceLabs](https://wiki.saucelabs.com/display/DOCS
 $ wdio wdio.conf.js
 ```
 
-Check the [SauceLabs Dashboard](https://saucelabs.com/beta/dashboard/tests) to make sure the test has run. The WebDriverIO Sauce service automatically sets test labels and results.
+Check the [Sauce Labs Dashboard](https://saucelabs.com/beta/dashboard/tests) to make sure the test has run. The WebDriverIO Sauce service automatically sets test labels and results.
 
 
 ## Part 3: Running on Real Devices
-SauceLabs also provides real device a testing solution through the TestObject platform. With some minor changes to the above `wdio.conf`, we can run UI tests on real devices.
+Sauce Labs also provides real device a testing solution through the TestObject platform. With some minor changes to the above `wdio.conf`, we can run UI tests on real devices.
 
 First, create a project in the [TestObject dashboard](https://app.testobject.com/) and upload your `.ipa` or `.apk` file.
 
-There is no official WebDriverIO TestObject service and at the time of writing this blog, SauceLabs and TestObject do not share the same API calls.
+There is no official WebDriverIO TestObject service and at the time of writing this blog, Sauce Labs and TestObject do not share the same API calls.
 
 **Update `wdio.conf` file:**
 ```diff
@@ -243,7 +243,7 @@ Check the [TestObject Dashboard](https://app.testobject.com/) to make sure the t
 ## Part 4: Timeouts
 When we started to write UI tests and run them as part of CICD, timeouts played a very important role in making sure UI tests were stable. We observed that our tests were failing for reasons outside of the test code, such as the device not being ready or the app installation taking a long time.
 
-There are various timeouts in play here at each level of tech stack: WebDriverIO, Mocha/Jasmine, Appium, and SauceLabs/TestObject. In our case, simple WebDriverIO tests kept failing intermittently until we completely understood the timeouts and tweaked them.
+There are various timeouts in play here at each level of tech stack: WebDriverIO, Mocha/Jasmine, Appium, and Sauce Labs/TestObject. In our case, simple WebDriverIO tests kept failing intermittently until we completely understood the timeouts and tweaked them.
 
 **WebDriverIO timeouts:**
 - `connectionRetryTimeout`: Http request timeouts while trying to connect to Appium server.
@@ -281,8 +281,8 @@ The following timeouts deal with how long Appium should wait for Android Virtual
 
 - `newCommandTimeout` - Limits how long (in seconds) Appium will wait for a new command from the client before assuming the client quit
 
-**SauceLabs/TestObject timeouts:**
-- `commandTimeout`: Similar to Appium's newCommandTimeout, but for SauceLabs. How long Selenium can take to run a command.
+**Sauce Labs/TestObject timeouts:**
+- `commandTimeout`: Similar to Appium's newCommandTimeout, but for Sauce Labs. How long Selenium can take to run a command.
 - `idleTimeout`: Limits how long a browser can wait for a test to send a new command. 
 - `maxDuration`: Limit the total time taken to run a test.
 
