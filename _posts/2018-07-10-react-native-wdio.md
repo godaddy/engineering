@@ -237,7 +237,7 @@ Refer to [Appium Capabilities for Real Device Testing](https://wiki.saucelabs.co
 $ wdio wdio.conf
 ```
 
-Check the [TestObject Dashboard](https://app.testobject.com/) to make sure the test has run. WebDriverIO does not update test labels and results for TestObject. Here are some references that can help update the test results: https://github.com/pizzasaurusrex/TestObject or https://gist.github.com/rajapanidepu/0e8c0f89671a8a563a7463f8c1ff0413
+Check the [TestObject Dashboard](https://app.testobject.com/) to make sure the test has run. WebDriverIO does not update test labels and results for TestObject. Here are some references that can help update the test results: <https://github.com/pizzasaurusrex/TestObject> or <https://gist.github.com/rajapanidepu/0e8c0f89671a8a563a7463f8c1ff0413>
 
 
 ## Part 4: Timeouts
