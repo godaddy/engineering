@@ -12,7 +12,7 @@ authors:
 
 
 ## Motivation:
-I work on a Mobile App team which employs the React Native Framework. Just as we wrote JavaScript code to develop React Native components for the Android and iOS platforms, we wanted to write our UI tests in a similar fashion where we are able to re-use the tests across iOS and Android platforms. In order to achieve that we explored few options and the final answer we found was WebDriverIO + Appium.
+I work on a Mobile App team which employs the React Native Framework. Just as we wrote JavaScript code to develop React Native components for the Android and iOS platforms, we wanted to write our UI tests in a similar fashion where we are able to re-use the tests across iOS and Android platforms. In order to achieve that we explored few options and the final answer we found was [WebDriverIO](http://webdriver.io/) + [Appium](http://appium.io/).
 
 WebDriverIO is a Node.js implementation of the WebDriver Protocol. WebDriverIO is one of the most popular web UI testing frameworks and it also supports native mobile UI testing through its plug-in architecture. The [synchronous nature of WebDriverIO](http://webdriver.io/guide/getstarted/v4.html#It%E2%80%99s-all-synchronous) helps us write clean UI tests with PageObject models.
 
