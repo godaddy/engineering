@@ -243,7 +243,7 @@ Check the [TestObject Dashboard](https://app.testobject.com/) to make sure the t
 ## Part 4: Timeouts
 When we started to write UI tests and run them as part of CICD, timeouts played a very important role in making sure UI tests were stable. We observed that our tests were failing for reasons outside of the test code, such as the device not being ready or the app installation taking a long time.
 
-There are various timeouts in play here at each level of tech stack: WebDriverIO, Mocha/Jasmine, Appium, and Sauce Labs/TestObject. In our case, simple WebDriverIO tests kept failing intermittently until we completely understood the timeouts and tweaked them.
+There are various timeouts in play here at each level of tech stack: WebDriverIO, Mocha/Jasmine, Appium, and Sauce Labs/TestObject.
 
 **WebDriverIO timeouts:**
 - `connectionRetryTimeout`: Http request timeouts while trying to connect to Appium server.
@@ -279,13 +279,14 @@ The following timeouts deal with how long Appium should wait for Android Virtual
 - `avdReadyTimeout` (Android only)
 - `launchTimeout` (iOS only)
 
-- `newCommandTimeout` - Limits how long (in seconds) Appium will wait for a new command from the client before assuming the client quit
+- `newCommandTimeout` - Limits how long (in seconds) Appium will wait for a new command from the client before assuming the client quit.
 
 **Sauce Labs/TestObject timeouts:**
 - `commandTimeout`: Similar to Appium's newCommandTimeout, but for Sauce Labs. How long Selenium can take to run a command.
-- `idleTimeout`: Limits how long a browser can wait for a test to send a new command. 
+- `idleTimeout`: Limits how long a browser can wait for a test to send a new command.
 - `maxDuration`: Limit the total time taken to run a test.
 
+ In our case, simple WebDriverIO tests kept failing intermittently until we completely understood the timeouts and tweaked them. For example, we faced an issue where iOS tests running on Sauce Labs were taking a long time to allocate simulator and install the application. Resulting in test failures with error message: `Your test errored. Session did not start. User might have disconnected`. Bumping default value of `idleTimeout` and `launchTimeout` from 90 seconds to 180 seconds fixed the issue.
 
 ## Conclusion:
 I hope the above discussion helps you set up some infrastructure for running WebDriverIO UI tests locally and remotely for emulators and real devices. Occasionally, we did face few intermittent UI test failures due to the app being unresponsive after installation or network latency. We addressed this issue by adding retry logic on top of the WebDriverIO command to re-run the failed test suites. 90% of the time these tests pass on the second run. We are continuing to write UI tests using WebDriverIO + Appium for native which turned out to be pretty effective for development teams while working with web and native.
