@@ -12,7 +12,7 @@ authors:
 
 
 ## Motivation:
-I work on a Mobile App team which employs the React Native Framework. Just as we wrote JavaScript code to develop React Native components for the Android and iOS platforms, we wanted to write our UI tests in a similar fashion where we are able to re-use the tests across iOS and Android platforms. In order to achieve that we explored few options and the final answer we found was [WebDriverIO](http://webdriver.io/) + [Appium](http://appium.io/).
+I work on a Mobile App team which employs the React Native Framework. Just as we wrote JavaScript code to develop React Native components for the Android and iOS platforms, we wanted to write our UI tests in a similar fashion where we are able to re-use the tests across iOS and Android platforms. In order to achieve that, we explored few options and the final answer we found was [WebDriverIO](http://webdriver.io/) + [Appium](http://appium.io/).
 
 WebDriverIO is a Node.js implementation of the WebDriver Protocol. WebDriverIO is one of the most popular web UI testing frameworks and it also supports native mobile UI testing through its plug-in architecture. The [synchronous nature of WebDriverIO](http://webdriver.io/guide/getstarted/v4.html#It%E2%80%99s-all-synchronous) helps us write clean UI tests with PageObject models.
 
@@ -25,7 +25,7 @@ This article discusses setting up WebDriverIO for the following scenarios:
 
 ## Part 1: Set up WebDriverIO to run native UI tests locally
 
-In your React Native project's directory, let's install WebDriverIO and create a basic WebDriverIO config.
+In your React Native project's directory, install WebDriverIO and create a basic WebDriverIO config.
 
 ```console
 $ npm install webdriverio -g
@@ -36,9 +36,9 @@ $ wdio config
 
 Follow the prompts to create a base WebDriverIO configuration as shown in the above picture.
 
-Note: For now, set the base URL to the default value: http://localhost; we will update that later. Once done, let WebDriverIO install all the needed packages.
+Note: For now, set the base URL to the default value: http://localhost; we will remove it in the later steps. Once done, let WebDriverIO install all the needed packages.
 
-Finally, the saved WebDriverIO config generated from `wdio config` can be found in `wdio.conf` at the root of the project:
+Finally, the generated WebDriverIO config can be found in the `wdio.conf` file at the root of the project:
 
 ```js
 exports.config = {
@@ -129,9 +129,9 @@ exports.config = {
 
 Please note this WebDriverIO config would work only on a Mac with Xcode and command line tools installed.
 
-In the above config, we have added `appium`  to the services list and updated the port number to point to Appium's default port number. Notice that we have removed the `baseUrl` field as we don't need it.
+In the above config, we added `appium` to the services list and updated the port number to point to Appium's default port number. Notice that we removed the `baseUrl` field as we don't need it.
 
-Capabilities have an `app` field whose value should be set to the path of an `.apk` for Android or an `.app` iOS application. The usual location for this file is `<PROJECT_ROOT>/android/app/build/outputs/apk/<FILE_NAME.apk>` for an `.apk` or `<PROJECT_ROOT>/ios/build/Build/Products/Debug-iphonesimulator/<FILE_NAME.app>` for an `.app` file.
+Capabilities have an `app` field whose value should be set to the path of the `.apk` for Android or the `.app` for iOS application. The usual location for this file is `<PROJECT_ROOT>/android/app/build/outputs/apk/<FILE_NAME.apk>` for the `.apk` or `<PROJECT_ROOT>/ios/build/Build/Products/Debug-iphonesimulator/<FILE_NAME.app>` for the `.app` file.
 
 We should also set `maxInstances` to 1 to avoid running multiple tests in parallel and in turn possibly running out of memory on the computer executing these tests.
 
@@ -161,7 +161,7 @@ $ wdio wdio.conf.js
 
 ![Screenshot showing wdio output](/assets/images/react-native-wdio/wdio-output.png)
 
-Now you have a WebdriverIO UI test running against the local emulator. Explore [WebDriverIO Mobile API](http://webdriver.io/api.html) to write some solid UI tests.
+Now, you have a WebdriverIO UI test running against the local emulator. Explore [WebDriverIO Mobile API](http://webdriver.io/api.html) to write some solid UI tests.
 
 
 ## Part 2: Running UI tests using cloud service: Sauce Labs
@@ -203,11 +203,11 @@ Use [Platform configurator by Sauce Labs](https://wiki.saucelabs.com/display/DOC
 $ wdio wdio.conf.js
 ```
 
-Check the [Sauce Labs Dashboard](https://saucelabs.com/beta/dashboard/tests) to make sure the test has run. The WebDriverIO Sauce service automatically sets test labels and results.
+Check the [Sauce Labs Dashboard](https://saucelabs.com/beta/dashboard/tests) to make sure the test ran successfully. The WebDriverIO Sauce service automatically sets test labels and results.
 
 
 ## Part 3: Running on Real Devices
-Sauce Labs also provides real device a testing solution through the TestObject platform. With some minor changes to the above `wdio.conf`, we can run UI tests on real devices.
+Sauce Labs also provides real device testing solution through the TestObject platform. With some minor changes to the above `wdio.conf`, we can run UI tests on real devices.
 
 First, create a project in the [TestObject dashboard](https://app.testobject.com/) and upload your `.ipa` or `.apk` file.
 
@@ -237,7 +237,7 @@ Refer to [Appium Capabilities for Real Device Testing](https://wiki.saucelabs.co
 $ wdio wdio.conf
 ```
 
-Check the [TestObject Dashboard](https://app.testobject.com/) to make sure the test has run. WebDriverIO does not update test labels and results for TestObject. Here are some references that can help update the test results: <https://github.com/pizzasaurusrex/TestObject> or <https://gist.github.com/rajapanidepu/0e8c0f89671a8a563a7463f8c1ff0413>
+Check the [TestObject Dashboard](https://app.testobject.com/) to make sure the test has run. WebDriverIO does not update test labels or results in TestObject Dashboard. Here are some references that can help update the test results: <https://github.com/pizzasaurusrex/TestObject> or <https://gist.github.com/rajapanidepu/0e8c0f89671a8a563a7463f8c1ff0413>
 
 
 ## Part 4: Timeouts
@@ -288,7 +288,7 @@ The following timeouts deal with how long Appium should wait for Android Virtual
 
 
 ## Conclusion:
-I hope the above discussion helps you set up some infrastructure for running WebDriverIO UI tests locally and remotely for emulators and real devices. Occasionally, we did face few intermittent UI test failures due to the app being unresponsive after installation or network latency. We have addressed this issue by adding retry logic on top of the WebDriverIO command to re-run the failed test suites. 90% of the time these tests pass on the second run. We are continuing to write UI tests using WebDriverIO + Appium for native which turned out to be pretty effective for development teams while working with web and native.
+I hope the above discussion helps you set up some infrastructure for running WebDriverIO UI tests locally and remotely for emulators and real devices. Occasionally, we did face few intermittent UI test failures due to the app being unresponsive after installation or network latency. We addressed this issue by adding retry logic on top of the WebDriverIO command to re-run the failed test suites. 90% of the time these tests pass on the second run. We are continuing to write UI tests using WebDriverIO + Appium for native which turned out to be pretty effective for development teams while working with web and native.
 
 GoDaddy is looking for a full-stack mobile engineer to join our next generation Customer Experience mobile team in Kirkland. The team is building our next generation experiences for our small business customers to help them start, grow, and run their venture. If you have the passion, enthusiasm, and ability to create compelling interactions for customers on their way to making their small businesses great, we would like to talk to you! Apply here: <https://careers.godaddy.com/job/cambridge/senior-software-engineer-mobile-focus/18045/8081067>
 
