@@ -14,7 +14,8 @@ authors:
 ## Motivation:
 I work on a Mobile App team which employs the React Native Framework. Just as we wrote JavaScript code to develop React Native components for the Android and iOS platforms, we wanted to write our UI tests in a similar fashion where we are able to re-use the tests across iOS and Android platforms. In order to achieve that, we explored few options and the final answer we found was [WebDriverIO](http://webdriver.io/) + [Appium](http://appium.io/).
 
-WebDriverIO is a Node.js implementation of the WebDriver Protocol. WebDriverIO is one of the most popular web UI testing frameworks and it also supports native mobile UI testing through its plug-in architecture. The [synchronous nature of WebDriverIO](http://webdriver.io/guide/getstarted/v4.html#It%E2%80%99s-all-synchronous) helps us write clean UI tests with PageObject models.
+WebDriverIO is a Node.js implementation of the WebDriver Protocol. WebDriverIO is one of the most popular web UI testing frameworks and it also supports native mobile UI testing through its plug-in architecture. The [synchronous nature of WebDriverIO](http://webdriver.io/guide/getstarted/v4.html#It%E2%80%99s-all-synchronous) helps us write clean UI tests in [PageObjects](http://webdriver.io/guide/testrunner/pageobjects.html) design pattern.
+
 
 This article discusses setting up WebDriverIO for the following scenarios:
 1. UI tests running locally using emulators
@@ -36,9 +37,9 @@ $ wdio config
 
 Follow the prompts to create a base WebDriverIO configuration as shown in the above picture.
 
-Note: For now, set the base URL to the default value: http://localhost; we will remove it in the later steps. Once done, let WebDriverIO install all the needed packages.
+For now, set the base URL to the default value: http://localhost; we will remove it in the later steps. Once done, let WebDriverIO install all the needed packages.
 
-Finally, the generated WebDriverIO config can be found in the `wdio.conf` file at the root of the project:
+When finished, the generated WebDriverIO config can be found in the `wdio.conf` file at the root of the project, here is what it should contain:
 
 ```js
 exports.config = {
@@ -70,11 +71,11 @@ exports.config = {
 };
 ```
 
-`wdio config` configures Jasmine as the default test runner, but you can change it by following the documentation at [WebDriverIO - Test Runner Frameworks](http://webdriver.io/guide/testrunner/frameworks.html). The above config is not yet ready for running mobile UI tests. Let's start tweaking it.
+`wdio config` configures Jasmine as the default test runner, but, you can change it by following the documentation at [WebDriverIO - Test Runner Frameworks](http://webdriver.io/guide/testrunner/frameworks.html). The initial configuration doesn’t have what we need to start running mobile UI tests, so, let’s start tweaking it.
 
 WebDriverIO supports multiple services, of which Appium is a test automation framework for use with native, hybrid, and mobile web apps. [WebDriverIO's Appium service](http://webdriver.io/guide/services/appium.html) lets you automatically run Appium server in the background, which passes on UI test commands to the mobile simulator/emulator.
 
-Set up Appium for WebDriverIO:
+Let's set up Appium for WebDriverIO:
 
 **Step 1:** Install Appium and wdio-appium-service:
 ```console
@@ -129,7 +130,7 @@ exports.config = {
 
 Please note this WebDriverIO config would work only on a Mac with Xcode and command line tools installed.
 
-In the above config, we added `appium` to the services list and updated the port number to point to Appium's default port number. Notice that we removed the `baseUrl` field as we don't need it.
+In the above config, we added `appium` to the services list and updated the port number to point to the Appium default port number. Notice that we removed the `baseUrl` field as we don't need it.
 
 Capabilities have an `app` field whose value should be set to the path of the `.apk` for Android or the `.app` for iOS application. The usual location for this file is `<PROJECT_ROOT>/android/app/build/outputs/apk/<FILE_NAME.apk>` for the `.apk` or `<PROJECT_ROOT>/ios/build/Build/Products/Debug-iphonesimulator/<FILE_NAME.app>` for the `.app` file.
 
