@@ -12,19 +12,26 @@ authors:
 
 
 ## Motivation:
-I work on a Mobile App team which employs the React Native Framework. Just as we wrote JavaScript code to develop React Native components for the Android and iOS platforms, we wanted to write our UI tests in a similar fashion where we are able to re-use the tests across iOS and Android platforms. In order to achieve that, we explored few options and the final answer we found was [WebDriverIO](http://webdriver.io/) + [Appium](http://appium.io/).
+We want to automate the validation of our user experiences in order to consistently maintain a high level of quality. 
 
-WebDriverIO is a Node.js implementation of the WebDriver Protocol. WebDriverIO is one of the most popular web UI testing frameworks and it also supports native mobile UI testing through its plug-in architecture. The [synchronous nature of WebDriverIO](http://webdriver.io/guide/getstarted/v4.html#It%E2%80%99s-all-synchronous) helps us write clean UI tests in [PageObjects](http://webdriver.io/guide/testrunner/pageobjects.html) design pattern.
+The Mobile App team I work on utilzes native code for parts of our application, yet, most of the user interfaces are written using React Native and JavaScript. Given that most of the UI is written in JavaScript, we wanted to use a similar tech stack for automating the validation of our user experiences (also known as function tests) on Android and iOS platforms. 
 
+Although, testing frameworks like Espresso, Robotium, XCTest that are currently in use by other teams at Godaddy, we needed the ability to write cross-platform UI tests for mobile platforms in Javascript and these frameworks don't support our needs there. 
 
-This article discusses setting up WebDriverIO for the following scenarios:
-1. UI tests running locally using emulators
-2. Using a cloud-based service to run on emulators
-3. Using a cloud-based service to run on real devices
-4. Timeouts at various levels
+We looked into Selenium based Appium as this seems to be the most popular test automation framework for both native and hybrid mobile applications which supports writing tests in JavaScript. Appium documentation suggests [WD](https://github.com/admc/wd) (a node.js client for Webdriver/Selenium) as the official Appium client for JavaScript. We found a few shortcomings with the WD library, such as; the async nature of the framework made tests complicated and full JsonWire protocol is [not supported](https://github.com/admc/wd#working-with-mobile-device-emulator) which is necessary for running test commands on native.
 
+Other option that we came across was WebDriverIO, a Node.js implementation of the WebDriver Protocol, which has full JSONWire protocol commands implemented and also supports special bindings for Appium. The advantage of WebDriverIO is that you don’t need to care about how to handle a Promise to avoid racing conditions and it takes away all the cumbersome setup work and manages the Selenium session for you which is awesome. 
 
-## Part 1: Set up WebDriverIO to run native UI tests locally
+This gives us the possibility to write clean code without the need to resolve promises which alleviates the overhead of needlessly accomodating tests running asynchronously which we have been a common source of mistakes. WebDriverIO also helps us write clean UI tests using [PageObjects](http://webdriver.io/guide/testrunner/pageobjects.html) design pattern.
+
+In order to help make this process easier for you to implement WebDriverIO for mobile functional tests, let's explore how we accomplished following:
+
+1. Write UI tests running locally using WebDriverIO and emulators
+2. Running tests on emulators using a cloud-based service
+3. Running tests on real devices using a cloud-based service
+4. Making test results consistent and predictable 
+
+##  Write UI tests running locally using WebDriverIO and emulators
 
 In your React Native project's directory, install WebDriverIO and create a basic WebDriverIO config.
 
@@ -39,7 +46,7 @@ Follow the prompts to create a base WebDriverIO configuration as shown in the ab
 
 For now, set the base URL to the default value: http://localhost; we will remove it in the later steps. Once done, let WebDriverIO install all the needed packages.
 
-When finished, the generated WebDriverIO config can be found in the `wdio.conf` file at the root of the project, here is what it should contain:
+When finished, the generated WebDriverIO config can be found in the `wdio.conf` file at the root of the project; here is an example of what it should contain:
 
 ```js
 exports.config = {
@@ -71,21 +78,22 @@ exports.config = {
 };
 ```
 
-`wdio config` configures Jasmine as the default test runner, but, you can change it by following the documentation at [WebDriverIO - Test Runner Frameworks](http://webdriver.io/guide/testrunner/frameworks.html). The initial configuration doesn’t have what we need to start running mobile UI tests, so, let’s start tweaking it.
+`wdio config` configures Jasmine as the default test runner, but, you can change it by following the documentation at [WebDriverIO - Test Runner Frameworks](http://webdriver.io/guide/testrunner/frameworks.html). The initial configuration doesn’t have what we need to start running mobile UI tests yet, so, let’s start tweaking it.
 
-WebDriverIO supports multiple services, of which Appium is a test automation framework for use with native, hybrid, and mobile web apps. [WebDriverIO's Appium service](http://webdriver.io/guide/services/appium.html) lets you automatically run Appium server in the background, which passes on UI test commands to the mobile simulator/emulator.
+WebDriverIO supports multiple services of which Appium is a test automation framework used with mobile applications. [WebDriverIO's Appium service](http://webdriver.io/guide/services/appium.html) lets you automatically run an Appium server in the background, which passes on the UI test commands to the mobile emulator.
 
-Let's set up Appium for WebDriverIO:
+Now that we have a WebDriverIO configuration, let's set it up to work with Appium.
 
 **Step 1:** Install Appium and wdio-appium-service:
+
 ```console
 $ npm install appium --save-dev
 $ npm install wdio-appium-service --save-dev
 ```
 
-**Step 2:** Provide capabilities based on the platform you would like to run tests on. Documents here provide insight into capabilities that are supported by Appium: https://appium.io/docs/en/writing-running-appium/caps/
+**Step 2:** Provide capabilities based on the platform you would like to run tests on. Capabilities tell an Appium service what environment and/or devices to run the tests in. Documents here provide insight into capabilities that are supported by Appium: https://appium.io/docs/en/writing-running-appium/caps/
 
-You need to make the following changes to `wdio.conf` to configure WebDriverIO to use Appium and run iOS tests on iPhone 8:
+For example, you need to make the following changes to `wdio.conf` to configure WebDriverIO to use Appium and run iOS tests on iPhone 8:
 
 ```diff
 exports.config = {
@@ -128,7 +136,10 @@ exports.config = {
 };
 ```
 
-Please note this WebDriverIO config would work only on a Mac with Xcode and command line tools installed.
+---
+Note: If you are targeting iOS Device for running UI test, you would need a Mac machine with Xcode and command line tools installed. We automate the target devices my manipulating capabilities.
+---
+
 
 In the above config, we added `appium` to the services list and updated the port number to point to the Appium default port number. Notice that we removed the `baseUrl` field as we don't need it.
 
@@ -165,7 +176,7 @@ $ wdio wdio.conf.js
 Now, you have a WebdriverIO UI test running against the local emulator. Explore [WebDriverIO Mobile API](http://webdriver.io/api.html) to write some solid UI tests.
 
 
-## Part 2: Running UI tests using cloud service: Sauce Labs
+## Running tests on emulators using a cloud-based service: Sauce Labs
 
 WebDriverIO officially supports some of the popular cloud services like Sauce Labs and BrowserStack by providing a service plugin. Here at GoDaddy, we use Sauce Labs for performing mobile UI testing on emulators and real devices.
 
@@ -207,7 +218,7 @@ $ wdio wdio.conf.js
 Check the [Sauce Labs Dashboard](https://saucelabs.com/beta/dashboard/tests) to make sure the test ran successfully. The WebDriverIO Sauce service automatically sets test labels and results.
 
 
-## Part 3: Running on Real Devices
+## Running tests on real devices using a cloud-based service
 Sauce Labs also provides real device testing solution through the TestObject platform. With some minor changes to the above `wdio.conf`, we can run UI tests on real devices.
 
 First, create a project in the [TestObject dashboard](https://app.testobject.com/) and upload your `.ipa` or `.apk` file.
@@ -241,7 +252,9 @@ $ wdio wdio.conf
 Check the [TestObject Dashboard](https://app.testobject.com/) to make sure the test has run. WebDriverIO does not update test labels or results in TestObject Dashboard. Here are some references that can help update the test results: <https://github.com/pizzasaurusrex/TestObject> or <https://gist.github.com/rajapanidepu/0e8c0f89671a8a563a7463f8c1ff0413>
 
 
-## Part 4: Timeouts
+## Making test results consistent and predictable
+These functional tests are automated and work across multiple service and framework layers. These services and frameworks are not synchronous and not consistently responsive, therefore, we have to accomodate intermittent failures. 
+
 When we started to write UI tests and run them as part of CICD, timeouts played a very important role in making sure UI tests were stable. We observed that our tests were failing for reasons outside of the test code, such as the device not being ready or the app installation taking a long time.
 
 There are various timeouts in play here at each level of tech stack: WebDriverIO, Mocha/Jasmine, Appium, and Sauce Labs/TestObject.
