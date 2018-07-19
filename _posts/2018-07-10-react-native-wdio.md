@@ -11,6 +11,7 @@ authors:
 ---
 
 ## Motivation:
+
 We want to automate the validation of our user experiences in order to consistently maintain a high level of quality. 
 
 The Mobile App team I work on utilzes native code for parts of our application, yet, most of the user interfaces are written using React Native and JavaScript. Given that most of the UI is written in JavaScript, we wanted to use a similar tech stack for automating the validation of our user experiences (also known as function tests) on Android and iOS platforms. 
