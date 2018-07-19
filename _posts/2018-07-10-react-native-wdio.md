@@ -298,16 +298,15 @@ The following timeouts deal with how long Appium should wait for Android Virtual
 - `idleTimeout`: Limits how long a browser can wait for a test to send a new command.
 - `maxDuration`: A limit for the total time taken to run a test.
 
- In our case, simple WebDriverIO tests kept failing intermittently until we understood the timeouts and tweaked them. For example, we faced an issue where iOS tests running on Sauce Labs were taking a long time to allocate simulator and install the application. Resulting in test failures with error message: `Your test errored. Session did not start. User might have disconnected`. Bumping default value of `idleTimeout` and `launchTimeout` from 90 seconds to 180 seconds fixed the issue.
+ In our case, simple WebDriverIO tests kept failing intermittently until we understood the timeouts and tweaked them. For example, we faced an issue where iOS tests running on Sauce Labs were taking a long time to allocate a simulator and install the application. Resulting in test failures with error message: `Your test errored. Session did not start. User might have disconnected`. Bumping the default values of `idleTimeout` and `launchTimeout` from 90 seconds to 180 seconds fixed the issue. Your miliage may vary on the timeout values, but, we suggest experimenting with them to find the right values for your case if the defaults aren't consitently working for you. 
+
+ Occasionally, we did face few intermittent UI test failures due to the app being unresponsive after installation or network latency. We addressed this issue by adding retry logic on top of the WebDriverIO command to re-run the failed test suites. The retry mechanism we wrote involved aggregating failed tests and re-running them using a [custom reporter](http://webdriver.io/v3.4/guide/testrunner/customreporter.html). We observed that 95% of the time these failed tests pass on the second run increasing our overall success rate.
 
 ## Conclusion:
 
-I hope the above discussion helps you set up some infrastructure for running WebDriverIO UI tests locally and remotely for emulators and real devices. Occasionally, we did face few intermittent UI test failures due to the app being unresponsive after installation or network latency. We addressed this issue by adding retry logic on top of the WebDriverIO command to re-run the failed test suites. The retry mechanism we wrote involved aggregating failed tests and re-running them using a [custom reporter](http://webdriver.io/v3.4/guide/testrunner/customreporter.html). We observed that 95% of the time these failed tests pass on the second run increasing our overall success rate. 
+I hope the above discussion helps you set up some infrastructure for running WebDriverIO UI tests locally and remotely for emulators and real devices. We are continuing to write UI tests using WebDriverIO + Appium for native features which turned out to be quite effective for development teams while working with both web and native platforms.
 
-We are continuing to write UI tests using WebDriverIO + Appium for native which turned out to be quite effective for development teams while working with both web and native.
-
-GoDaddy is looking for a full-stack mobile engineer to join our next generation Customer Experience mobile team in Kirkland. The team is building our next generation experiences for our small business customers to help them start, grow, and run their venture. If you have the passion, enthusiasm, and ability to create compelling interactions for customers on their way to making their small businesses great, we would like to talk to you! Apply here: <https://careers.godaddy.com/job/cambridge/senior-software-engineer-mobile-focus/18045/8081067>
-
+GoDaddy is looking for a full-stack mobile engineer to join our mobile team in Kirkland. The team is building our next generation experiences for our small business customers to help them start, grow, and run their venture. If you have the passion, enthusiasm, and ability to create compelling interactions for customers on their way to making their small businesses great, we would like to talk to you! Apply here: <https://careers.godaddy.com/>.
 
 ## References:
 
