@@ -14,7 +14,7 @@ authors:
 
 We want to automate the validation of our user experiences in order to consistently maintain a high level of quality.
 
-The Mobile App team I work on utilizes native code for parts of our application, yet, most of the user interfaces are written using React Native and JavaScript. Given that most of the UI is written in JavaScript, we wanted to use a similar tech stack for automating the validation of our user experiences (also known as functional tests) on Android and iOS platforms.
+The Mobile App team I work on utilizes native code for parts of our application, yet, most of the user interfaces are written using React Native and JavaScript. Given that most of the UI is written in JavaScript, we wanted to use a similar tech stack for the automation and validation of our user experiences (also known as functional tests) on Android and iOS platforms.
 
 Although, testing frameworks like Espresso, Robotium, XCTest are currently in use by other teams at Godaddy, we needed the ability to write cross-platform UI tests for mobile platforms in Javascript and these frameworks don't support our needs there.
 
@@ -310,7 +310,7 @@ The following timeouts deal with how long Appium should wait for Android Virtual
 
 I hope the above discussion helps you set up some infrastructure for running WebDriverIO UI tests locally and remotely for emulators and real devices. We are continuing to write UI tests using WebDriverIO + Appium for native features which turned out to be quite effective for development teams while working with both web and native platforms.
 
-GoDaddy is looking for a full-stack mobile engineer to join our mobile team. The team is building our next generation experiences for our small business customers to help them start, grow, and run their venture. If you have the passion, enthusiasm, and ability to create compelling interactions for customers on their way to making their small businesses great, we would like to talk to you! Apply here: <https://careers.godaddy.com/>.
+GoDaddy is looking for full-stack engineers to join our mobile team. The team is building our next generation experiences for our small business customers to help them start, grow, and run their venture. If you have the passion, enthusiasm, and ability to create compelling interactions for customers on their way to making their small businesses great, we would like to talk to you! Apply here: <https://careers.godaddy.com/>.
 
 ## References
 
