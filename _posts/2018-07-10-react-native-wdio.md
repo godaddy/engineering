@@ -14,20 +14,20 @@ authors:
 
 We want to automate the validation of our user experiences in order to consistently maintain a high level of quality.
 
-The Mobile App team I work on utilizes native code for parts of our application, yet, most of the user interfaces are written using React Native and JavaScript. Given that most of the UI is written in JavaScript, we wanted to use a similar tech stack for automating the validation of our user experiences (also known as function tests) on Android and iOS platforms.
+The Mobile App team I work on utilizes native code for parts of our application, yet, most of the user interfaces are written using React Native and JavaScript. Given that most of the UI is written in JavaScript, we wanted to use a similar tech stack for the automation and validation of our user experiences (also known as functional tests) on Android and iOS platforms.
 
-Although, testing frameworks like Espresso, Robotium, XCTest that are currently in use by other teams at Godaddy, we needed the ability to write cross-platform UI tests for mobile platforms in Javascript and these frameworks don't support our needs there.
+Although, testing frameworks like Espresso, Robotium, XCTest are currently in use by other teams at Godaddy, we needed the ability to write cross-platform UI tests for mobile platforms in Javascript and these frameworks don't support our needs there.
 
-We looked into Selenium based [Appium](https://appium.io/) as this seems to be the most popular test automation framework for both native and hybrid mobile applications which supports writing tests in JavaScript. Appium documentation suggests [WD](https://github.com/admc/wd) (a node.js client for Webdriver/Selenium) as the official Appium client for JavaScript. We found a few shortcomings with the WD library, such as; the async nature of the framework made tests complicated and full JsonWire protocol is [not supported](https://github.com/admc/wd#working-with-mobile-device-emulator) which is necessary for running test commands on native.
+We looked into Selenium-based [Appium](https://appium.io/), as that is the most popular test automation framework for both native and hybrid mobile applications which supports writing tests in JavaScript. Appium documentation suggests [WD](https://github.com/admc/wd) (a node.js client for Webdriver/Selenium) as the official Appium client for JavaScript. We found a few shortcomings with the WD library, such as: the async nature of the framework made tests complicated and full JSONWire protocol is [not supported](https://github.com/admc/wd#working-with-mobile-device-emulator), which is necessary for running test commands on native.
 
-Another option that we came across was [WebDriverIO](http://webdriver.io), a Node.js implementation of the WebDriver Protocol, which has full JSONWire protocol commands implemented and also supports special bindings for Appium. The advantage of WebDriverIO is that you don’t need to care about how to handle a Promise to avoid racing conditions and it takes away all the cumbersome setup work and manages the Selenium session for you which is awesome.
+Another option we came across was [WebDriverIO](http://webdriver.io), a Node.js implementation of the WebDriver Protocol, which has full JSONWire protocol commands implemented and also supports special bindings for Appium. The advantage of WebDriverIO is that you don’t need to care about how to handle a Promise to avoid race conditions and it takes away all the cumbersome setup work and manages the Selenium session for you, which is awesome.
 
-This gives us the possibility to write clean code without the need to resolve promises which alleviates the overhead of needlessly accommodating tests running asynchronously which has been a common source of mistakes. WebDriverIO also helps us write clean UI tests using [PageObjects](http://webdriver.io/guide/testrunner/pageobjects.html) design pattern.
+This gives us the possibility to write clean code without the need to resolve Promises which alleviates the overhead of needlessly accommodating tests running asynchronously which has been a common source of mistakes. WebDriverIO also helps us write clean UI tests using [PageObjects](http://webdriver.io/guide/testrunner/pageobjects.html) design pattern.
 
 In order to help make this process easier for you to implement WebDriverIO for mobile functional tests, let's explore how we accomplished the following:
 
 1. [Write UI tests running locally using WebDriverIO and emulators](#write-ui-tests-running-locally-using-webdriverio-and-emulators)
-2. [Running tests on emulators using a cloud-based service](#running-tests-on-emulators-using-a-cloud-based-service)
+2. [Running tests on emulators using a cloud-based service: Sauce Labs](#running-tests-on-emulators-using-a-cloud-based-service-sauce-labs)
 3. [Running tests on real devices using a cloud-based service](#running-tests-on-real-devices-using-a-cloud-based-service)
 4. [Making test results consistent and predictable](#making-test-results-consistent-and-predictable)
 
@@ -142,7 +142,7 @@ In the above config, we added `appium` to the services list and updated the port
 
 Capabilities have an `app` field value which should be set to the path of the `.apk` for Android or the `.app` for iOS application. The usual location for this file is `<PROJECT_ROOT>/android/app/build/outputs/apk/<FILE_NAME.apk>` for the `.apk` or `<PROJECT_ROOT>/ios/build/Build/Products/Debug-iphonesimulator/<FILE_NAME.app>` for the `.app` file.
 
-We should also set `maxInstances` to 1 to avoid running multiple tests in parallel and this can alleviate the possibility of running out of memory.
+We should also set `maxInstances` to 1 to avoid running multiple tests in parallel. This can alleviate the possibility of running out of memory.
 
 **Step 3:** Add a simple WebDriverIO UI test to run.
 
@@ -174,9 +174,9 @@ Now, you have a WebdriverIO UI test running against the local emulator. You are 
 
 ## Running tests on emulators using a cloud-based service: Sauce Labs
 
-WebDriverIO officially supports some of the popular cloud services like Sauce Labs and BrowserStack by providing a service plugin. Here at GoDaddy, we use [Sauce Labs](https://saucelabs.com/) for performing mobile UI testing on emulators and real devices. If you don't have a Sauce Labs account you can start a free trial here: (https://signup.saucelabs.com/signup/trial)
+WebDriverIO officially supports some of the popular cloud services like Sauce Labs and BrowserStack by providing a service plugin. Here at GoDaddy, we use [Sauce Labs](https://saucelabs.com/) for performing mobile UI testing on emulators and real devices. If you don't have a Sauce Labs account you can start a free trial here: <https://signup.saucelabs.com/signup/trial>
 
-Let's configure our current WebDriverIO test to run using the Sauce Labs simulators.
+Let's configure our current WebDriverIO test to run using the Sauce Labs emulators.
 
 **Step 1:** Install [WDIO Sauce Service](http://webdriver.io/guide/services/sauce.html)
 
@@ -212,7 +212,7 @@ Let's run the test using Sauce Labs with the updated configuration.
 wdio wdio.conf.js
 ```
 
-Check the [Sauce Labs Dashboard](https://saucelabs.com/beta/dashboard/tests) to make sure the test ran successfully. The WebDriverIO Sauce service automatically sets test labels and results. Now that you have run your test on could based emulators, this opens up the ability to scale out the automation of your functional tests. Sometimes, an emulator doesn't quite meet all the requirements necessary to ensure confidence in app quality due to real sensors, older devices, and other aspects like memory and CPU of a real device.
+Check the [Sauce Labs Dashboard](https://saucelabs.com/beta/dashboard/tests) to make sure the test ran successfully. The WebDriverIO Sauce service automatically sets test labels and results. Now that you have run your test on cloud-based emulators, this opens up the ability to scale out the automation of your functional tests. Sometimes, an emulator doesn't quite meet all the requirements necessary to ensure confidence in app quality due to lack of real sensors, older devices, and other aspects like memory and CPU of a real device.
 
 ## Running tests on real devices using a cloud-based service
 
@@ -248,13 +248,13 @@ Let's run the test with the updated configuration.
 wdio wdio.conf
 ```
 
-Check the [TestObject Dashboard](https://app.testobject.com/) to make sure the test has run. WebDriverIO does not update test labels or results in TestObject Dashboard. TestObject does not aggregate the test results when running through WebDriverIO, therefore, we have to write some extra code so that your test results are in sync. Here are some references that can help with that: <https://github.com/pizzasaurusrex/TestObject> or <https://gist.github.com/rajapanidepu/0e8c0f89671a8a563a7463f8c1ff0413>
+Check the [TestObject Dashboard](https://app.testobject.com/) to make sure the test has run. WebDriverIO does not update test labels or results in TestObject Dashboard. TestObject does not aggregate the test results when running through WebDriverIO. Therefore, write some extra code to keep test results in sync. Here are some references that can help with that: <https://github.com/pizzasaurusrex/TestObject> or <https://gist.github.com/rajapanidepu/0e8c0f89671a8a563a7463f8c1ff0413>
 
 ## Making test results consistent and predictable
 
-These functional tests are automated and work across multiple service and framework layers. These services and frameworks are not synchronous and not consistently responsive, therefore, we have to accommodate intermittent failures.
+These functional tests are automated and work across multiple service and framework layers. These services and frameworks are not synchronous and not consistently responsive; therefore, we have to accommodate intermittent failures.
 
-When we started to write the UI tests and run them as part of CICD, we observed that the tests were failing for reasons which were not related to the test code itself. An example symptom of this was that a test would pass in the first run, yet, we would see that same test failing randomly in subsequent runs with no changes made to the test code.
+When we started to write the UI tests and run them as part of CICD, we observed that the tests were failing for reasons which were not related to the test code itself. An example of this was a test would pass in the first run, yet, we would see same test failing randomly in subsequent runs with no changes made to the test code.
 
 There are various timeouts configurations in play here at each level of tech stack: WebDriverIO, Mocha/Jasmine, Appium, and Sauce Labs/TestObject.
 
@@ -310,7 +310,7 @@ The following timeouts deal with how long Appium should wait for Android Virtual
 
 I hope the above discussion helps you set up some infrastructure for running WebDriverIO UI tests locally and remotely for emulators and real devices. We are continuing to write UI tests using WebDriverIO + Appium for native features which turned out to be quite effective for development teams while working with both web and native platforms.
 
-GoDaddy is looking for a full-stack mobile engineer to join our mobile team in Kirkland. The team is building our next generation experiences for our small business customers to help them start, grow, and run their venture. If you have the passion, enthusiasm, and ability to create compelling interactions for customers on their way to making their small businesses great, we would like to talk to you! Apply here: <https://careers.godaddy.com/>.
+GoDaddy is looking for full-stack engineers to join our mobile team. The team is building our next generation experiences for our small business customers to help them start, grow, and run their venture. If you have the passion, enthusiasm, and ability to create compelling interactions for customers on their way to making their small businesses great, we would like to talk to you! Apply here: <https://careers.godaddy.com/>.
 
 ## References
 
