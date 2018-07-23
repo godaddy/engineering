@@ -14,9 +14,9 @@ authors:
 
 We want to automate the validation of our user experiences in order to consistently maintain a high level of quality.
 
-The Mobile App team I work on utilizes native code for parts of our application, yet, most of the user interfaces are written using React Native and JavaScript. Given that most of the UI is written in JavaScript, we wanted to use a similar tech stack for automating the validation of our user experiences (also known as function tests) on Android and iOS platforms.
+The Mobile App team I work on utilizes native code for parts of our application, yet, most of the user interfaces are written using React Native and JavaScript. Given that most of the UI is written in JavaScript, we wanted to use a similar tech stack for automating the validation of our user experiences (also known as functional tests) on Android and iOS platforms.
 
-Although, testing frameworks like Espresso, Robotium, XCTest that are currently in use by other teams at Godaddy, we needed the ability to write cross-platform UI tests for mobile platforms in Javascript and these frameworks don't support our needs there.
+Although, testing frameworks like Espresso, Robotium, XCTest are currently in use by other teams at Godaddy, we needed the ability to write cross-platform UI tests for mobile platforms in Javascript and these frameworks don't support our needs there.
 
 We looked into Selenium-based [Appium](https://appium.io/), as that is the most popular test automation framework for both native and hybrid mobile applications which supports writing tests in JavaScript. Appium documentation suggests [WD](https://github.com/admc/wd) (a node.js client for Webdriver/Selenium) as the official Appium client for JavaScript. We found a few shortcomings with the WD library, such as: the async nature of the framework made tests complicated and full JSONWire protocol is [not supported](https://github.com/admc/wd#working-with-mobile-device-emulator), which is necessary for running test commands on native.
 
@@ -27,7 +27,7 @@ This gives us the possibility to write clean code without the need to resolve Pr
 In order to help make this process easier for you to implement WebDriverIO for mobile functional tests, let's explore how we accomplished the following:
 
 1. [Write UI tests running locally using WebDriverIO and emulators](#write-ui-tests-running-locally-using-webdriverio-and-emulators)
-2. [Running tests on emulators using a cloud-based service](#running-tests-on-emulators-using-a-cloud-based-service)
+2. [Running tests on emulators using a cloud-based service: Sauce Labs](#running-tests-on-emulators-using-a-cloud-based-service-sauce-labs)
 3. [Running tests on real devices using a cloud-based service](#running-tests-on-real-devices-using-a-cloud-based-service)
 4. [Making test results consistent and predictable](#making-test-results-consistent-and-predictable)
 
@@ -174,9 +174,9 @@ Now, you have a WebdriverIO UI test running against the local emulator. You are 
 
 ## Running tests on emulators using a cloud-based service: Sauce Labs
 
-WebDriverIO officially supports some of the popular cloud services like Sauce Labs and BrowserStack by providing a service plugin. Here at GoDaddy, we use [Sauce Labs](https://saucelabs.com/) for performing mobile UI testing on emulators and real devices. If you don't have a Sauce Labs account you can start a free trial here: (https://signup.saucelabs.com/signup/trial)
+WebDriverIO officially supports some of the popular cloud services like Sauce Labs and BrowserStack by providing a service plugin. Here at GoDaddy, we use [Sauce Labs](https://saucelabs.com/) for performing mobile UI testing on emulators and real devices. If you don't have a Sauce Labs account you can start a free trial here: <https://signup.saucelabs.com/signup/trial>
 
-Let's configure our current WebDriverIO test to run using the Sauce Labs simulators.
+Let's configure our current WebDriverIO test to run using the Sauce Labs emulators.
 
 **Step 1:** Install [WDIO Sauce Service](http://webdriver.io/guide/services/sauce.html)
 
@@ -212,7 +212,7 @@ Let's run the test using Sauce Labs with the updated configuration.
 wdio wdio.conf.js
 ```
 
-Check the [Sauce Labs Dashboard](https://saucelabs.com/beta/dashboard/tests) to make sure the test ran successfully. The WebDriverIO Sauce service automatically sets test labels and results. Now that you have run your test on cloud-based emulators, this opens up the ability to scale out the automation of your functional tests. Sometimes, an emulator doesn't quite meet all the requirements necessary to ensure confidence in app quality due to real sensors, older devices, and other aspects like memory and CPU of a real device.
+Check the [Sauce Labs Dashboard](https://saucelabs.com/beta/dashboard/tests) to make sure the test ran successfully. The WebDriverIO Sauce service automatically sets test labels and results. Now that you have run your test on cloud-based emulators, this opens up the ability to scale out the automation of your functional tests. Sometimes, an emulator doesn't quite meet all the requirements necessary to ensure confidence in app quality due to lack of real sensors, older devices, and other aspects like memory and CPU of a real device.
 
 ## Running tests on real devices using a cloud-based service
 
