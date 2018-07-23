@@ -1,13 +1,16 @@
 ---
 layout: post
 title: "React Native Application UI testing using WebDriverIO and Appium"
-date: 2018-07-09 22:58:15 -0800
+date: 2018-07-09 12:00:00 -0800
 cover: /assets/images/react-native-wdio/cover-wdio.png
 excerpt: We recently adopted WebDriverIO based UI testing for our React Native application. Benefits of using WebDriverIO include allowing us to write UI tests just as we wrote tests for the web. WebDriverIO configuration allows us to plugin Sauce Labs Emulators or Real Devices for cloud-based testing.
 authors:
   - name: Raja Panidepu
     url: https://www.linkedin.com/in/rpanidepu/
     photo: /assets/images/rpanidepu.png
+  - name: Chad Neff
+    url: https://github.com/ineffably
+    photo: https://avatars0.githubusercontent.com/u/1356998?s=150&v=4
 ---
 
 ## Motivation:
