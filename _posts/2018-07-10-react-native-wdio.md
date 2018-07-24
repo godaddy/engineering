@@ -177,7 +177,7 @@ Now, you have a WebdriverIO UI test running against the local emulator. You are 
 
 ## Running tests on emulators using a cloud-based service: Sauce Labs
 
-WebDriverIO officially supports some of the popular cloud services like Sauce Labs and BrowserStack by providing a service plugin. Here at GoDaddy, we use [Sauce Labs](https://saucelabs.com/) for performing mobile UI testing on emulators and real devices. If you don't have a Sauce Labs account you can start a free trial here: <https://signup.saucelabs.com/signup/trial>
+WebDriverIO officially supports some of the popular cloud services like Sauce Labs and BrowserStack by providing a service plugin. Here at GoDaddy, we use [Sauce Labs](https://saucelabs.com/) for performing mobile UI testing on emulators and real devices. If you don't have a Sauce Labs account you can start a free trial here: [Sauce Labs: Sign Up for a Free Trial](https://signup.saucelabs.com/signup/trial?utm_campaign=free+trial&utm_medium=blog&utm_source=godaddy&campid=7011M000001ELsB)
 
 Let's configure our current WebDriverIO test to run using the Sauce Labs emulators.
 
