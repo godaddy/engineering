@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Real User Performance Measuring for Next.js"
-date: 2018-08-15 12:00:00 -0800
+date: 2018-08-21 12:00:00 -0800
 cover: /assets/images/headers/next-rum.jpg
 excerpt: With the introduction of navigation timing in browsers it has become a lot easier to measure performance of your front-end application. With the introduction of the `next-rum` component you will be able to gather the same metrics for your Next.js based application as well.
 options:
