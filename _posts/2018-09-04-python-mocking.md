@@ -1,18 +1,15 @@
-<!--
-Thank you for considering writing an article to godaddy.github.io!
+---
+layout: post
+title: "Making mocking mistakes in Python"
+date: 2018-09-04 12:00:00 -0800
+cover: /assets/images/python-kitten.jpg
+excerpt: Python mocking is tricky. See if you can diagnose and correct four example mocking mistakes, all of which I've made while learning the mock library in the past few months.
+authors:
+  - name: Raphey Holmes
+    url: https://github.com/raphey
+    photo: https://avatars.githubusercontent.com/raphey
+---
 
-To make the editorial process as seamless as possible, please provide us the following information:
--->
-
-## META
-
-* The title of the article: Making mocking mistakes in Python
-* Keywords: python, testing, mocking
-* Link to cover photo: [cover.jpg](cover.jpg)
-* Summary *(~50 words)*: Python mocking is tricky. See if you can diagnose and correct four example mocking mistakes, all of which I've made while learning the mock library in the past few months.
-* My name: [Raphey Holmes](https://github.com/raphey)
-
-## The article
 
 ### Background/requirements
 This post assumes you have some familiarity with python mocking and the `mock` library. If not, [this intro by Naftuli Kay](https://www.toptal.com/python/an-introduction-to-mocking-in-python) and [this other intro by Amos Omondi](https://semaphoreci.com/community/tutorials/getting-started-with-mocking-in-python) are great places to start; these articles are where I figured out most of the mistakes I've been making. I'm working in Python 2, which still has `mock` v 2.0.0 as its own library rather than part of `unittest`, but the mistakes below also apply for Python 3.
@@ -60,14 +57,14 @@ Why doesn't this work?
 <details><summary>Show error message</summary>
 <p>
 
-```
+<code>
 Error
 Traceback (most recent call last):
   ...
   File "./venv/lib/python2.7/site-packages/mock/mock.py", line 1522, in _get_target
     (target,))
 TypeError: Need a valid target to patch. You supplied: 'json'
-```
+</code>
 
 </p>
 </details>
@@ -75,7 +72,7 @@ TypeError: Need a valid target to patch. You supplied: 'json'
 <details><summary>Show the mistake</summary>
 <p>
 
-As the traceback indicates, `mock.patch` can't find the `json` module. This can be fixed by changing the patch line to `@patch('main.json')` This fits with the rule of thumb from the [documentation](http://www.voidspace.org.uk/python/mock/patch.html#where-to-patch) that you should "patch where an object is looked up, which is not necessarily the same place as where it is defined." However, in this case, that isn't the full story: the specific error produced within the mock library is caused by any patch that doesn't involve a `.` as a separator (the same is true in Python 3's unittest.mock library). If we were to instead use `@patch('json.load')`, modifying the return value statement to remove the redundant `.load`, we'd be breaking the rule and mocking it where it came from, but it still works: we're mocking the function from the `json` package, but `main.py`'s import points to the whole package. However, if `main.py` is rewritten to use `from json import load`, and we tried to patch `json.load` instead of `main.load`, our test would fail, since we wouldn't be patching the function we're using.
+As the traceback indicates, <code>mock.patch</code> can't find the <code>json</code> module. This can be fixed by changing the patch line to <code>@patch('main.json')</code> This fits with the rule of thumb from the <a href="http://www.voidspace.org.uk/python/mock/patch.html#where-to-patch">documentation</a>  that you should "patch where an object is looked up, which is not necessarily the same place as where it is defined." However, in this case, that isn't the full story: the specific error produced within the mock library is caused by any patch that doesn't involve a <code>.</code> as a separator (the same is true in Python 3's unittest.mock library). If we were to instead use <code>@patch('json.load')</code>, modifying the return value statement to remove the redundant <code>.load</code>, we'd be breaking the rule and mocking it where it came from, but it still works: we're mocking the function from the <code>json</code> package, but <code>main.py</code>'s import points to the whole package. However, if <code>main.py</code> is rewritten to use <code>from json import load</code>, and we tried to patch <code>json.load</code> instead of <code>main.load</code>, our test would fail, since we wouldn't be patching the function we're using.
 </p>
 </details>
 
@@ -124,16 +121,16 @@ What's wrong with this?
 <details><summary>Show error message.</summary>
 <p>
 
-In this case, the test fails, but there is not necessarily any error beyond `AssertionError: False is not true`.
+In this case, the test fails, but there is not necessarily any error beyond <code>AssertionError: False is not true</code>.
 </p>
 </details>
 
 <details><summary>Show the mistake.</summary>
 <p>
 
-The problem is the decorator order: as things stand, `mock_json` is mocking `main.validate`, and `mock_validate` is mocking `main.json`. Decorators move outward/upward from the decorated function, so the arguments need to have that order. When I set this up, there was no error, because the person object returned by `mock_validate` was taken as truthy, and the `True` that was returned by `mock_json` was found to not be a cat person.
+The problem is the decorator order: as things stand, <code>mock_json</code> is mocking <code>main.validate</code>, and <code>mock_validate</code> is mocking <code>main.json</code>. Decorators move outward/upward from the decorated function, so the arguments need to have that order. When I set this up, there was no error, because the person object returned by <code>mock_validate</code> was taken as truthy, and the <code>True</code> that was returned by <code>mock_json</code> was found to not be a cat person.
 
-Side note: I'm currently reading and enjoying [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882) as part of our engineering book club, and I've been thinking about the way that some of these error-prone mocking situations come about in part because the functions we're testing are too long and/or work at multiple levels of abstraction. Why should one function be responsible for loading json from a file, validating that json, and also performing a classification? But we'll stick with it for now, since it's convenient for these examples.
+Side note: I'm currently reading and enjoying <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Clean Code</a> as part of our engineering book club, and I've been thinking about the way that some of these error-prone mocking situations come about in part because the functions we're testing are too long and/or work at multiple levels of abstraction. Why should one function be responsible for loading json from a file, validating that json, and also performing a classification? But we'll stick with it for now, since it's convenient for these examples.
 </p>
 </details>
 
@@ -184,14 +181,14 @@ class TestIsCatPerson(unittest.TestCase):
 <details><summary>Show error message</summary>
 <p>
 
-The first assertion passes, but the second doesn't. There's no meaningful error, other than the fact that an exception isn't raised. A good IDE might call your attention to the mock_validate argument in the two places where it's used.
+The first assertion passes, but the second doesn't. There's no meaningful error, other than the fact that an exception isn't raised. A good IDE might call your attention to the <code>mock_validate</code> argument in the two places where it's used.
 </p>
 </details>
 
 <details><summary>Show mistake</summary>
 <p>
 
-It _looks_ like this is setting up `simplified_validate` to be a stand-in for `mock_validate`, and by extension a stand-in for `main.validate`, but the substitution isn't taking place. Instead, we want to use `mock_validate.side_effect = simplified_validate`, or to simplify things visually, we could change the patch line to `@patch('main.validate', side_effect=simplified_validate)` and omit the `mock_validate` argument. I find the `side_effect` terminology a bit confusing, since the term doesn't do anything to capture the fact that this `side_effect` will in effect be subbed in for the mocked function and called with the same arguments. If anyone has a good way of explaining this, I'm all ears.
+It <i>looks</i> like this is setting up <code>simplified_validate</code> to be a stand-in for <code>mock_validate</code>, and by extension a stand-in for <code>main.validate</code>, but the substitution isn't taking place. Instead, we want to use <code>mock_validate.side_effect = simplified_validate</code>, or to simplify things visually, we could change the patch line to <code>@patch('main.validate', side_effect=simplified_validate)</code> and omit the <code>mock_validate</code> argument. I find the <code>side_effect</code> terminology a bit confusing, since the term doesn't do anything to capture the fact that this <code>side_effect</code> will in effect be subbed in for the mocked function and called with the same arguments. If anyone has a good way of explaining this, I'm all ears.
 </p>
 </details>
 
@@ -245,7 +242,7 @@ No error message, and the test passes.
 <details><summary>Show mistake</summary>
 <p>
 
-This is a subtle/debatable one. Whether or not this is ok hinges on how much we depend on this test to tell us if something changes about how the `Validator` object is defined and used in `main.py`. By making it a `MagicMock` instance, it will continue working even if the `Validator` method called within `is_cat_person` changes or stops existing. This is one drawback of the flexibility of `MagicMock`. The alternative is to import the Validator object and use the mock library's `create_autospec` function, as in: `@patch('main.Validator', create_autospec(Validator))`.
+This is a subtle/debatable one. Whether or not this is ok hinges on how much we depend on this test to tell us if something changes about how the <code>Validator</code> object is defined and used in <code>main.py</code>. By making it a <code>MagicMock</code> instance, it will continue working even if the <code>Validator</code> method called within <code>is_cat_person</code> changes or stops existing. This is one drawback of the flexibility of <code>MagicMock</code>. The alternative is to import the Validator object and use the mock library's <code>create_autospec</code> function, as in: <code>@patch('main.Validator', create_autospec(Validator))</code>.
 </p>
 </details>
 
