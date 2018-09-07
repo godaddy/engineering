@@ -84,11 +84,11 @@ Now we've modified our `is_cat_person` function slightly to include a call to a 
 
 ```python
 # main.py
-from json import load
+import json
 
 def is_cat_person(filepath):
     with open(filepath) as f:
-        person_json = load(f)
+        person_json = json.load(f)
     if validate(person_json.get('validation_id')):
         ...
         # Do some stuff with person_json and return True if Cat Person, False otherwise
