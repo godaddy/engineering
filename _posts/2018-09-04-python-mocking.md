@@ -200,11 +200,11 @@ Let's revisit example 2, but with two differences. First, we've switched to usin
 
 ```python
 # main.py
-from json import load
+import json
 
 def is_cat_person(filepath):
     with open(filepath) as f:
-        person_json = load(f)
+        person_json = json.load(f)
     if Validator().validate(person_json.get('validation_id')):
         ...
         # Do some stuff with person_json and return True if Cat Person, False otherwise
