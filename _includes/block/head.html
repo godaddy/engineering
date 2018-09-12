@@ -28,9 +28,9 @@
   <meta property="og:url" content="{{ site.url }}{{ page.url}}">
 
   {% if page.cover %}
-    <meta name="og:image" content="{{ site.url }}{{ page.cover }}">
+    <meta property="og:image" content="{{ site.url }}{{ page.cover }}">
   {% else %}
-    <meta name="og:image" content="{{ site.url }}/assets/images/banner.png">
+    <meta property="og:image" content="{{ site.url }}/assets/images/banner.png">
   {% endif %}
 
   {% if page.title %}
