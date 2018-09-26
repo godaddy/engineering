@@ -19,7 +19,6 @@ gem install bundler
 Install project dependencies.
 
 ```
-gem install bundler
 bundle install
 ```
 
