@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mocking SOAP APIs in functional tests using Nock"
-date: 2018-09-25 12:00:00 -0800
+date: 2018-10-02 12:00:00 -0800
 cover: /assets/images/headers/using-nock.jpg
 excerpt: This post explains why and how to mock the external REST and SOAP
   APIs in the functional tests of a service written in NodeJS to have a more
