@@ -38,6 +38,10 @@
 </script>
 {% endif %}
 
+{% if page.url == '/' %}
+<script type="module" src="{{ '/assets/scripts/featured-repos.js' | relative_url }}"></script>
+{% endif %}
+
 {% if page.slug contains 'featured-projects' %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js"></script>
 <script>

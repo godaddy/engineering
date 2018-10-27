@@ -1,0 +1,37 @@
+<div class="featured-repos row d-none">
+  <div class="col">
+    <div class="card shadow border-0 p-3 text-center">
+      <h3 class="mb-3">Featured Repository</h3>
+
+      <div id="featured-repos-carousel" class="carousel slide" data-ride="carousel" data-interval="7000">
+        <div id="featured-repos" class="carousel-inner">
+          <template id="featured-repo-template">
+            <div class="carousel-item">
+
+              <small>
+                <span class="badge small featured-repo-language mb-2">
+                  Unknown
+                </span>
+              </small>
+
+              <h4 class="title mb-2">
+                <a class="featured-repo-title" href=""></a>
+              </h4>
+
+              <p class="featured-repo-description"></p>
+
+              <div class="btn-group btn-group-sm mb-3" role="group" aria-label="Repo details">
+                <a role="button" href="" class="button-stargazers-count btn btn-light" title="View stars"></a>
+                <a role="button" href="" class="button-forks-count btn btn-light" title="View forks"></a>
+              </div>
+            </div>
+          </template>
+        </div>
+        <ol id="featured-repos-indicators" class="carousel-indicators mt-3 mb-0"></ol>
+        <template id="featured-carousel-indicator">
+          <li data-target="#featured-repos-carousel" data-slide-to=""></li>
+        </template>
+      </div>
+    </div>
+  </div>
+</div>
