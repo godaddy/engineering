@@ -83,7 +83,8 @@ of SVG cards surfaced directly in your Markdown or HTML.
 ```
 ![SVG card](/api/website/compare?q1=documentId:${id1}&q2=documentId:${id2}&format=svg)
 ```
-![Compare SVG](/assets/images/lh4u/widget%20compare%20-%20about.jpg)
+
+![Compare SVG]({{ '/assets/images/lh4u/widget%20compare%20-%20about.jpg' | relative_url }})
 
 
 ## Advanced Visualization
@@ -98,7 +99,7 @@ on grouping of results, time ranges, domains, scores and more is a powerful util
 Here we find our Kibana dashboard showing us how our website is performing over
 time to learn from the changes we're making.
 
-![Kibana Perf](/assets/images/lh4u/kibana%20-%20overall%20-%20about.jpg)
+![Kibana Perf]({{ '/assets/images/lh4u/kibana%20-%20overall%20-%20about.jpg' | relative_url }})
 
 ### Competition
 
@@ -106,7 +107,7 @@ Yep we even
 [compare (favorably) against competition](https://www.godaddy.com/garage/site-speed-small-business-website-white-paper/)!
 Names redacted, but we're on the high end in case you're curious.
 
-![Kibana Competitor Comparison](/assets/images/lh4u/kibana%20-%20product%20comparisons.jpg)
+![Kibana Competitor Comparison]({{ '/assets/images/lh4u/kibana%20-%20product%20comparisons.jpg' | relative_url }})
 
 
 
@@ -116,13 +117,13 @@ LH4U has two requirements, [Elasticsearch](https://www.elastic.co/downloads/elas
 and an AMQP-compatible Queue (we use [RabbitMQ](https://www.rabbitmq.com/download.html)).
 Both requirements are opensource and easy to setup if you're not already using them.
 
-![Data Flows](/assets/images/lh4u/data%20flow.jpg)
+![Data Flows]({{ '/assets/images/lh4u/data%20flow.jpg' | relative_url }})
 
 ```
 npm i -g lighthouse4u
 lh4u --config-dir ./app/config \
   --config-base defaults \
-  --config local \  
+  --config local \
   -- init
 ```
 
@@ -147,7 +148,7 @@ are available, but here is a summary of the more interesting bits:
   your own `custom` provider via `customPath`. We use this for JWT internally.
 * `http.routes` - Allows you to extend your LH4U instance with your own
   custom routes. This can be handy if you need to extend the behavior of your server.
-* `lighthouse.config` - All LH settings can be overridden to fit your needs. 
+* `lighthouse.config` - All LH settings can be overridden to fit your needs.
 * `lighthouse.validate` - A handy feature in cases where you need to verify that
   the responding page is who and what you think before you record the LH results of
   an incorrect page. Useful in cases where there may be DNS transitions. Plug in
@@ -161,7 +162,7 @@ are available, but here is a summary of the more interesting bits:
 
 
 
-## Dynamic Pipelines 
+## Dynamic Pipelines
 
 We've got a ton of useful data, but what can we do with it automagically? In the
 case of a CICD pipeline, instead of surfacing the results, nothing prevents you from

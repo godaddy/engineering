@@ -5,7 +5,7 @@
 
       <div class="list-group mb-3">
         {% for post in site.posts limit:3 %}
-          <a href="{{ post.url }}" title="Read post" class="list-group-item list-group-item-action flex-column align-items-start">
+          <a href="{{ post.url | relative_url }}" title="Read post" class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">{{ post.title }}</h5>
               <small class="text-right">{{ post.date | date: '%B %d, %Y' }}</small>
@@ -13,7 +13,7 @@
             <p class="mb-1">{{ post.excerpt }}</p>
             <small>
               {% for author in post.authors %}
-              By <img class="rounded mx-1" src="{{ author.photo }}" alt="{{ author.name }}" width="14">
+              By <img class="rounded mx-1" src="{{ author.photo | relative_url }}" alt="{{ author.name }}" width="14">
               {{ author.name }}
               {% endfor %}
             </small>

@@ -1,6 +1,6 @@
 <div class="card card--post mb-3 shadow hoverable border-0">
-  <a href="{{ post.url }}">
-    <img class="card-img-top" src="{{ post.cover }}" alt="Article featured image">
+  <a href="{{ post.url | relative_url }}">
+    <img class="card-img-top" src="{{ post.cover | relative_url }}" alt="Article featured image">
   </a>
 
   <div class="card-body">
@@ -12,7 +12,7 @@
 
     <p class="card-text">{{ post.excerpt }}</p>
 
-    <a href="{{ post.url }}" class="btn btn-primary" title="{{ post.title }}" role="button">
+    <a href="{{ post.url | relative_url }}" class="btn btn-primary" title="{{ post.title }}" role="button">
       Read Article
     </a>
   </div>

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-top navbar-expand-md navbar-light bg-white">
-  <a class="navbar-brand text-font-headline" href="{{ '/' | absolute_url }}" title="GoDaddy Open Source">
+  <a class="navbar-brand text-font-headline" href="{{ '/' | relative_url }}" title="GoDaddy Open Source">
     {{ site.theme_settings.title | default: site.title }}
   </a>
 
@@ -13,7 +13,7 @@
       {% for item in items %}
       {% if item.title and item.hide != true %}
       <li class="nav-item{% if item.url == page.url %} active{% endif %}">
-        <a class="nav-link" href="{{ item.url }}" title="{{ item.title }}">
+        <a class="nav-link" href="{{ item.url | relative_url }}" title="{{ item.title }}">
           {{ item.title }}
         </a>
       </li>

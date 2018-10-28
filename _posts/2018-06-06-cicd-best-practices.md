@@ -109,7 +109,7 @@ running on the build agent.
 1. deploys the image to a single instance (canary environment) using Kubernetes, and ensure it can run without issues for a small period of time (typically 2 minutes) while serving production traffic
 1. deploys the image to our production environment
 
-![Typical pipeline](/assets/images/cicd/typical-pipeline.png "A typical pipeline showing parallel steps")
+![Typical pipeline]({{ '/assets/images/cicd/typical-pipeline.png' | relative_url }} "A typical pipeline showing parallel steps")
 
 Pipelines that build multiple artifacts could also build those artifacts in parallel.
 
@@ -263,7 +263,7 @@ service that pings the Jenkins REST api to determine the current status, but the
 1. We use the [Github Autostatus Jenkins plugin](https://wiki.jenkins.io/display/JENKINS/Github+Autostatus+Plugin)
 for monitoring health of our jobs over time. This has allowed us to identify which areas of the build might need improvement. It allows you to build dashboards like the following, which shows build pass rate, average build time, and count of specific stage errors.
 
-![Sample dashboard](/assets/images/cicd/sample-build-dashboard.png "A dashboard built from the Jenkins Github Autostatus Plugin")
+![Sample dashboard]({{ '/assets/images/cicd/sample-build-dashboard.png' | relative_url }} "A dashboard built from the Jenkins Github Autostatus Plugin")
 
 This is useful for finding stages which fail too often, and for debugging build inefficiencies.
 

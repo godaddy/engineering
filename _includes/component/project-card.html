@@ -6,7 +6,7 @@
     {% for link in project.links %}
     <a
       class="card-link"
-      href="{{ link.url }}"
+      href="{{ link.url | relative_url }}"
       title="{{ link.title }}">
       {% capture type %}{{ link.type }}{% endcapture %}
       {% include function/get-project-text.html type=type %}
