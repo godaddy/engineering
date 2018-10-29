@@ -177,7 +177,7 @@ pipeline {
 
 The **Pipeline Steps** build action links to this page:
 
-![Pipeline steps]({{ '/assets/images/monitoring-plugin/flowgraph-table.png | relative_url }})
+![Pipeline steps]({{ '/assets/images/monitoring-plugin/flowgraph-table.png' | relative_url }})
 
 You can see representations for every stage and step in the plugin, plus additional stuff added by Jenkins automatically.
 
