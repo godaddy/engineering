@@ -5,8 +5,6 @@ date:   2018-10-16 02:00:00 -0800
 cover:  /assets/images/cypress/logo-dark.cy.png
 excerpt: Cypress is a relatively new front end testing tool that can be used for your UI testing 
 needs. Selenium brings some challenges to UI testing that Cypress aims to solve through a better developer experience.
-options:
-  - full-bleed-cover
 authors:
   - name: Pablo Velasquez
     url: https://github.com/newpablo
@@ -160,7 +158,7 @@ to write Cypress tests is minimal. The learning curve is drastically reduced by:
 One of the more impressive features of Cypress is the Test Runner. Inside the Test Runner, Cypress offers a Selector 
 Playground that can be used to generate selectors for your tests.
 
-![Screenshot showing Element Selector](/assets/images/cypress/element%20selector.png) 
+![Screenshot showing Element Selector](/assets/images/cypress/elementselector.png) 
 
 Gone are the days of inspecting elements or hunting through page source to generate a selector. Cypress defines a 
 strategy of finding the best unique selector and provides the command needed within your test code. In the above 
