@@ -13,6 +13,7 @@ authors:
     photo: https://avatars2.githubusercontent.com/u/7356157?s=460&v=4
   - name: Scott Creighton
     url: https://github.com/screighton
+    photo: https://avatars1.githubusercontent.com/u/43220691?s=400&u=4a5332354a0f6996e18853a00b64363cbe0ba088&v=4
  
 ---
 
