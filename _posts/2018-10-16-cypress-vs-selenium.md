@@ -3,8 +3,7 @@ layout: post
 title:  "Move over Selenium - UI Testing with Cypress"
 date:   2018-10-16 02:00:00 -0800
 cover:  /assets/images/cypress/logo-dark.cy.png
-excerpt: Cypress is a relatively new front end testing tool that can be used for your UI testing 
-needs. Selenium brings some challenges to UI testing that Cypress aims to solve through a better developer experience.
+excerpt: Cypress is a relatively new front end testing tool that can be used for your UI testing needs. Selenium brings some challenges to UI testing that Cypress aims to solve through a better developer experience.
 authors:
   - name: Pablo Velasquez
     url: https://github.com/newpablo
@@ -12,7 +11,6 @@ authors:
   - name: Scott Creighton
     url: https://github.com/screighton
     photo: https://avatars1.githubusercontent.com/u/43220691?s=400&u=4a5332354a0f6996e18853a00b64363cbe0ba088&v=4
- 
 ---
 
 ## Before we start, of course Selenium has good qualities
