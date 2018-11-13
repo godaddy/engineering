@@ -7,7 +7,7 @@ excerpt: This blog discusses the pros and cons of Oozie and Airflow to help you 
          It also contains a sample plugin which implements the Airflow operator.
 authors:
   - name: Anusha Buchireddygari
-    url: https://twitter.com/anushabuchi
+    url: https://www.linkedin.com/in/anushabuchireddygari/
     photo: /assets/images/anusha-buchireddygari.png
 ---
 
