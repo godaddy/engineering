@@ -8,7 +8,7 @@ excerpt: This blog discusses the pros and cons of Oozie and Airflow to help you 
 authors:
   - name: Anusha Buchireddygari
     url: https://twitter.com/anushabuchi
-    photo: yet to do
+    photo: /assets/images/anusha-buchireddygari.png
 ---
 
 On the Data Platform team at GoDaddy we use both Oozie and Airflow for scheduling jobs. 
