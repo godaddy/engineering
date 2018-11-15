@@ -33,7 +33,7 @@ With cron, you have to write code for the above functionality, whereas Oozie and
 ### Oozie ###
 
 Apache Oozie is a workflow scheduler which uses Directed Acyclic Graphs (DAG) to schedule Map Reduce Jobs (e.g. Pig, Hive, Sqoop, Distcp, Java functions). 
-It’s an open source project written in Java, [Apache Oozie](https://github.com/apache/Oozie).
+[Apache Oozie](https://github.com/apache/Oozie) an open source project written in Java.
 When we develop Oozie jobs, we write bundle, coordinator, workflow, properties file. A workflow file is required whereas others are optional.
 * The workflow file contains the actions needed to complete the job. Some of the common actions we use in our team are the Hive action to run hive scripts, ssh action, shell action, pig action and fs action for creating, moving, and removing files/folders
 * The coordinator file is used for dependency checks to execute the workflow.
@@ -59,7 +59,7 @@ At GoDaddy, we use Hue UI for monitoring Oozie jobs.
 ### Airflow
 
 Apache Airflow is another workflow scheduler which also uses DAGs.
-It’s an open source project written in python, [Apache Airflow](https://github.com/apache/incubator-airflow).
+[Apache Airflow](https://github.com/apache/incubator-airflow) an open source project written in python.
 Some of the features in Airflow are:
 * Operators, which are job tasks similar to actions in Oozie.
 * Hooks to connect to various databases.
