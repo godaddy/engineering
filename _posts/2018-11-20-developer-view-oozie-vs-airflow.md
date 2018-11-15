@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Data pipeline job scheduling in GoDaddy: Developer’s point of view on Oozie vs Airflow"
-date: 2018-11-20 12:00:00 -0800
+date: 2018-11-15 12:00:00 -0800
 cover: /assets/images/time.png
 excerpt: This blog discusses the pros and cons of Oozie and Airflow to help you choose which scheduler to use for your data pipeline jobs. 
          It also contains a sample plugin which implements the Airflow operator.
