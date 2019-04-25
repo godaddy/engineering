@@ -57,7 +57,7 @@ Building on this we decided to do some more projects at the Cloudfest Hackathon 
 
 We also decided to build something useful for customers. We wondered if we could build a Dynamic DNS (DDNS) application using Domain Connect. This allows a server that uses DHCP and gets a dynamic IP address to update a DNS entry whenever the IP address changes. This functionality was popular in the late 1990s with some routers and DNS provides supporting proprietary protocols. While not as commonly used today, some small business customers and advanced users still use this capability.  
 
-As you may guess, we were successful and built a [nifty little Windows Application](https://github.com/Domain-Conect/DomainConnectDDNS-Windows) that does this. It runs as a Windows Service or as a System Tray Icon (later we also built Linux versions). It uses the Domain Connect protocol to update an A record whenever your IP address changes. With a short TTL, this is what DDNS does. 
+As you may guess, we were successful and built a [nifty little Windows Application](https://github.com/Domain-Connect/DomainConnectDDNS-Windows) that does this. It runs as a Windows Service or as a System Tray Icon (later we also built Linux versions). It uses the Domain Connect protocol to update an A record whenever your IP address changes. With a short TTL, this is what DDNS does. 
 
 Note: For this implementation the Domain Connect is implemented using OAuth.  The end user grants permission for the application to update DNS using Domain Connect on their behalf.
 
