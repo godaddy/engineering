@@ -27,7 +27,7 @@ allows your tests to fully access every API that the platform has to offer.
 
 ### Why did we build another testing tool?
 
-`ekke` is the Open Source rewrite of a tool that we (Arnout Kazemier,
+`ekke` is the open source rewrite of a tool that we (Arnout Kazemier,
 Martijn Swaagman, and Andrew Burgess) built during an internal hackathon we
 held many moons ago. We wanted to create a tool that allowed us to quickly
 verify that the code and its components would work in the different
