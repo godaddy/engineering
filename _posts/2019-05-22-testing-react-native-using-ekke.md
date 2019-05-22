@@ -6,7 +6,7 @@ cover: /assets/images/ekke/react-phone.png
 excerpt: Introducing `ekke`, a new, unique test runner for React-Native. It allows you to execute your test code directly on the device, eliminating the need for imperfect mocks and enabling you to test in the same environment as your production users.
 authors:
   - name: Arnout Kazemier
-    title: Sr. Software Engineer
+    title: Principal Software Engineer
     url: https://twitter.com/3rdEden
     photo: https://avatars2.githubusercontent.com/u/28071?s=460&v=4
 ---
