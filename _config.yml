@@ -6,7 +6,6 @@ description: > # this means to ignore newlines until the next key
 
 email: opensource@godaddy.com
 url: "https://godaddy.github.io"
-baseurl: "/engineering"
 permalink: pretty
 
 analytics_id: UA-37178807-20
