@@ -141,7 +141,7 @@ secret data from the specified external secret management system, and automatica
 creates native `Secret` objects that hold the secret data. The
 architecture diagram below illustrates this process.
 
-![Architecture Diagram](/assets/images/kubernetes-external-secrets/architecture.png)
+![Architecture Diagram]({{site.baseurl}}/assets/images/kubernetes-external-secrets/architecture.png)
 
 ## Using
 

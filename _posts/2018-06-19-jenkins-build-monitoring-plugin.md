@@ -18,7 +18,7 @@ we use on my team at GoDaddy. One of the best practices was:
 Most of our pipelines provide per-stage status checks shown on
 the GitHub PR page. For example:
 
- ![PR Page showing status checks](/assets/images/monitoring-plugin/pr-build-page.png)
+ ![PR Page showing status checks]({{site.baseurl}}/assets/images/monitoring-plugin/pr-build-page.png)
 
 Our engineers like this because they don't have to leave GitHub so see whether the PR built successfully.
 
@@ -132,7 +132,7 @@ In the rest of this article, I'll talk about the high-level design of the plugin
 
 The following class diagram shows the architecture of the plugin.
 
-![GitHub autostatus plugin class diagram](/assets/images/monitoring-plugin/github-autostatus-design.png)
+![GitHub autostatus plugin class diagram]({{site.baseurl}}/assets/images/monitoring-plugin/github-autostatus-design.png)
 
 ### Job watching components
 
@@ -177,13 +177,13 @@ pipeline {
 
 The **Pipeline Steps** build action links to this page:
 
-![Pipeline steps](/assets/images/monitoring-plugin/flowgraph-table.png)
+![Pipeline steps]({{site.baseurl}}/assets/images/monitoring-plugin/flowgraph-table.png)
 
 You can see representations for every stage and step in the plugin, plus additional stuff added by Jenkins automatically.
 
 `onNewHead(flowNode)` is called with the following flowNodes.
 
-![Flownodes](/assets/images/monitoring-plugin/flownode-table.png)
+![Flownodes]({{site.baseurl}}/assets/images/monitoring-plugin/flownode-table.png)
 
 StepStartNode Flow nodes contain additional properties to help identify their purpose,
 but that's enough detail for this example.
