@@ -86,7 +86,7 @@ buttons at once:
 npm run storybook
 ```
 
-![](/assets/images/exemplar/buttons.png)
+![]({{site.baseurl}}/assets/images/exemplar/buttons.png)
 
 ## What's Next?
 

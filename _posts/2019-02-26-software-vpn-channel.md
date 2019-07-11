@@ -16,7 +16,7 @@ In general, there are two ways to build the connection: [AWS direct connect](htt
 
 ## High Level Architecture Design
 
-![OpenVPN High-Level Architecture](/assets/images/ha-openvpn/openvpn-arch.png)
+![OpenVPN High-Level Architecture]({{site.baseurl}}/assets/images/ha-openvpn/openvpn-arch.png)
 
 To configure a high-availability OpenVPN server on AWS, we used the Active-Passive HA configuration. We set up two OpenVPN servers, one primary and one secondary. We ran them simultaneously on two container instances/EC2 instances in the ECS cluster. Each container instance belonged to an auto-scaling group with a desired count 1. For each auto-scaling group, there was a dedicated auto-scaling launch configuration associated with it. In the launch configuration, we copied the OpenVPN server certs from an S3 bucket to the instance. Also, we assigned an Elastic IP to the container instance to make sure its IP address is persistent after reboot. Then, we connected each OpenVPN Server to an OpenVPN client set up on a GoDaddy VM. This gave us two OpenVPN tunnels.
 
@@ -24,7 +24,7 @@ To facilitate the OpenVPN server and client setup, we also created server and cl
 
 During any time, only one OpenVPN server (Primary OpenVPN Server) is actively being used. All traffic from AWS to the On-Premises data centers will go through that OpenVPN server. We have a CloudWatch rule defined for AWS ECS task state change event. Based on the event received, the rule will trigger a lambda function to update the route table and promote the secondary server as the primary server if the primary OpenVPN server is down. The figure below shows one such event.
 
-![Route Table Update Event](/assets/images/ha-openvpn/openvpn-route.png)
+![Route Table Update Event]({{site.baseurl}}/assets/images/ha-openvpn/openvpn-route.png)
 
 ## Auto-Recovery and Monitor
 
@@ -32,11 +32,11 @@ In the current setup, on the server side, we use AWS auto-scaling with desired c
 
 Then, we would need monitors to help us to discover any OpenVPN connection failure as soon as it happens. To do this, there is a cron job running on each ECS container instance. It pings one of our internal services at GoDaddy, and then it publishes the status metric to CloudWatch.
 
-![OpenVPN Status](/assets/images/ha-openvpn/openvpn-Status.png)
+![OpenVPN Status]({{site.baseurl}}/assets/images/ha-openvpn/openvpn-Status.png)
 
 We configured a CloudWatch alarm for each OpenVPN status metric. Once the alarm is triggered, it will send alerts to our slack channel and on-call engineers can take actions to inspect:
 
-![OpenVPN Alarms](/assets/images/ha-openvpn/openvpn-alarm.png)
+![OpenVPN Alarms]({{site.baseurl}}/assets/images/ha-openvpn/openvpn-alarm.png)
 
 ## Conclusion
 

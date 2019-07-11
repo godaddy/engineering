@@ -83,7 +83,7 @@ of SVG cards surfaced directly in your Markdown or HTML.
 ```
 ![SVG card](/api/website/compare?q1=documentId:${id1}&q2=documentId:${id2}&format=svg)
 ```
-![Compare SVG](/assets/images/lh4u/widget%20compare%20-%20about.jpg)
+![Compare SVG]({{site.baseurl}}/assets/images/lh4u/widget%20compare%20-%20about.jpg)
 
 
 ## Advanced Visualization
@@ -98,7 +98,7 @@ on grouping of results, time ranges, domains, scores and more is a powerful util
 Here we find our Kibana dashboard showing us how our website is performing over
 time to learn from the changes we're making.
 
-![Kibana Perf](/assets/images/lh4u/kibana%20-%20overall%20-%20about.jpg)
+![Kibana Perf]({{site.baseurl}}/assets/images/lh4u/kibana%20-%20overall%20-%20about.jpg)
 
 ### Competition
 
@@ -106,7 +106,7 @@ Yep we even
 [compare (favorably) against competition](https://www.godaddy.com/garage/site-speed-small-business-website-white-paper/)!
 Names redacted, but we're on the high end in case you're curious.
 
-![Kibana Competitor Comparison](/assets/images/lh4u/kibana%20-%20product%20comparisons.jpg)
+![Kibana Competitor Comparison]({{site.baseurl}}/assets/images/lh4u/kibana%20-%20product%20comparisons.jpg)
 
 
 
@@ -116,7 +116,7 @@ LH4U has two requirements, [Elasticsearch](https://www.elastic.co/downloads/elas
 and an AMQP-compatible Queue (we use [RabbitMQ](https://www.rabbitmq.com/download.html)).
 Both requirements are opensource and easy to setup if you're not already using them.
 
-![Data Flows](/assets/images/lh4u/data%20flow.jpg)
+![Data Flows]({{site.baseurl}}/assets/images/lh4u/data%20flow.jpg)
 
 ```
 npm i -g lighthouse4u

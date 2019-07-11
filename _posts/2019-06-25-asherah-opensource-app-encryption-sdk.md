@@ -148,7 +148,7 @@ String decryptedPayloadString = new String(encryptionSessionBytes.decrypt(newByt
 
 Here is a diagram showing at a high level a typical encryption operation in **Asherah**:
 
-![Diagram 1](/assets/images/asherah/first.png)
+![Diagram 1]({{site.baseurl}}/assets/images/asherah/first.png)
 
 Features:
 
@@ -179,7 +179,7 @@ initialize your encryption or decryption context. A helpful and configurable `Cr
 it wraps and manages the complexity of key rotation schedules and caching behavior, among other things. Future **Asherah** 
 features will primarily be exposed via the policy.
 
-![Diagram 2](/assets/images/asherah/envelope.png)
+![Diagram 2]({{site.baseurl}}/assets/images/asherah/envelope.png)
 
 Envelope encryption is a method for managing and storing key material alongside the data that the key encrypts. In this 
 model, when you encrypt a data element, you take the key you used to encrypt the data, encrypt the **key** with a separate,
@@ -194,7 +194,7 @@ Security Products page](https://cloud.google.com/kms/docs/envelope-encryption).
 
 The notion of higher and lower order keys can be generalized to a hierarchy or tree of keys:
 
-![Diagram 3](/assets/images/asherah/key_hierarchy.png)
+![Diagram 3]({{site.baseurl}}/assets/images/asherah/key_hierarchy.png)
 
 The key hierarchy here has several tiers, each of which you can use to partition your data. A good example of a plausible
 data partitioning scheme would be to assign each service in your infrastructure a separate SK. Then, assign each customer in 
@@ -205,7 +205,7 @@ different service.
 In order to see how all of these pieces fit together, let's take a look a sequence diagram of a encrypting a
 payload using **Asherah**:
 
-![Diagram 4](/assets/images/asherah/happy_path_create_all_keys.svg)
+![Diagram 4]({{site.baseurl}}/assets/images/asherah/happy_path_create_all_keys.svg)
 
 The level of complexity increases significantly when different levels of keys are in need of rotation or are
 stale in the cache. All of this complexity is already implemented for you in **Asherah**!

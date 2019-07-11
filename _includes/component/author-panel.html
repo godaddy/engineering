@@ -15,8 +15,8 @@
     {% for author in page.authors %}
     <div class="col-12{% if page.authors.size > 1 %} col-md-6{% endif %}">
       <div class="author mb-3">
-        <a href="{{ author.url }}">
-          <img class="rounded mr-2" src="{{ author.photo }}" alt="{{ author.name }}" width="64">
+        <a href="{{ author.url | relative_url }}">
+          <img class="rounded mr-2" src="{{ author.photo | relative_url }}" alt="{{ author.name }}" width="64">
           <span class="author-details">
             <h6>{{ author.name }}</h6>
             {% if author.title %}

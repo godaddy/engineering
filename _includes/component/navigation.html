@@ -6,7 +6,7 @@
 </nav>
 
 <nav class="navbar navbar-top navbar-expand-md navbar-light bg-white">
-  <a class="navbar-brand font-weight-bold" href="{{ '/' | absolute_url }}" title="GoDaddy Engineering">
+  <a class="navbar-brand font-weight-bold" href="{{ '/' | relative_url }}" title="GoDaddy Engineering">
     {{ site.theme_settings.title | default: site.title }}
   </a>
 
@@ -20,7 +20,7 @@
       {% for item in items %}
       {% if item.title and item.hide != true %}
       <li class="nav-item{% if item.url == page.url %} active{% endif %}">
-        <a class="nav-link font-weight-bold" href="{{ item.url }}" title="{{ item.title }}">
+        <a class="nav-link font-weight-bold" href="{{ item.url | relative_url }}" title="{{ item.title }}">
           {{ item.title }}
         </a>
       </li>

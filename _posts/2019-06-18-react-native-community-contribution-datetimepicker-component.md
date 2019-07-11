@@ -162,8 +162,8 @@ The component comes with a runnable [React Native example app][example] that
 uses the new component. Below are examples of the date and time picker on both
 platforms.
 
-![DatePicker on iOS](/assets/images/datetimepicker/ios-datepicker.png)
-![TimePicker on Android](/assets/images/datetimepicker/android-timepicker.png)
+![DatePicker on iOS]({{site.baseurl}}/assets/images/datetimepicker/ios-datepicker.png)
+![TimePicker on Android]({{site.baseurl}}/assets/images/datetimepicker/android-timepicker.png)
 
 This contribution to the [lean core initiative][leancore] will allow the
 community to continue adding new features and bug fixes to the React Native
@@ -186,5 +186,5 @@ for the new module.
 [eslint]: https://www.npmjs.com/package/@react-native-community/eslint-config
 [orb]: https://github.com/react-native-community/react-native-circleci-orb/
 [Detox]: https://github.com/wix/detox/
-[ekke]: /2019/05/22/testing-react-native-using-ekke/
+[ekke]: {{site.baseurl}}/2019/05/22/testing-react-native-using-ekke/
 [install]: https://github.com/react-native-community/react-native-datetimepicker/#getting-started

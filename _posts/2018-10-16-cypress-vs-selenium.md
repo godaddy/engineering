@@ -46,7 +46,7 @@ We struggled to get wide adoption in teams for writing UI tests. Therefore scali
 
 Even with all of the extensions, improvements and wrappers we built into our custom framework developer interest remains low and maintenance remains high. 
 
-![Screenshot showing Selenium Test After Run](/assets/images/cypress/selenium-test.png)
+![Screenshot showing Selenium Test After Run]({{site.baseurl}}/assets/images/cypress/selenium-test.png)
 
 Some of the problems we encountered: 
 
@@ -95,14 +95,14 @@ $ npx cypress open
 
 The Cypress Test Runner will load with a pre-loaded set of tests which run against a Cypress example [application](https://github.com/cypress-io/cypress-example-kitchensink).
 
-![Screenshot showing Cypress Test Runner Start](/assets/images/cypress/ide.png)
+![Screenshot showing Cypress Test Runner Start]({{site.baseurl}}/assets/images/cypress/ide.png)
 
 ### Clear Documentation
  
 In addition to the detailed guides provided on the Cypress website, Cypress provides a search capability on their 
 documentation site helping to find answers quicker.
 
-![Screenshot showing Cypress Search](/assets/images/cypress/search.png)
+![Screenshot showing Cypress Search]({{site.baseurl}}/assets/images/cypress/search.png)
 
 Similar to Selenium, Cypress is also [open source](https://github.com/cypress-io/cypress) which has allowed us to look
  at their code to find how it works and provided insight into issues others have run into providing potential 
@@ -156,7 +156,7 @@ to write Cypress tests is minimal. The learning curve is drastically reduced by:
 One of the more impressive features of Cypress is the Test Runner. Inside the Test Runner, Cypress offers a Selector 
 Playground that can be used to generate selectors for your tests.
 
-![Screenshot showing Element Selector](/assets/images/cypress/elementselector.png) 
+![Screenshot showing Element Selector]({{site.baseurl}}/assets/images/cypress/elementselector.png) 
 
 Gone are the days of inspecting elements or hunting through page source to generate a selector. Cypress defines a 
 strategy of finding the best unique selector and provides the command needed within your test code. In the above 
@@ -167,7 +167,7 @@ selector for your element.
 
 Another feature of the Test Runner is the Command Log which details every step of the test.
 
-![Screenshot showing Cypress Test Runner Running](/assets/images/cypress/testrunner.png)
+![Screenshot showing Cypress Test Runner Running]({{site.baseurl}}/assets/images/cypress/testrunner.png)
 
 On the left side a list of commands will show exactly what request was made making it easy to debug when problems 
 arise. On the GoDaddy GoCentral team, we use a testing environment to verify new features before deploying to our 
@@ -176,7 +176,7 @@ services maintained by teams throughout the company and sometimes one of those s
 example below you can see a call to one of our APIs that is returning a 404 response. This allows us to debug our 
 test and inspect the request and response made to determine if our test is working properly.
 
-![Screenshot showing Cypress debugging](/assets/images/cypress/debugging.png)
+![Screenshot showing Cypress debugging]({{site.baseurl}}/assets/images/cypress/debugging.png)
 
 ### Mocking Flaky APIs
 
@@ -208,7 +208,7 @@ avoiding making the actual call to the service. We can also guarantee that our t
  race condition. We also simulated the JSON response received from the endpoint. This can be useful when wanting to 
  test various responses without having to setup test data before each test. 
  
-![Screenshot showing 204 mocking](/assets/images/cypress/204mocking.png)
+![Screenshot showing 204 mocking]({{site.baseurl}}/assets/images/cypress/204mocking.png)
  
 Another useful example of mocking responses is to verify UI functionality when things go bad. With Cypress, it's easy
  to simulate what an error might look like to a customer when a service outage occurs.
@@ -226,7 +226,7 @@ cy.route({
 With the above code, we can simulate our endpoint returning a 500 response to verify the customer sees the 
 appropriate error message on their screen
 
-![Screenshot showing 500 mocking](/assets/images/cypress/500mocking.png)
+![Screenshot showing 500 mocking]({{site.baseurl}}/assets/images/cypress/500mocking.png)
 
 ## Best Practices (or what we've learned so far)
 

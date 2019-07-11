@@ -20,7 +20,7 @@ execution of tests directly **inside your React-Native application**. `ekke`
 allows your tests to fully access every API that the platform has to offer.
 
 <p align="center">
-  <img width="800" height="607" src="/assets/images/ekke/ekke-react-native-intro.gif" />
+  <img width="800" height="607" src="{{site.baseurl}}/assets/images/ekke/ekke-react-native-intro.gif" />
   <br />
   <sub>Ekke in action: running a test suite inside React-Native and streaming results back to the CLI</sub>
 </p>
@@ -162,7 +162,7 @@ And watch the magic unfold. The sequence of events that will happen:
 - Closes the process with exit code 0 if your tests pass, or 1 when there was
   a failure.
 
-![Our test suite passes](/assets/images/ekke/ekke-result.png)
+![Our test suite passes]({{site.baseurl}}/assets/images/ekke/ekke-result.png)
 
 It's that simple to use `ekke`. The project is now available on:
 

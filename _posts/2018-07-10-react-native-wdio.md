@@ -43,7 +43,7 @@ npm install webdriverio -g
 wdio config
 ```
 
-![Screenshot showing wdio config](/assets/images/react-native-wdio/wdio-config.png)
+![Screenshot showing wdio config]({{site.baseurl}}/assets/images/react-native-wdio/wdio-config.png)
 
 Follow the prompts to create a base WebDriverIO configuration as shown in the above picture.
 
@@ -171,7 +171,7 @@ Run the UI test:
 wdio wdio.conf.js
 ```
 
-![Screenshot showing wdio output](/assets/images/react-native-wdio/wdio-output.png)
+![Screenshot showing wdio output]({{site.baseurl}}/assets/images/react-native-wdio/wdio-output.png)
 
 Now, you have a WebdriverIO UI test running against the local emulator. You are now set to explore [WebDriverIO Mobile API](http://webdriver.io/api.html) to continue writing more complete UI tests.
 
