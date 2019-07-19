@@ -3,7 +3,7 @@ layout: post
 title: "Secrets, GPG, BlackBox, and Docker - an Experimental Approach"
 date: 2019-07-19 09:00:00 -0700
 cover: /assets/images/secrets-gpg-blackbox-docker-an-experimental-approach/cover.png
-excerpt: This articles describes an experimental approach on how Blackbox and Docker can be used in combination to manage secrets.
+excerpt: This article describes an experimental approach on how Blackbox and Docker can be used in combination to manage secrets.
 authors:
   - name: Mayank Jethva
     title: Software Engineer
