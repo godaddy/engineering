@@ -11,7 +11,7 @@ authors:
     photo: https://avatars.githubusercontent.com/mayank23
 ---
 
-This post dicusses an experimental containerized approach for using Blackbox, created by StackOverflow, to secure secrets. We'll have a detailed walkthrough about compiling our own version of GPG and Blackbox and running them on a container.
+This post describes an experimental containerized approach for using Blackbox, created by StackOverflow, to secure secrets. We'll have a detailed walkthrough about compiling our own version of GPG and Blackbox and running them on a container.
 
 > **Secrets:** protected data such as passwords, ssl certificates, or any other data needing protection.
 
