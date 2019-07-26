@@ -54,10 +54,9 @@ for a name because they must use the proceeds from the small percentage of
 the portfolio that sells to fund the names that don't sell.
 
 Different sellers have distinctive strategies when listing domain names.
-The following table shows the average ask price of the top ten sellers in 2017
-(by the number of priced listings) on [Afternic].
-It also includes a portfolio quality score (normalized predicted GoValue),
-which will be discussed in more detail below.
+The following table shows the average ask price of ten of our top sellers in
+2017 on [Afternic].  It also includes a portfolio quality score (normalized
+predicted GoValue), which will be discussed in more detail below.
 
 
 |           | Average Ask Price | Portfolio Quality | Ask Price / Quality |
