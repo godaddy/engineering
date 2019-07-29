@@ -114,7 +114,7 @@ everything will sell for the mean price.  The following chart compares the
 [root mean squared error]
 (RMSE) of humans and machine predictions.
 
-![RMSE Chart](/assets/images/domain-name-valuation/rmse.png)
+![RMSE Chart]({{site.baseurl}}/assets/images/domain-name-valuation/rmse.png)
 
 GoDaddy GoValue is significantly better at predicting past
 sale prices than both human experts and Estibot.  RMSE is a standard metric for
@@ -131,7 +131,7 @@ higher and lower sales prices when ordered by the predicted sales prices.
 randomly, half the time they will be ordered correctly just by chance.
 The following shows each method’s rank score.
 
-![Rank Score Chart](/assets/images/domain-name-valuation/rankscore.png)
+![Rank Score Chart]({{site.baseurl}}/assets/images/domain-name-valuation/rankscore.png)
 
 The results show that GoDaddy GoValue is better than human experts at
 predicting past sale prices for aftermarket domain names.
@@ -187,7 +187,7 @@ RNN feeds into a fully connected neural network to process the sale context
 and domain-level features.  The following figure shows a simplified structure
 of our neural network:
 
-![Neural Network Structure](/assets/images/domain-name-valuation/neuralnetwork.png)
+![Neural Network Structure]({{site.baseurl}}/assets/images/domain-name-valuation/neuralnetwork.png)
 
 [vector representation of words]: http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf
 [recurrent neural network]: https://en.wikipedia.org/wiki/Recurrent_neural_network
