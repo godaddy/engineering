@@ -56,9 +56,9 @@ At its core, it relies on Gnu Privacy Guard (GPG) to encrypt/decrypt files using
 - Bob can send a message to Alice by encrypting a message using Alice's public key. Only Alice can decrypt this message because she has the corresponding private key. 
 - But the question remains about how Alice and Bob can verify the authenticity and integrity of the message. 
 - Alice can first construct the following: 
-  1. A signed secure hash of the original message using her private key
-  2. plain original message
-  3. hashing algortihm details
+  1. plain original message (i.e, "Hey, what's up?")
+  2. A signed secure hash of the original message using her private key
+  3. hashing algortihm details (i.e, SHA256)
 - Alice can combine all of these individual pieces and encrypt it with Bob's public key, then send the result to Bob.
 - Once Bob decrypts the received message he can has three pieces. 
 - Bob can verify the authenticity and integrity by first computing a secure hash based off the algorithm details sent by Alice of the plain original message, followed by using Alice's public key to verify the signed hash which was received. If the received signed hash and the computed hash match, the message was not tampered with. Also, since only Alice's private key could be used generate the received signed hash, Bob knows this message is actually from Alice.
