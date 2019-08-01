@@ -52,9 +52,8 @@ At its core, it relies on Gnu Privacy Guard (GPG) to encrypt/decrypt files using
 - A private key kept for yourself,
 - A public key which you give to the....public. (i.e, other entities which you want to communicate with).
 - Assume Alice has generated a GPG public/private keypair, (often just denoted as a GPG keypair).
-- Alice can encrypt a message (i.e, the plaintext) using her private key which will only be readable once the other party, Bob, decrypts the encrypted message (i.e, the ciphertext) using Alice's public key. Bob knows the message is from Alice because only Alice's public key would be able to decrypt this ciphertext into something intelligible by Bob.
-- Bob can send an important message to Alice by encrypting a message using Alice's public key.
-- Alice can then retrieve the plaintext message by decrypting with the ciphertext with her private key. Since Alice's public key is uniquely paired with her private key (assuming a sound key generation protocol), only Alice can decypt this message.
+- Alice can send a message to Bob by encrypting a message (i.e, plaintext) with Bob's public key. Only Bob can decrypt this message since he has the corresponding private key.
+- Bob can send a message to Alice by encrypting a message using Alice's public key. Only Alice can decrypt this message because she has the corresponding private key. 
 
 There are a few algorithms which support asymmetric encryption/decryption. A prominent one is RSA. We'll be using GPG to create RSA public/private key pairs which will then be used by Blackbox to handle encrypting/decrypting our secrets. The secrets are placed in version control.
 
