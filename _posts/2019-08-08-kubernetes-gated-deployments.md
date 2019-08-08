@@ -3,39 +3,45 @@ layout: post
 title: "Kubernetes Gated Deployments"
 date: 2019-08-08 09:00:00 -0700
 cover: /assets/images/kubernetes-gated-deployments/cover.jpg
-excerpt: Kubernetes Gated Deployments is a Kubernetes controller that facilitates automatic regression testing and canary analysis on Kubernetes deployments, that can detect and roll back the causal change without developer intervention. It is designed to augment existing deployment processes by analyzing key functionality and performance metrics associated with the application.
+excerpt: Kubernetes Gated Deployments is a Kubernetes controller that facilitates automatic regression testing and canary analysis on Kubernetes deployments. It is designed to augment existing deployment processes by analyzing key functionality and performance metrics associated with the application, and can detect and roll back changes if they cause undesirable behavior.
 authors:
   - name: Steven Fu
-    title:
-    url:
-    photo:
+    title: Software Engineer
+    url: https://www.linkedin.com/in/stevenkfu
+    photo: /assets/images/kubernetes-gated-deployments/stevenkfu.jpg
   - name: Satish Ravi
-    title:
-    url:
-    photo:
+    title: Principal Software Engineer
+    url: https://github.com/satish-ravi
+    photo: /assets/images/kubernetes-gated-deployments/satish-ravi.jpg
   - name: Jacob Brooks
-    title:
-    url:
-    photo:
-  - name: Silas Boyd-Wickizer
-    title: Sr. Director of Engineering
-    url: https://github.com/silasbw
-    photo: https://avatars.githubusercontent.com/silasbw
+    title: Software Engineer
+    url: https://github.com/jlbrooks
+    photo: https://avatars.githubusercontent.com/jlbrooks
 ---
 
-At GoDaddy, teams frequently perform continuous deployments of their services to
-Kubernetes. When engineers make changes to these services, those changes may
-affect the behavior of the application, resulting in a negative impact on the
-customer experience that unit and integration tests would not catch. For
-example, an engineer might introduce a performance regression that increases
-page load time. In this case, it is important to mitigate the impact on
-customers by promptly removing the change from production. Measuring the impact
-of a change and making a quick decision to roll back can be challenging in an
-environment where there are many deploys each day. To help address this
-challenge, we designed, implemented, and open sourced an extension for
-Kubernetes, called Kubernetes Gated Deployments, that automates regression
-testing and canary analysis, and rolls back the changes if they cause
-undesirable behavior.
+At GoDaddy, teams perform continuous deployments of their services dozens of
+times a day to Kubernetes. Changes to a service may cause unintended effects
+that unit and integration tests do not catch, resulting in a negative impact on
+the customer experience. For example, an engineer might introduce a performance
+regression that increases page load time. In this case, [it is
+important](https://www.nngroup.com/articles/website-response-times/) to mitigate
+the impact on customers by promptly removing the change from production.
+Measuring the impact of a change and making a quick decision to roll back can be
+challenging in an environment where there are many deploys each day. Existing
+tools that facilitate this process require a more complex infrastructure than
+our current setup that primarily uses native Kubernetes resources and
+operations. For example, [Kayenta](https://github.com/spinnaker/kayenta)
+requires teams to onboard to [Spinnaker](https://www.spinnaker.io/), which is
+useful in some cases, but does not work well for all our DevOps patterns;
+[Flagger](https://github.com/weaveworks/flagger) requires setting up an
+additional service to route traffic and a webhook for custom metrics. To help
+address this challenge, we designed, implemented, and open sourced an extension
+for Kubernetes, called [Kubernetes Gated
+Deployments](https://github.com/godaddy/kubernetes-gated-deployments), that
+automates regression testing and canary analysis, and rolls back the changes if
+they cause undesirable behavior. Getting started with Kubernetes Gated
+Deployments is a lightweight process, and it does not require engineers to
+deploy or configure additional services on their Kubernetes cluster.
 
 ## Challenges in analyzing application metrics
 
@@ -44,33 +50,36 @@ back is necessary. However, it is difficult to make data-driven decisions that
 are statistically sound, and that process is often time-consuming, leading to
 prolonged customer impact. Common techniques for assessing the impact of changes
 on key metrics of an application's functionality and performance include
-pre-post analysis, load testing and benchmarking, and canary deploys with manual
+[pre-post analysis](https://www.cscu.cornell.edu/news/statnews/stnews79.pdf),
+[load testing and
+benchmarking](https://en.wikipedia.org/wiki/Software_performance_testing), and
+[canary deploys](https://martinfowler.com/bliki/CanaryRelease.html) with manual
 inspection of metrics. There are several drawbacks with these approaches:
 
-* They are not scalable, and do not isolate and measure the impact of the change
-  itself: Manual assessments are time consuming and not scalable when teams are
-  making a large number of deployments throughout the day, which also makes it
-  challenging to determine the specific change that resulted in the impact on
+* **They are laborious, and do not isolate and measure the impact of the change
+  itself**: Manual assessments are time consuming and not scalable when teams
+  are making a large number of deployments throughout the day, which also makes
+  it challenging to determine the specific change that resulted in the impact on
   key metrics.
-* They are prone to human error: Human analysis inherently leads to a subjective
-  decision that can result from error or bias, and it is difficult to
+* **They are prone to human error**: Human analysis inherently leads to a
+  subjective decision that can result from error or bias, and it is difficult to
   consistently determine if the metric deviations are due to random chance or
   from a deployed change.
-* They are not representative of the system under realistic circumstances: For
-  example, engineers might choose to load test using synthetic models for user
-  requests, but it is difficult to ensure that those synthetic models produce a
-  traffic pattern similar enough to real production traffic to guarantee the
-  load test captures what engineers intend to measure.
-* It is difficult to monitor and respond to regressions in key metrics in a
-  timely manner: Teams may rely on monitors to show increased response times or
-  complaints from users, but at this point the change has already adversely
+* **They are not representative of the system under realistic circumstances**:
+  For example, engineers might choose to load test using synthetic models for
+  user requests, but it is difficult to ensure that those synthetic models
+  produce a traffic pattern similar enough to real production traffic to
+  guarantee the load test captures what engineers intend to measure.
+* **It is difficult to monitor and respond to regressions in key metrics in a
+  timely manner**: Teams may rely on monitors to show increased response times
+  or complaints from users, but at this point the change has already adversely
   affected the customer experience, and engineers must roll back the change.
 
 ## Kubernetes Gated Deployments
 
-To solve the problems described above, we’ve created Kubernetes Gated
+To solve the problems described above, we've created Kubernetes Gated
 Deployments, which we use in place of manual analysis of metrics and
-intervention, enabling our engineering teams to run each deployment as a
+intervention. It enables our engineering teams to run each deployment as a
 controlled experiment. Just as teams run experiments on product metrics to test
 client-side changes, they can use this Kubernetes extension to run experiments
 on infrastructure and code changes to assess the impact of those changes and
@@ -121,7 +130,11 @@ tag, and the number of replicas corresponding to the proportion of traffic they
 want the treatment to receive. We designed this to be similar to how teams
 normally deploy their application in the absence of Kubernetes Gated
 Deployments, so that they only need to make small changes to their deployment
-infrastructure to support it.
+infrastructure to support it. One limitation is that if multiple deployments
+occur during an experiment, the control deployment could be multiple versions
+behind the treatment; to avoid this, teams should ensure that a single
+deployment and its corresponding experiment finish before a subsequent
+deployment occurs.
 
 ![Architecture]({{site.baseurl}}/assets/images/kubernetes-gated-deployments/architecture.svg)
 
@@ -131,7 +144,26 @@ functionality or performance data to determine if the treatment version is doing
 harm to the metrics measured. If it is, the controller will either roll back the
 treatment `Deployment` by setting the number of replicas to zero, or it will
 promote the treatment by updating the control `Deployment`'s pod spec to match
-that of the treatment and then scale down the treatment to zero replicas.
+that of the treatment and then scale down the treatment to zero replicas. The
+controller will also set an annotation, `gatedDeployStatus`, on the treatment
+`Deployment` to specify what the decision was. Teams can use this to observe the
+outcome of the gated deployment or in CICD pipelines to programmatically halt
+the deployment process on a failed experiment. A sample deployment process might
+look like:
+```
+kubectl apply -f treatment-deployment.yaml
+
+do
+  gatedDeployStatus = kubectl get deploy treatment
+                      -o jsonpath='{.metadata.annotations.gatedDeployStatus}'
+while gatedDeployStatus == 'notSignificant'
+
+if gatedDeployStatus == 'harm' then
+  notify()
+  fail()
+else
+  success()
+```
 
 ## Decision plugins
 
@@ -144,29 +176,31 @@ teams set up contains at least one decision plugin, and the object contains the
 configuration for those plugins.
 
 The controller will query each plugin on a configurable polling interval that
-defaults to 30 seconds. Each plugin returns one of three values:
+defaults to 30 seconds. Each plugin can be configured with an experiment time
+limit and returns one of three values:
 
 * `WAIT`: if the analysis cannot make a conclusion about the metric yet, e.g.,
   it requires a minimum amount of time or if the result is not yet statistically
   significant
-* `PASS`: if the treatment version does no harm to the metric analyzed
+* `PASS`: if the treatment version does no harm to the metric analyzed, or if
+  the experiment time exceeds the configured limit
 * `FAIL`: if the treatment does harm to the metric analyzed
 
 Teams can configure multiple plugins for a single deployment. For example, a
 team might want to measure response time and error rate for multiple endpoints
-in a single application along with. In this case, all plugins must return `PASS`
-for the controller to decide that the experiment is a success; if any plugin
-returns `FAIL`, it will decide that the experiment is a failure. Otherwise, the
-controller will continue polling the metrics until the plugin satisfies one of
+in a single application. In this case, all plugins must return `PASS` for the
+controller to decide that the experiment is a success; if any plugin returns
+`FAIL`, it will decide that the experiment is a failure. Otherwise, the
+controller will continue polling the metrics until the plugins satisfy one of
 the two conditions above. Once the controller makes a decision for the
-experiment and takes action to roll back or continue deploying the treatment,
-the controller will set an annotation, `gatedDeployStatus`, on the treatment
-`Deployment` to specify what the decision was. Teams can use this to observe the
-outcome of the gated deployment or in CICD pipelines to programmatically halt
-the deployment process on a failed experiment.
+experiment, it will take action to roll back or continue deploying the treatment
+version.
 
-For a list of the decision plugins available and to contribute more, see
-[here](https://github.com/godaddy/kubernetes-gated-deployments/tree/master/lib/plugins).
+See
+[here](https://github.com/godaddy/kubernetes-gated-deployments/tree/master/lib/plugins)
+for a list of the decision plugins available, and
+[here](https://github.com/godaddy/kubernetes-gated-deployments#contributing-plugins)
+for a guide on how to contribute more.
 
 ## Usage of the New Relic decision plugin
 
@@ -213,7 +247,7 @@ deciding that it is a success.
 ## Kubernetes Gated Deployments in production
 
 We have replaced log analysis of a single canary pod that some of our services
-used with `Kubernetes Gated Deployments`, and we have been using the New Relic
+used with Kubernetes Gated Deployments, and we have been using the New Relic
 response time decision plugin for a while with some production services. It has
 already detected and rolled back a performance regression that resulted from
 calling a new API with increased response times and has given engineers more
@@ -236,9 +270,10 @@ Deployments, please visit
 contributions and would love to expand the decision plugins available to support
 other metric backends and analysis techniques.
 
-The GoDaddy Machine Learning team built Kubernetes Gated Deployments. Interested
-in helping to build personalized and experimentally validated services and
-experiences? We're looking for a
+Our team of engineers and full-stack data scientists builds experimentally
+validated services. Come join us and contribute to services that help us
+leverage experimentation services and machine learning models to improve the
+GoDaddy customer experience. We're looking for a
 [principal](https://godaddy.wd1.myworkdayjobs.com/GoDaddy_careers/job/Kirkland/Principal-Software-Engineering----Machine-Learning-and-Experimentation_R006162-1)
 and a
 [senior](https://godaddy.wd1.myworkdayjobs.com/GoDaddy_careers/job/Kirkland/Senior-Software-Engineering---Machine-Learning-and-Experimentation_R006435-1)
