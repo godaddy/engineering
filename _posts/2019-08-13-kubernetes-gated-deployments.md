@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Kubernetes Gated Deployments"
-date: 2019-08-08 09:00:00 -0700
+date: 2019-08-13 09:00:00 -0700
 cover: /assets/images/kubernetes-gated-deployments/cover.jpg
 excerpt: Kubernetes Gated Deployments is a Kubernetes controller that facilitates automatic regression testing and canary analysis on Kubernetes deployments. It is designed to augment existing deployment processes by analyzing key functionality and performance metrics associated with the application, and can detect and roll back changes if they cause undesirable behavior.
 authors:
