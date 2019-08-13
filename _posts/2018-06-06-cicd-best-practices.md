@@ -10,6 +10,8 @@ authors:
     photo: /assets/images/jxpearce.jpg
 ---
 
+{% include component/check-out-kubernetes-gated-deployments.html %}
+
 CICD means both
 
 - Continuous Integration and Continuous Delivery
