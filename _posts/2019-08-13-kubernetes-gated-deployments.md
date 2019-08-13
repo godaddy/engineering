@@ -274,7 +274,7 @@ Our team of engineers and full-stack data scientists builds experimentally
 validated services. Come join us and contribute to services that help us
 leverage experimentation services and machine learning models to improve the
 GoDaddy customer experience. We're looking for a
-[principal](https://godaddy.wd1.myworkdayjobs.com/GoDaddy_careers/job/Kirkland/Principal-Software-Engineering----Machine-Learning-and-Experimentation_R006162-1)
+[principal](https://careers.godaddy.com/job/cambridge/principal-software-development-engineer-machine-learning-and-experimentation/18045/11812427)
 and a
-[senior](https://godaddy.wd1.myworkdayjobs.com/GoDaddy_careers/job/Kirkland/Senior-Software-Engineering---Machine-Learning-and-Experimentation_R006435-1)
+[senior](https://careers.godaddy.com/job/cambridge/senior-software-engineering-machine-learning-and-experimentation/18045/12444210)
 back-end software engineer.
