@@ -7,7 +7,7 @@ excerpt: New DNS privacy standards (DoH and DoT) have been published by the IETF
 authors:
   - name: Brian Dickson
     title: Senior Software Engineer
-    url: www.linkedin.com/in/brianpeterdickson
+    url: https://www.linkedin.com/in/brianpeterdickson
     photo: https://avatars3.githubusercontent.com/u/54912895?s=400&v=4
 ---
 
