@@ -1,3 +1,4 @@
+---
 layout: post
 title: "DNS-over-HTTPS: Privacy and Security Concerns"
 date: 2019-09-04 09:00:00 -0700
@@ -8,6 +9,7 @@ authors:
     title: Senior Software Engineer
     url: www.linkedin.com/in/brianpeterdickson
     photo: https://avatars3.githubusercontent.com/u/54912895?s=400&v=4
+---
 
 ## About the Author
 Brian Dickson is a member of the DNS team at GoDaddy. This team is responsible for all internal and exteral DNS, including our DNS product (hosted authoritative DNS services), our corporate DNS domains (authoritative), and internal DNS resolution.
