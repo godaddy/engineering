@@ -1,22 +1,13 @@
-<!--
-Thank you for considering writing an article to godaddy.github.io!
-
-To make the editorial process as seamless as possible, please provide us the following information:
--->
-
-## Metadata
-
-* The title of the article: DNS Privacy and Security: DoH Concerns
-* Keywords *(3-4 works great)*: DNS DoH DoT DNSSEC
-* Link to cover photo: [cover]({{site.baseurl}}/assets/images/doh/DoH-blog-picture.png)
-* Summary *(~50 words)*: New DNS privacy standards (DoH and DoT) have been published by the IETF. DNS also has had backwards-compatible security extensions added via DNSSEC, for several years. This post examines the browser-supported DoH and compares it to DoT, and examines privacy, security, and risks.
-* My name: Brian Dickson
-* My twitter user name *(or github or linkedin profile)*: www.linkedin.com/in/brianpeterdickson
-* Sites for sharing *(see [the post-publish checklist](https://github.secureserver.net/opensource/godaddy.github.io#post-publish-checklist) for examples)*:
-
-## The article
-
-# DNS-over-HTTPS: Privacy and Security Concerns
+layout: post
+title: "DNS-over-HTTPS: Privacy and Security Concerns"
+date: 2019-09-04 09:00:00 -0700
+cover: /assets/images/doh/DoH-blog-picture.png
+excerpt: New DNS privacy standards (DoH and DoT) have been published by the IETF. DNS also has had backwards-compatible security extensions added via DNSSEC, for several years. This post examines the browser-supported DoH and compares it to DoT, and examines privacy, security, and risks.
+authors:
+  - name: Brian Dickson
+    title: Senior Software Engineer
+    url: www.linkedin.com/in/brianpeterdickson
+    photo: https://avatars3.githubusercontent.com/u/54912895?s=400&v=4
 
 ## About the Author
 Brian Dickson is a member of the DNS team at GoDaddy. This team is responsible for all internal and exteral DNS, including our DNS product (hosted authoritative DNS services), our corporate DNS domains (authoritative), and internal DNS resolution.
