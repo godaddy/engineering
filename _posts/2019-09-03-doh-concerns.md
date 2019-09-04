@@ -8,7 +8,7 @@ To make the editorial process as seamless as possible, please provide us the fol
 
 * The title of the article: DNS Privacy and Security: DoH Concerns
 * Keywords *(3-4 works great)*: DNS DoH DoT DNSSEC
-* Link to cover photo: [cover]({{site.baseurl}}/assets/images/doh/DoH-blog-picture.pdf)
+* Link to cover photo: [cover]({{site.baseurl}}/assets/images/doh/DoH-blog-picture.png)
 * Summary *(~50 words)*: New DNS privacy standards (DoH and DoT) have been published by the IETF. DNS also has had backwards-compatible security extensions added via DNSSEC, for several years. This post examines the browser-supported DoH and compares it to DoT, and examines privacy, security, and risks.
 * My name: Brian Dickson
 * My twitter user name *(or github or linkedin profile)*: www.linkedin.com/in/brianpeterdickson
