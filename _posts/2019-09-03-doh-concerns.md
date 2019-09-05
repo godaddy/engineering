@@ -6,7 +6,7 @@ cover: /assets/images/doh/DoH-blog-picture.png
 excerpt: New DNS privacy standards (DoH and DoT) have been published by the IETF. DNS also has had backwards-compatible security extensions added via DNSSEC, for several years. This post examines the browser-supported DoH and compares it to DoT, and examines privacy, security, and risks.
 authors:
   - name: Brian Dickson
-    title: Senior Software Engineer
+    title: Principal Software Engineer
     url: https://www.linkedin.com/in/brianpeterdickson
     photo: https://avatars3.githubusercontent.com/u/54912895?s=400&v=4
 ---
