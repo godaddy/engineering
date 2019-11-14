@@ -2,7 +2,7 @@
 layout: post
 title: "Frontend Caching Quick Start"
 date: 2019-11-19 09:00:00 -0700
-cover: /assets/images/2019-11-19-frontend-caching-quick-start/cover.png
+cover: /assets/images/2019-11-19-frontend-caching-quick-start/cover.jpg
 excerpt:  This post provides a quick start guide to front end caching, helping developers create an optimal caching strategy.
 authors:
   - name: Mayank Jethva
