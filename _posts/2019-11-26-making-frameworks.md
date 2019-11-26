@@ -245,7 +245,7 @@ are attending the conference, I hope to see you at my talk,
 [starter repos]: https://github.com/search?l=JavaScript&q=starter+boilerplate&type=Repositories
 [create-react-app]: https://github.com/facebook/create-react-app
 [yeoman]: https://yeoman.io/
-[next.js]: https://https://nextjs.org/
+[next.js]: https://nextjs.org/
 [njsi2019]:https://events19.linuxfoundation.org/events/nodejs-interactive-2019/
 [njsi2019 talk]:https://njsi2019.sched.com/event/T5Fc/gasket-framework-maker-andrew-gerard-godaddy-llc
 [cover-photo]: https://pixabay.com/photos/building-construction-site-cranes-768815/
