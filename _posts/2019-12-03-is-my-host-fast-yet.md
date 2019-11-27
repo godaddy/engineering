@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Is my host fast yet?"
-date: 2019-11-03 12:00:00 -0800
+date: 2019-12-03 12:00:00 -0800
 cover: /assets/images/ismyhostfastyet/cover.jpg
 excerpt: You put some files on a server and users grab them; that’s hosting, right?
   Sure, if you’re stuck in the 90’s. While there have been significant innovations in this space,
