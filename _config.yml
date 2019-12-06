@@ -5,7 +5,7 @@ description: > # this means to ignore newlines until the next key
   to build and market their digital identities.
 
 email: opensource@godaddy.com
-url: "https://godaddy.github.io"
+url: "https://godaddy.com"
 baseurl: "/engineering"
 permalink: pretty
 
@@ -28,7 +28,7 @@ theme_settings:
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  
+
 sass:
   sass_dir: ./_stylesheets
   style: compressed
