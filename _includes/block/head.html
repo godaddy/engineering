@@ -20,19 +20,19 @@
   {% if page.canonical %}
   <link rel="canonical" href="{{ page.canonical }}">
   {% else %}
-  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
   {% endif %}
 
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="{{ site.title }}">
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:url" content="{{ site.url }}{{site.baseurl}}{{ page.url }}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@GodaddyOSS">
 
   {% if page.cover %}
-  <meta property="og:image" content="{{ site.url }}{{ page.cover }}">
+  <meta property="og:image" content="{{ site.url }}{{site.baseurl}}{{ page.cover }}">
   {% else %}
-  <meta property="og:image" content="{{ site.url }}/assets/images/banner.png">
+  <meta property="og:image" content="{{ site.url }}{{site.baseurl}}/assets/images/banner.png">
   {% endif %}
 
   {% if page.title %}
