@@ -8,7 +8,7 @@ authors:
   - name: Benjamin Bowen
     title: Senior Development Manager
     url: https://www.linkedin.com/in/benjamin-bowen-0a8b734/
-    photo: https://avatars.githubusercontent.com/benjaminbowen
+    photo: /assets/images/kernel_bypass/user_profile.jpg
 ---
 
 
