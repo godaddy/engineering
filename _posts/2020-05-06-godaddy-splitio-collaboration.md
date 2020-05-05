@@ -49,8 +49,7 @@ raw configuration (data outlining experiments like cohorts, targeting rules, and
 split percentages) from decisioning (the point at which a user is assigned to a
 cohort for a particular experiment). This approach avoids any network call from the
 browser, works with edge caching because no user-specific information is sent to the browser, and decisions in microseconds. Split
-provided a design spec, and we both contributed to a set of tools that let us co-
-locate raw configuration alongside GoDaddy teams’ cached pages at the CDN layer.
+provided a design spec, and we both contributed to a set of tools that let us co-locate raw configuration alongside GoDaddy teams’ cached pages at the CDN layer.
 
 ![Architecture overview]({{site.baseurl}}/assets/images/godaddy-splitio-collaboration/architecture-overview.png)
 
