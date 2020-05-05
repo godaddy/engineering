@@ -2,7 +2,7 @@
 layout: post
 title: "GoDaddy x Split.io"
 date: 2020-05-06 09:00:00 -0700
-cover: /assets/images/godaddy-splitio-collaboration/Hive-five_L.jpg
+cover: /assets/images/godaddy-splitio-collaboration/High-five_L.png
 excerpt: GoDaddy and Split.io recently joined forces to design and build a set of experimentation tools that enables A/B testing without a performance penalty.
 authors:
   - name: Celia Waggoner
