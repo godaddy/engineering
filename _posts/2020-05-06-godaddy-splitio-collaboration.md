@@ -103,9 +103,9 @@ page, resulting in an increased conversion rate.
 
 ## How to contribute
 
-* Node.js data serializer: https://github.com/godaddy/split-node-serializer
-* Golang data serializer: https://github.com/godaddy/split-go-serializer
-* JavaScript data loader: https://github.com/godaddy/split-javascript-data-loader
+* Node.js data serializer: <https://github.com/godaddy/split-node-serializer>
+* Golang data serializer: <https://github.com/godaddy/split-go-serializer>
+* JavaScript data loader: <https://github.com/godaddy/split-javascript-data-loader>
 
 ## Careers at GoDaddy
 
