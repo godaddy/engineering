@@ -2,7 +2,7 @@
 layout: post
 title: "Four tips for developing sound experimentation practices"
 date: 2020-05-12
-cover: /assets/images/experimentation-practices/cover.jpg
+cover: /assets/images/experimentation-practices/person-holding-blue-ballpoint-pen-on-white-notebook-669610.jpg
 excerpt: Best practices and lessons learned for teams moving towards experiment-driven development.
 authors:
   - name: Ellen O'Connor
