@@ -1,4 +1,13 @@
 [{
+  "name": "kubernetes-external-secrets",
+  "description": "Integrate external secret management systems with Kubernetes",
+  "links": [{
+    "title": "kubernetes-external-secrets on GitHub",
+    "type": "source",
+    "url": "https://github.com/godaddy/kubernetes-external-secrets"
+  }],
+  "id": "kubernetes-external-secrets"
+}, {
   "name": "kubernetes-client",
   "description": "Simplified Kubernetes API client for Node.js",
   "links": [{
@@ -11,22 +20,52 @@
     "url": "https://www.npmjs.com/package/kubernetes-client"
   }],
   "id": "kubernetes-client"
-},
-{
-  "name": "datastar",
-  "description": "Robust and feature rich ODM for Cassandra",
+}, {
+  "name": "coblocks",
+  "description": "A suite of professional page building content blocks for the WordPress Gutenberg block editor",
   "links": [{
-    "title": "datastar on GitHub",
+    "title": "coblocks on GitHub",
     "type": "source",
-    "url": "https://github.com/godaddy/datastar"
+    "url": "https://github.com/godaddy-wordpress/coblocks"
   }, {
-    "title": "datastar on npm",
+    "title": "coblocks on WordPress.org",
     "type": "package",
-    "url": "https://www.npmjs.com/package/datastar"
+    "url": "https://wordpress.org/plugins/coblocks/"
   }],
-  "id": "datastar"
-},
-{
+  "id": "coblocks"
+}, {
+  "name": "go",
+  "description": "The most flexible Gutenberg-first WordPress theme built for go-getters everywhere",
+  "links": [{
+    "title": "go on GitHub",
+    "type": "source",
+    "url": "https://github.com/godaddy-wordpress/go"
+  }, {
+    "title": "go on WordPress.org",
+    "type": "package",
+    "url": "https://wordpress.org/themes/go/"
+  }]
+}, {
+  "name": "asherah",
+  "description": "An application-layer encryption SDK that provides advanced encryption features and defense in-depth against compromise",
+  "links": [{
+    "title": "asherah on GitHub",
+    "type": "source",
+    "url": "https://github.com/godaddy/asherah"
+  }]
+}, {
+  "name": "tartufo",
+  "description": "Searches through git repositories for high entropy strings and secrets, digging deep into commit history",
+  "links": [{
+    "title": "tartufo on GitHub",
+    "type": "source",
+    "url": "https://github.com/godaddy/tartufo"
+  }, {
+    "title": "tartufo on PyPI",
+    "type": "package",
+    "url": "https://pypi.org/project/tartufo/"
+  }]
+}, {
   "name": "procfilter",
   "description": "YARA-integrated process denial framework for Windows",
   "links": [{
@@ -67,28 +106,6 @@
   }],
   "id": "warehouse"
 }, {
-  "name": "jiractl",
-  "description": "Command-line tool for managing Jira",
-  "links": [{
-    "title": "jiractl on GitHub",
-    "type": "source",
-    "url": "https://github.com/godaddy/jiractl"
-  }],
-  "id": "jiractl"
-}, {
-  "name": "WP Contact Widgets",
-  "description": "WordPress widgets for rendering social profiles and contact information",
-  "links": [{
-    "title": "contact-widgets on WordPress.org",
-    "type": "package",
-    "url": "https://wordpress.org/plugins/contact-widgets/"
-  }, {
-    "title": "wp-contact-widgets on GitHub",
-    "type": "source",
-    "url": "https://github.com/godaddy/wp-contact-widgets"
-  }],
-  "id": "wp-contact-widgets"
-}, {
   "name": "eslint-plugin-i18n-json",
   "description": "Fully-extendable eslint plugin for JSON i18n translation files",
   "links": [{
@@ -127,4 +144,17 @@
     "url": "https://github.com/godaddy/addhoc"
   }],
   "id": "addhoc"
+}, {
+  "name": "datastar",
+  "description": "Robust and feature rich ODM for Cassandra",
+  "links": [{
+    "title": "datastar on GitHub",
+    "type": "source",
+    "url": "https://github.com/godaddy/datastar"
+  }, {
+    "title": "datastar on npm",
+    "type": "package",
+    "url": "https://www.npmjs.com/package/datastar"
+  }],
+  "id": "datastar"
 }]
