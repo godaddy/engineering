@@ -6,8 +6,6 @@ order: 1
 excerpt: Open source projects created and maintained by GoDaddy engineers.
 ---
 
-{% include component/project-search.html %}
-
 <div class="card-deck project-cards">
   {% for project in site.data.projects %}
     {% assign mod = forloop.index | modulo: 3 %}
