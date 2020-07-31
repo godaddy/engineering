@@ -8,6 +8,7 @@ email: opensource@godaddy.com
 url: "https://godaddy.com"
 baseurl: "/engineering"
 permalink: pretty
+repository: https://github.com/godaddy/engineering.git
 
 analytics_id: UA-37178807-20
 applicant_source: APPLICANT_SOURCE-3-119
