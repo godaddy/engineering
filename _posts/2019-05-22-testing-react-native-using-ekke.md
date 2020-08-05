@@ -67,7 +67,7 @@ app that you create using `react-native init`.
 
 Import the `Ekke` component and add it somewhere in your component tree:
 
-```js
+```jsx
 import YourActualApplicationHere from './some/path';
 import { Ekke } from 'ekke';
 import React from 'react';
@@ -99,7 +99,8 @@ going on underneath the covers:
 Now that the component is integrated in the application we can start writing
 our first `test.js`:
 
-```js
+```jsx
+{% raw %}
 import { View, AsyncStorage } from 'react-native';
 import { describe, it } from 'mocha';
 import { render } from 'ekke';
@@ -135,6 +136,7 @@ describe('My first Ekke test', function () {
     assume(props.width).equals(400);
   });
 });
+{% endraw %}
 ```
 
 This simple test suite will interact with the built-in `AsyncStorage` API,
