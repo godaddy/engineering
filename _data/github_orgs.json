@@ -1,0 +1,17 @@
+[{
+  "name": "GoDaddy",
+  "slug": "godaddy",
+  "description": "GoDaddy's primary Open Source org"
+}, {
+  "name": "GoDaddy WordPress",
+  "slug": "godaddy-wordpress",
+  "description": "Open Source WordPress projects from GoDaddy"
+}, {
+  "name": "GoDaddy Experimental",
+  "slug": "godaddy-experimental",
+  "description": "GoDaddy's lab - experiments, prototypes, and fun projects"
+}, {
+  "name": "Warehouse.ai",
+  "slug": "warehouseai",
+  "description": "A storage and developer workflow engine for npm packages"
+}]
