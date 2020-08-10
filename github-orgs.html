@@ -5,10 +5,12 @@ layout: default
 order: 1
 excerpt: GitHub orgs created and maintained by GoDaddy engineers.
 ---
-
+<p>
+  GoDaddy's Open Source projects on GitHub:
+</p>
 <div class="card-deck">
   {% for org in site.data.github_orgs %}
-    {% assign mod = forloop.index | modulo: 2 %}
+    {% assign mod = forloop.index | modulo: 3 %}
     {% include component/github-card.html org=org %}
     {% if mod == 0 %}
     <div class="w-100 d-none d-sm-block"></div>

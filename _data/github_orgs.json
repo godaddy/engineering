@@ -1,7 +1,7 @@
 [{
   "name": "GoDaddy",
   "slug": "godaddy",
-  "description": "GoDaddy's primary Open Source org"
+  "description": "GoDaddy's primary collection of Open Source projects"
 }, {
   "name": "GoDaddy WordPress",
   "slug": "godaddy-wordpress",
