@@ -1,0 +1,17 @@
+---
+title: GitHub
+slug: github-orgs
+layout: default
+order: 1
+excerpt: GitHub orgs created and maintained by GoDaddy engineers.
+---
+
+<div class="card-deck">
+  {% for org in site.data.github_orgs %}
+    {% assign mod = forloop.index | modulo: 2 %}
+    {% include component/github-card.html org=org %}
+    {% if mod == 0 %}
+    <div class="w-100 d-none d-sm-block"></div>
+    {% endif %}
+  {% endfor %}
+</div>

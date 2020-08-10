@@ -1,0 +1,12 @@
+<div class="card mb-3 shadow border-0">
+  <div class="card-body">
+    <h5 class="card-title text-font-headline">{{ org.name }}</h5>
+    <p class="card-text">{{ org.description }}</p>
+    <a
+       class="btn btn-block btn-primary btn-github"
+       href="https://github.com/{{ org.slug }}"
+       role="button">
+      <img src="{{ site.baseurl }}/assets/images/github.png"> View on GitHub
+    </a>
+  </div>
+</div>
