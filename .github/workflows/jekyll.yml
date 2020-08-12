@@ -11,10 +11,12 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    # jekyll/builder version 4.1.0
     steps:
     - uses: actions/checkout@v2
     - name: Build the site in the jekyll/builder container
       run: |
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:3.8.6 /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
+        jekyll/builder@sha256:98cda359955f25f18c4bcc78536cdfd30e7ded689b1f52fcd513c75cbe4e751e \
+        /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
