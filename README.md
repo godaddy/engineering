@@ -12,10 +12,10 @@ Clone your forked repository.
 git clone git@github.com:YOUR_USERNAME/godaddy.github.io.git
 ```
 
-Install [Bundler](https://bundler.io/).
+Ensure you have Ruby 2.7.1 installed. If you're using [RVM](https://rvm.io) you can do this with
 
 ```
-gem install bundler
+rvm install 2.7.1
 ```
 
 Install project dependencies.
