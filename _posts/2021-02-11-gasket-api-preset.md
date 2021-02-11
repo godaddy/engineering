@@ -11,6 +11,7 @@ authors:
     title: Senior Software Engineer
     url: https://www.linkedin.com/in/kawikabader
     photo: /assets/images/gasket-api-preset/kawikabader.jpg
+canonical: https://blog.gasket.dev/api-preset/
 ---
 
 In this article, we'll learn how to create a simple API with Node.js and Express, using the Gasket API Preset. We'll also get a glimpse into generating API documentation with the new Gasket Swagger Plugin!
