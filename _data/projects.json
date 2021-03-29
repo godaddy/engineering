@@ -1,4 +1,13 @@
 [{
+  "name": "gasket",
+  "description": "A framework maker for JavaScript applications.",
+  "links": [{
+    "title": "gasket on GitHub",
+    "type": "source",
+    "url": "https://github.com/godaddy/gasket"
+  }],
+  "id": "kubernetes-external-secrets"
+},{
   "name": "kubernetes-external-secrets",
   "description": "Integrate external secret management systems with Kubernetes",
   "links": [{
