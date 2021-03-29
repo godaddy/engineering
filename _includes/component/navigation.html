@@ -20,14 +20,14 @@
       {% for item in items %}
       {% if item.title and item.hide != true %}
       <li class="nav-item{% if item.url == page.url %} active{% endif %}">
-        <a class="nav-link font-weight-bold" href="{{ item.url | relative_url }}" title="{{ item.title }}">
+        <a class="nav-link" href="{{ item.url | relative_url }}" title="{{ item.title }}">
           {{ item.title }}
         </a>
       </li>
       {% endif %}
       {% endfor %}
       <li class="nav-item">
-        <a class="nav-link btn btn-primary text-white font-weight-bold px-3" href="https://careers.godaddy.com/?source=APPLICANT_SOURCE-3-118&utm_source=godaddy-oss" title="Work at GoDaddy">
+        <a class="nav-link btn btn-primary font-weight-bold px-3" href="https://careers.godaddy.com/?source=APPLICANT_SOURCE-3-118&utm_source=godaddy-oss" title="Work at GoDaddy">
           Join us!
         </a>
       </li>

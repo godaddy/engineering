@@ -5,15 +5,19 @@
     "title": "gasket on GitHub",
     "type": "source",
     "url": "https://github.com/godaddy/gasket"
+  },{
+    "title": "gasket/cli on npm",
+    "type": "package",
+    "url": "https://www.npmjs.com/package/@gasket/cli"
   }],
-  "id": "kubernetes-external-secrets"
+  "id": "gasket"
 },{
   "name": "kubernetes-external-secrets",
   "description": "Integrate external secret management systems with Kubernetes",
   "links": [{
     "title": "kubernetes-external-secrets on GitHub",
     "type": "source",
-    "url": "https://github.com/godaddy/kubernetes-external-secrets"
+    "url": "https://github.com/external-secrets/kubernetes-external-secrets"
   }],
   "id": "kubernetes-external-secrets"
 }, {
