@@ -1,6 +1,29 @@
 @font-face {
-  font-family: gdsherpa;
-  src: url(//img1.wsimg.com/ux/fonts/sherpa/1.0/gdsherpa-bold.woff2) format("woff2"),
-  url(//img1.wsimg.com/ux/fonts/sherpa/1.0/gdsherpa-regular.woff2) format("woff2");
-  font-display: block;
+    font-family: 'GD Sherpa';
+    font-weight: 700;
+    src: url('https://img6.wsimg.com/ux-assets/@ux/fonts/2.0.0/GDSherpa-bold.woff2') format('woff2'),url('https://img6.wsimg.com/ux-assets/@ux/fonts/2.0.0/GDSherpa-bold.woff') format('woff');
+    
+    font-display: swap;
+}
+@font-face {
+    font-family: 'GD Sherpa';
+    font-weight: 400;
+    src: url('https://img6.wsimg.com/ux-assets/@ux/fonts/2.0.0/GDSherpa-regular.woff2') format('woff2'),url('https://img6.wsimg.com/ux-assets/@ux/fonts/2.0.0/GDSherpa-regular.woff') format('woff');
+    
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GD Sage';
+    font-weight: 700;
+    src: url('https://img6.wsimg.com/ux-assets/@ux/fonts/2.0.0/GDSage-bold.woff2') format('woff2'),url('https://img6.wsimg.com/ux-assets/@ux/fonts/2.0.0/GDSage-bold.woff') format('woff'),url('https://img6.wsimg.com/ux-assets/@ux/fonts/2.0.0/GDSage-bold.ttf') format('truetype');
+    
+    font-display: swap;
+}
+@font-face {
+    font-family: 'GD Sage';
+    font-weight: 400;
+    src: url('https://img6.wsimg.com/ux-assets/@ux/fonts/2.0.0/GDSage-regular.woff2') format('woff2'),url('https://img6.wsimg.com/ux-assets/@ux/fonts/2.0.0/GDSage-regular.woff') format('woff');
+    
+    font-display: swap;
 }

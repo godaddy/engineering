@@ -58,7 +58,8 @@ small {
 }
 
 .text-font-headline {
-  font-family: $text-headline-stack;
+  font-family: $text-headline-stack-secondary;
+  font-weight: 700;
 }
 
 .text-drop-cap {

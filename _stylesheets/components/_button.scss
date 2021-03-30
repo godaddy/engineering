@@ -3,10 +3,24 @@
 // -----------------------------------------------------------------------------
 
 .btn.btn-primary {
-  background-color: $secondary-base;
+  background-color: $product-base;
+  border-color: $grey-dark;
+  color:  $grey-dark;
+  border-radius: 0;
 
-  &:hover {
-    background-color: $secondary-midrange;
-    border-color: $secondary-highlight;
+  &:hover,
+  &:active {
+    background-color: $grey-dark;
+    border-color: $grey-dark;
+    color: $product-base;
+  }
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    background-color: $grey-dark;
+    border-color: $grey-dark;
+    color:  $product-base;
+  }
+  &.nav-link:hover {
+  	color: $product-base;
   }
 }
