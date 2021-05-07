@@ -1,7 +1,7 @@
 ---
 layout: post
 title: GoDaddy and AWS join forces to release a Serverless plugin for use with AWS Service Catalog
-date: 2021-05-04 03:00:00 -0700
+date: 2021-05-07 13:00:00 -0700
 cover: /assets/images/serverless-aws-servicecatalog-plugin/cover.jpg
 excerpt: The serverless-aws-servicecatalog plugin provides developers with the power of Serverless deployments while allowing companies to maintain governance over AWS resources by using AWS Service Catalog. This is one step on the path to unlock the power of no-managed-resource applications for enterprise uses. By taking advantage of higher order abstractions over CloudFormation, such as Service Catalog, teams working with self-created and managed custom products can also make use of Serverless to develop, maintain and deploy these innovative new runtimes.
 options:
