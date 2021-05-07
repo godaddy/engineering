@@ -14,7 +14,10 @@
               <p class="mb-1">{{ post.excerpt }}</p>
               <small>
                 {% for author in post.authors %}
-                By <img class="rounded mx-1" src="{{ author.photo | relative_url }}" alt="{{ author.name }}" width="14">
+                By 
+                {% if author.photo %} 
+                <img class="rounded mx-1" src="{{ author.photo | relative_url }}" alt="{{ author.name }}" width="14">
+                {% endif %}
                 {{ author.name }}
                 {% endfor %}
               </small>
