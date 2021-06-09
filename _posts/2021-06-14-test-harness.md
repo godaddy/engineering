@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Writing a Language-Agnostic Integration Test Suite
-date: 2021-06-04 10:00:00 -0700
+date: 2021-06-14 10:00:00 -0700
 cover: /assets/images/test-harness/cover.jpg
 excerpt: Writing APIs around SDKs in multiple languages proves to be an effective method of implementing a language-agnostic integration test suite.
 options:
