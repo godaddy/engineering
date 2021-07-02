@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Radpack your dependencies
-date: 2021-06-07 10:00:00 -0700
+date: 2021-07-07 10:00:00 -0700
 cover: /assets/images/radpack-your-dependencies/cover.jpg
 excerpt: Bundlers like Webpack do a great job at providing a toolset needed to deliver an optimal out-of-the-box delivery solution. Loaders on the other hand are focused on delivering only the requested assets, as they are needed, and have a much higher cacheability. Radpack offers the best of both worlds.
 options:
