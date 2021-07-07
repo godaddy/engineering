@@ -2,8 +2,6 @@
 name: Refresh Static Content
 
 on:
-  pull_request:
-    branches: [ main ]
   schedule:
     - cron:  '0 8 * * *' # Runs every day at 8am
 
