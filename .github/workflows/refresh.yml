@@ -9,10 +9,10 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the site in the jekyll/builder container
-      run: |
-        docker run \
-        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder@sha256:98cda359955f25f18c4bcc78536cdfd30e7ded689b1f52fcd513c75cbe4e751e \
-        /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
+      - name: Trigger GitHub pages rebuild
+        run: |
+          curl --fail --request POST \
+            --url https://api.github.com/repos/${{ github.repository }}/pages/builds \
+            --header "Authorization: Bearer $USER_TOKEN"
+        env:
+          USER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
