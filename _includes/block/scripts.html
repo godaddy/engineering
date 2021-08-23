@@ -10,6 +10,13 @@
   ga('create', '{{ site.analytics_id }}', 'auto');
   ga('require', 'outboundLinkTracker');
   ga('send', 'pageview');
+
+var captureOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
 </script>
 {% endif %}
 
