@@ -6,34 +6,38 @@
 
         <div class="list-group">
           {% for post in site.posts limit:3 %}
-            <a href="{{ post.url | relative_url}}" title="Read post" class="list-group-item list-group-item-action flex-column align-items-start">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1 text-font-headline">{{ post.title }}</h5>
-                <small class="text-right">{{ post.date | date: '%B %d, %Y' }}</small>
-              </div>
-              <p class="mb-1">{{ post.excerpt }}</p>
-              <small>
-                {% for author in post.authors %}
-                By 
-                {% if author.photo %} 
-                <img class="rounded mx-1" src="{{ author.photo | relative_url }}" alt="{{ author.name }}" width="14">
-                {% endif %}
-                {{ author.name }}
-                {% endfor %}
-              </small>
-            </a>
+          <a href="{{ post.url | relative_url}}" title="Read post"
+            class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1 text-font-headline">{{ post.title }}</h5>
+              <small class="text-right">{{ post.date | date: '%B %d, %Y' }}</small>
+            </div>
+            <p class="mb-1">{{ post.excerpt }}</p>
+            <small>
+              {% for author in post.authors %}
+              By
+              {% if author.photo %}
+              <img class="rounded mx-1" src="{{ author.photo | relative_url }}" alt="{{ author.name }}" width="14">
+              {% else %}
+              <img class="rounded mx-1" src="{{ site.baseurl }}/assets/images/default_avatar.png"
+                alt="{{ author.name }}" width="14">
+              {% endif %}
+              {{ author.name }}
+              {% endfor %}
+            </small>
+          </a>
           {% endfor %}
         </div>
       </div>
 
       <div class="card-footer">
         <div class="row">
-            <div class="col-xs-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-              <a class="btn btn-block btn-primary" href="{{ '/blog-posts' | relative_url }}" role="button">
-                View All
-              </a>
-            </div>
+          <div class="col-xs-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+            <a class="btn btn-block btn-primary" href="{{ '/blog-posts' | relative_url }}" role="button">
+              View All
+            </a>
           </div>
+        </div>
       </div>
     </div>
   </div>
