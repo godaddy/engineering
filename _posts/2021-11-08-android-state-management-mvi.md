@@ -251,7 +251,7 @@ class MainActivity : Fragment() {
 }
 ```
 
-This approach that we initially went with had many benefits and advantages over multiple `LiveData` observables as we saw in the MVVM example earlier. Some of the advantages included:
+This approach that we initially went with had many benefits and advantages over multiple `LiveData` observables as we saw in the MVVM example earlier. Some of the advantages include:
 
 - We are now avoiding issues with different states being emitted from different `LiveData` objects that can emit at any time. We have a **single state** controlling this. 
 - Using the data class `.copy()`  mechanism to update parts of the state that have changed, helped to not lose data along the way, as you only change parts of the object that need to change. 
