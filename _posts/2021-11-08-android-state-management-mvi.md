@@ -412,7 +412,7 @@ We’ve learnt a lot over the past couple of years, and I don’t doubt that we 
 
 Right now, we have been successfully using Spotify’s Mobius Framework in our app for the past year and have migrated our largest piece of work - the Canvas Editor to use it too. After switching to Mobius in the Canvas Editor, we observed fewer bugs and race conditions with state were resolved. The level of testing and separation of concerns we’ve achieved using MVI over the years has improved our code quality and eliminated the “god class” activity/view Model that we’ve seen in the past. 
 
-We hope this write up of our journey can help you think a bit more about state management and the potential for race conditions with complicated state. 
+We hope this write-up of our journey can help you think a bit more about state management and the potential for race conditions with complicated state. 
 
 Have any questions or feedback? Feel free to reach out to [Rebecca](https://twitter.com/riggaroo), [Kamil](https://www.linkedin.com/in/kamilslesinski/) or [@GoDaddyOSS](https://twitter.com/godaddyoss)!
 
