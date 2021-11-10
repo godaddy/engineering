@@ -121,7 +121,7 @@ One way to potentially improve on this behaviour, is to use data classes that co
 
 # MVI / Unidirectional Data Flow
 
-Now that we understand where potential issues can come from with MVVM and multiple LiveData observables, let’s talk a bit about Unidirectional Data Flow or MVI (Model-View-Intent) and our experience with it.
+Now that we understand where potential issues can come from with MVVM and multiple LiveData observables, let’s talk a bit about Unidirectional Data Flow and MVI (Model-View-Intent) and our experience with them.
 
 With Unidirectional Data Flow everything is modelled around a single state object. This state is immutable, to prevent unwanted side effects. There is a clear flow of how data changes through the system, since it only happens in a single direction.
 
