@@ -102,7 +102,7 @@ class ProjectFragment: Fragment() {
 
 From this example, it is difficult to know what the UI of the screen will look like at any point because each `LiveData`  observable can emit a new state at **any point in time**. If we start adding new functions to our `ViewModel` that emit new loading or error states, would you be able to describe what the UI will look like at a single point in time? 
 
-This can result in a [race condition](https://en.wikipedia.org/wiki/Race_condition), since these separate observables can emit state changes independently. What would the state look like if an error is emitted but there is currently a project loaded?
+This can result in a [race condition](https://en.wikipedia.org/wiki/Race_condition) since these separate observables can emit state changes independently. What would the state look like if an error is emitted but there is currently a project loaded?
 
 Typically these kinds of issues manifest on the UI with overlapping states like in this example we had from the app:
 
