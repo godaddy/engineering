@@ -128,7 +128,7 @@ With Unidirectional Data Flow everything is modelled around a single state objec
 
 {:refdef: style="text-align: center;"}
 <figure>
-  <img src="{{{site.baseurl}}/assets/images/android-state-management-mvi/unidirectional_data_flow.png" alt="my alt text"/>
+  <img src="{{site.baseurl}}/assets/images/android-state-management-mvi/unidirectional_data_flow.png" alt="Diagram showing Unidirectional Data Flow"/>
   <figcaption>Simple representation of how unidirectional data flow works (taken from https://developer.android.com/codelabs/jetpack-compose-state#2)</figcaption>
 </figure>
 {: refdef}
