@@ -113,7 +113,7 @@ Typically these kinds of issues manifest on the UI with overlapping states like 
 
 There are several drawbacks when using this approach of MVVM with separate LiveData objects:
 
-- It is hard to know at a single point in time, what the UI should look like, if there are multiple LiveData objects that change the state of the screen.
+- It is hard to know at a single point in time, what the UI should look like if there are multiple LiveData objects that change the state of the screen.
 - There is no single snapshot to be able to recreate the UI from easily.
 - This also then begs the question, are we handling all the potential cases here?
 
