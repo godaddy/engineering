@@ -26,7 +26,7 @@ As time went on, we started facing issues with the MVI approach. The way we impl
 
 ## State Management 
 
-Let’s step back a bit and learn about the issues we faced with our approaches over the past couple of years. What does it mean when we talk about State Management for UI? State management refers to keeping track of how a user interface should look and how it should react to different user inputs. On a complex screen with plenty of buttons, gestures and text input - managing the state is a full time concern. 
+Let’s step back a bit and learn about the issues we faced with our approaches over the past couple of years. What does it mean when we talk about State Management for UI? State management refers to keeping track of how a user interface should look and how it should react to different user inputs. On a complex screen with plenty of buttons, gestures and text input - managing the state is a full-time concern. 
 
 Take this screen for example: 
 {:refdef: style="text-align: center;"}
