@@ -133,7 +133,7 @@ With Unidirectional Data Flow everything is modelled around a single state objec
 </figure>
 {: refdef}
 
-A user performs an event (or action/intent as used in other examples of MVI), for instance they open a screen that calls `LoadProjectEvent`, the event is processed to produce a new state and that state is rendered on screen.
+A user performs an event (or action/intent as used in other examples of MVI), for instance, they open a screen that calls `LoadProjectEvent`, the event is processed to produce a new state and that state is rendered on screen.
 
 With this flow of data, you can easily reconstruct your screen from a single model update without needing implicit state set from other observables.
 
