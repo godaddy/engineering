@@ -331,7 +331,7 @@ In the end, we settled on a state machine that processes events (input) one by o
 
 While such architecture did not remove the complexity of handling concurrent operations (those still need to be tracked and handled properly, i.e. started, stopped, ignored if obsolete, etc), it did give us a solid framework with strong assertions around state consistency and available state transitions.
 
-Before we embarked on a journey of implementing everything from scratch, we did a bit of research into available solutions and found this little gem of a framework, [Mobius](https://github.com/spotify/mobius).  As it turned out, developers at Spotify faced exactly the same issues and solved them for us already!
+Before we embarked on a journey of implementing everything from scratch, we did a bit of research into available solutions and found this little gem of a framework, [Mobius](https://github.com/spotify/mobius).  As it turned out, developers at Spotify faced the same issues and solved them for us already!
 
 
 ## Spotify’s Mobius framework
