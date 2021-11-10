@@ -181,7 +181,7 @@ val projectLoadProcessor = ObservableTransformer<ProjectAction.LoadAction,Projec
     }
 ```
 
-It is worth mentioning that in the code above: we were also doing some bad things*, we were storing a state in memory in the `ProjectRepository` and mutating that in memory project from all these different observables! (More on this later)
+It is worth mentioning that in the code above: we were also doing some bad things*, we were storing a state in memory in the `ProjectRepository` and mutating that in-memory project from all these different observables! (More on this later)
 
 The reducers then took these Results produced by the processors, combined with the current state, and produced a new state for the UI to display:
 
