@@ -117,7 +117,7 @@ There are several drawbacks when using this approach of MVVM with separate LiveD
 - There is no single snapshot to be able to recreate the UI from easily.
 - This also then begs the question, are we handling all the potential cases here?
 
-One way to potentially improve on this behaviour, is to use data classes that contain the state information in one class, and expose only a singular LiveData object to the UI. This would help solve the issue of having multiple observables emitting different state that we’d need to keep track of, and its a building block of how MVI can work, as we will explore next. 
+One way to potentially improve on this behaviour, is to use data classes that contain the state information in one class and expose only a singular LiveData object to the UI. This would help solve the issue of having multiple observables emitting different state that we’d need to keep track of, and it's a building block of how MVI can work, as we will explore next. 
 
 # MVI / Unidirectional Data Flow
 
