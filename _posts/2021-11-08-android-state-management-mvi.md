@@ -39,7 +39,7 @@ There are plenty of concerns that need to be managed and tracked on this screen 
 - What is the currently selected tool on screen?
 - What are the layers and properties that should be displayed in this project?
 
-Not only is there the current state of what should be rendered on screen, but there are many different interactions that need to mutate this state - scaling gestures, button taps, colour changes etc. 
+Not only is there the current state of what should be rendered on screen, but there are many different interactions that need to mutate this state - scaling gestures, button taps, colour changes, etc. 
 
 ## MVVM and the issues we faced 😣
 
