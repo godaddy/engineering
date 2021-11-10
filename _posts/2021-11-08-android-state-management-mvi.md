@@ -140,7 +140,7 @@ With this flow of data, you can easily reconstruct your screen from a single mod
 
 ## Our homegrown MVI framework
 
-As mentioned at the start of this post, we took inspiration for our MVI implementation from [this example](https://github.com/oldergod/android-architecture) online.  In this diagram below, you can see that the flow of data is in a single direction. We have a View that emits "Actions". The ViewModel then takes the Action and sends them to the Processors which perform operations asynchronously to deliver a Result to the Reducers. Reducers take the Results and the current State of the screen, and produce a new State which the View then renders on screen.
+As mentioned at the start of this post, we took inspiration for our MVI implementation from [this example](https://github.com/oldergod/android-architecture) online.  In the diagram below, you can see that the flow of data is in a single direction. We have a View that emits "Actions". The ViewModel then takes the Action and sends them to the Processors which perform operations asynchronously to deliver a Result to the Reducers. Reducers take the Results and the current State of the screen and produce a new State which the View then renders on-screen.
 
 {:refdef: style="text-align: center;"}
 <figure>
