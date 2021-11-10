@@ -256,7 +256,7 @@ This approach that we initially went with had many benefits and advantages over 
 - We are now avoiding issues with different states being emitted from different `LiveData` objects that can emit at any time. We have a **single state** controlling this. 
 - Using the data class `.copy()`  mechanism to update parts of the state that have changed, helped to not lose data along the way, as you only change parts of the object that need to change. 
 - Our UI layer is minimal now - it only fires actions that have happened and there is not any logic sitting inside the view. 
-- There is a clearer separation of concerns, Actions, Processors, Reducers controlling the UI state. Nothing external is changing the state. This makes it easier to test and ensure its doing the correct thing. 
+- There is a clearer separation of concerns, Actions, Processors, Reducers controlling the UI state. Nothing external is changing the state. This makes it easier to test and ensure it is doing the correct thing. 
 - There is also a clear pattern that keeps the code clean and allowed us to separate actions into different files, so we didn’t have all the logic inside the ViewModel file either. (We have over 200 unique actions that can happen on a single screen)
 
 But not everything worked as expected with this MVI setup either! 😩 Although for the most part things seemed to work well on the surface, we started observing strange crashes in production and a few race conditions along the way. 
