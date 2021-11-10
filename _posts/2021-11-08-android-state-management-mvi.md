@@ -306,7 +306,7 @@ Having identified all the shortcomings of our current implementation, we came up
 - Unidirectional flow of data: actions in, state out - we knew this was a good assumption and wanted to stick with it. 
 - Concurrency
   - Synchronized state access - we couldn’t let multiple concurrent jobs read and write state as they pleased
-  - Non-blocking events processing - receiving events had to be as fast as possible, however, processing could be much slower (i.e. requiring slow I/O operations, like network calls) and should not block processing of new events
+  - Non-blocking events processing - receiving events had to be as fast as possible, however, processing could be much slower (i.e. requiring slow I/O operations, like network calls) and should not block the processing of new events
 - Ordering
   - First in, first out - events had to be processed in the order they were sent/arrived
   - Processing actions one at a time - or, more precisely, actions should read and modify state one at a time
