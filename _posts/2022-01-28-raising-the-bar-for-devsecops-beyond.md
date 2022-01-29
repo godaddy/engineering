@@ -14,8 +14,6 @@ authors:
     photo: https://gravatar.com/avatar/477388166acd641cc7ab6779682cc26c?s=400
 ---
 
-![Image Credit: Cowboy Wannabe on Unsplash]({{site.baseurl}}/assets/images/raising-the-bar-for-devsecops-beyond/cover.jpg)
-
 I started doing [DevOps] by accident. Long ago, I was responsible for managing a
 handful of Linux servers at a small university. How I got this job in the first
 place is beyond me, as until then my entire Linux experience consisted of a
@@ -208,6 +206,8 @@ discipline has evolved to the point that a silly-looking term like
 autonomous teams. But don’t leave your developers stranded; invest the time and
 effort to build thoughtful tools that guide them on their journey to
 DevSecFinOps enlightenment.
+
+Image Credit: Cowboy Wannabe on Unsplash
 
 [DevOps]: https://aws.amazon.com/devops/what-is-devops/
 [Puppet]: https://puppet.com/
