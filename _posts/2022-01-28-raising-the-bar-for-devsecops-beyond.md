@@ -2,7 +2,7 @@
 layout: post
 title: Raising the Bar for DevSecFinOps and Beyond
 date: 2022-01-28 16:00:00 -0700
-cover: /assets/images/devsecops-beyond/cover.jpg
+cover: /assets/images/raising-the-bar-for-devsecops-beyond/cover.jpg
 options:
   - full-bleed-cover
 excerpt: DevSecFinOps (Development + Security + Finance + Operations) means developers are accountable for more and more disciplines related to the services they build. Organizations can ease this burden by building internal developer platforms that prioritize the developer experience.
