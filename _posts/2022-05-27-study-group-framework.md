@@ -18,8 +18,6 @@ authors:
     photo: /assets/images/mjain.jpeg
 ---
 
-## Life Getting in the Way of Learning? Use This Study Group Framework
-
 I started leading the Cloud Platforms Services team at GoDaddy in late 2019. My team’s charter was to develop and maintain GoDaddy’s home grown AWS Service Catalog products. Additionally, my team provided guidance and support to engineers when they ran into issues deploying infrastructure in AWS. We were one of a handful of teams tasked with ensuring a successful adoption of the AWS Cloud by GoDaddy engineers. At the same time we were also trying to shift the company culture towards Developer Driven [DevSecFinOps](https://www.godaddy.com/engineering/2022/01/28/raising-the-bar-for-devsecops-beyond/).
 
 As if dealing with support requests from engineers everyday wasn't enough, my seven-member team was also responsible for keeping up with the fast pace of innovation at AWS. To top it off, most of us only had a superficial knowledge of AWS services when we started. It was like flying an airplane not knowing what a lot of the knobs did. Sound familiar?
