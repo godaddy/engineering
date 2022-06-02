@@ -11,12 +11,11 @@ authors:
   - name: Mayur Jain
     title: Director of Engineering
     url: https://www.linkedin.com/in/jainmayur/
-    photo: /assets/images/mjain.jpeg
+    photo: /assets/images/mjain.jpe
   - name: Rebekah Gil
     title: Mgr - Software Develoment
     url: https://www.linkedin.com/in/rebekahlyn/
     photo: /assets/images/rgil.jpeg
-
 ---
 
 I started leading the Cloud Platforms Services team at GoDaddy in late 2019. My team’s charter was to develop and maintain GoDaddy’s home grown AWS Service Catalog products. Additionally, my team provided guidance and support to engineers when they ran into issues deploying infrastructure in AWS. We were one of a handful of teams tasked with ensuring a successful adoption of the AWS Cloud by GoDaddy engineers. At the same time we were also trying to shift the company culture towards Developer Driven [DevSecFinOps](https://www.godaddy.com/engineering/2022/01/28/raising-the-bar-for-devsecops-beyond/).
@@ -58,3 +57,4 @@ Stay curious and get better every day!
 ### Authors
 
 Mayur Jain with equal contribution from my partner-in-crime Rebekah Gil.
+
