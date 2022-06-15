@@ -30,6 +30,12 @@ Build the site on the local preview server.
 bundle exec jekyll serve
 ```
 
+If building the site on a Windows box you may need to use the `--force_polling` option as shown below. To learn more see [here](https://github.com/microsoft/WSL/issues/216#issuecomment-756424551).
+
+```
+bundle exec jekyll serve --force_polling
+```
+
 The local server listens on http://localhost:4000 by default.
 
 To distribute a preview of your changes, enable GitHub Pages by going to the Settings of your forked repository and set the Source to the `master` branch. Within a minute you should be able to access it at https://YOUR_USERNAME.github.io/godaddy.github.io.
