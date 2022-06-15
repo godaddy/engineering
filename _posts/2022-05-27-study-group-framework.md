@@ -11,7 +11,7 @@ authors:
   - name: Mayur Jain
     title: Director of Engineering
     url: https://www.linkedin.com/in/jainmayur/
-    photo: /assets/images/mjain.jpe
+    photo: /assets/images/mjain.jpeg
   - name: Rebekah Gil
     title: Mgr - Software Develoment
     url: https://www.linkedin.com/in/rebekahlyn/
