@@ -23,4 +23,4 @@ The case study explains how we:
 
 Check out the post at the [Google Developer blog](https://web.dev/godaddy/).
 
-If you want to be part of an awesome team that works to solve problems and build solutions for millions of small businesses, check [out our current open roles](https://grnh.se/4946c0fe3us).
+If you want to be part of an awesome team that works to solve problems and build solutions for millions of small businesses, check out [our current open roles](https://grnh.se/4946c0fe3us).
