@@ -130,6 +130,7 @@ When terminating a pod, Kubernetes first sends a `SIGINT` and, if the pod does n
 
 An easy way to work around that limitation and to have a [greceful-shutdown](https://learnk8s.io/graceful-shutdown) is to add a sleep interval before the Puma process stops. To achieve that we use a `preStop` hook and, in our testing, we landed on a sleep interval of 40 seconds that is enough time for Kubernetes' `Endpoints Controller` async reaction and for `kube-proxy` to update `iptable` rules. We are also increasing the `terminationGracePeriodSeconds` to 70 seconds that applies to the total time (both PreStopp hook + container stop) to allow for 30 seconds for Puma to process queued requests before it receives `SIGKILL`.
 
+{% raw %}
 ```yaml
 terminationGracePeriodSeconds: 70
 containers:
@@ -141,6 +142,7 @@ containers:
         exec:
           command: ["sh", "-c", "sleep 40"]
 ```
+{% endraw %}
 
 ## Puma stats and auto-scaling
 
