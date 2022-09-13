@@ -3,7 +3,6 @@ layout: post
 title: "Optimizing Email Batch API with bulk inserts"
 date: 2022-09-12 00:00:00 -0700
 cover: /assets/images/optimizing-email-batch-api/cover.jpg
-cover_attribution: "Photo by Marek Piwnicki: https://www.pexels.com/photo/train-in-motion-8991549/"
 options:
   - full-bleed-cover
 excerpt: This blog post explores how we optimized our Email Batch API by using Rails bulk inserts with MySQL and how to calculate the auto-incrementing IDs for records, given MySQL does not support a RETURNING clause.
@@ -142,3 +141,7 @@ And for the Email API in AWS running with Aurora MySQL 5.7, the change decreased
 ## Summary
 
 MySQL does not support a `RETURNING` clause for getting the auto-incrementing IDs for bulk inserts, but it provides the `LAST_INSERT_ID()` information function that helps us calculate them. By introducing bulk inserts, we significantly improved the transaction duration times of our Email Batch API requests. The change had a more significant effect on AWS Aurora MySQL, presumably due to its engine optimization. A simpler application model with minimal callbacks and validation logic makes introducing such a change more feasible.
+
+
+
+_*) Cover Photo Attribution: Photo by Marek Piwnicki: https://www.pexels.com/photo/train-in-motion-8991549/_

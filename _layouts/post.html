@@ -6,7 +6,7 @@ widgets:
 {% include section/header.html %}
 
 {% if page.options contains 'full-bleed-cover' %}
-<div class="cover-image" style="background-image: url({{ page.cover | relative_url }});" {% if page.cover_attribution %} title="{{ page.cover_attribution }}" {% endif %}></div>
+<div class="cover-image" style="background-image: url({{ page.cover | relative_url }});"></div>
 {% endif %}
 
 <div class="container text-line-height-2x pt-3">
