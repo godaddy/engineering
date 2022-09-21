@@ -2,7 +2,7 @@
 layout: post
 title: "Better Sample Size Estimation: Accounting for False Discovery Rate Adjustment in Controlled Experiments"
 date: 2022-09-19 00:00:00 -0700
-cover: /assets/images/sample-size-calculator/cover.png
+cover: /assets/images/sample-size-calculator/cover.jpg
 options:
   - full-bleed-cover
 usemathjax: true
