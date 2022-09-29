@@ -14,16 +14,18 @@
             </div>
             <p class="mb-1">{{ post.excerpt }}</p>
             <small>
-              {% for author in post.authors %}
+              {% if post.authors %}
               By
-              {% if author.photo %}
-              <img class="rounded mx-1" src="{{ author.photo | relative_url }}" alt="{{ author.name }}" width="14">
-              {% else %}
-              <img class="rounded mx-1" src="{{ site.baseurl }}/assets/images/default_avatar.png"
-                alt="{{ author.name }}" width="14">
+                {% for author in post.authors %}
+                  {% if author.photo %}
+                  <img class="rounded mx-1" src="{{ author.photo | relative_url }}" alt="{{ author.name }}" width="14">
+                  {% else %}
+                  <img class="rounded mx-1" src="{{ site.baseurl }}/assets/images/default_avatar.png"
+                    alt="{{ author.name }}" width="14">
+                  {% endif %}
+                  {{ author.name }}
+                {% endfor %}
               {% endif %}
-              {{ author.name }}
-              {% endfor %}
             </small>
           </a>
           {% endfor %}
