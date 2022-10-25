@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Chasing Runaway Memory Usage in Istio Sidecars"
-date: 2022-10-21 00:00:00 -0700
+date: 2022-10-25 00:00:00 -0700
 cover: /assets/images/chasing-runaway-memory-usage-in-istio-sidecars/cover.jpg
 options:
   - full-bleed-cover
