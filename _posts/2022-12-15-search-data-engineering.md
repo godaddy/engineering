@@ -131,7 +131,7 @@ Search is a pretty well covered topic, but missing from the discussion of search
 
 While some of the larger tech companies like Google, Facebook, and Amazon probably have similar capabilities, no one in the domains space can do what we do. Even our competitors use our search functionality! No one wants to ride a bike without a chain...
 
-If you're interested in working on a team that innovates search in the domains space, check out this [current open role](https://careers.godaddy.com/job/ontario/senior-data-engineer/7795/27630867936)!
+If you want to be part of an awesome team that works to solve problems and build solutions for millions of small businesses, check out [our current open roles](https://careers.godaddy.com/search-jobs).
 
 
 _*) Cover Photo Attribution: Photo by <a href="https://unsplash.com/@deadframe?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jani Brumat</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>_
