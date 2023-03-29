@@ -16,7 +16,7 @@ authors:
     title: Principal Software Engineer
     url: https://www.linkedin.com/in/ankit-jhalaria-54429315/
     photo: /assets/images/ankit.png
-  - name: Wai-kin Lauw
+  - name: Wai Kin Lau
     title: Sr. Director of Engineering
     url: https://www.linkedin.com/in/waikinlau/
     photo: /assets/images/waikin.png
