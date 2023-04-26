@@ -25,7 +25,7 @@ theme_settings:
     At GoDaddy we build next-generation experiences that empower the world's
     small business owners to start and grow their independent ventures.
   copyright_text: >
-    Copyright © 1999 - 2021 GoDaddy Operating Company, LLC. All Rights Reserved.
+    Copyright © 1999 - 2023 GoDaddy Operating Company, LLC. All Rights Reserved.
 
 plugins:
   - jekyll-feed
