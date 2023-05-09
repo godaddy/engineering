@@ -65,7 +65,7 @@ others to reliably detect and report hosted CSAM. These tools help us to stop
 further re-victimization of children and mitigate continued exposure to
 traumatic content for our content reviewers.
 
-Using our [Abuse Reporting Form](https://abuseform.com),
+Using our [Abuse Reporting Form](https://extendedsupport.godaddy.com/abusereport),
 GoDaddy's trusted reporters and the general public can report material found
 online that promotes, encourages, or engages in child exploitation or abuse of
 children. This triggers an investigation, which is depicted in the following
