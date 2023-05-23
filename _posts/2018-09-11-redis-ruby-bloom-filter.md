@@ -8,7 +8,7 @@ options:
   - full-bleed-cover
 authors:
   - name: Dalibor Nasevic
-    title: Principal Software Engineer
+    title: Sr. Principal Software Engineer
     url: https://dalibornasevic.com
     photo: https://avatars.githubusercontent.com/dalibor
 ---

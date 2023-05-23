@@ -9,7 +9,7 @@ excerpt: In the past couple of years, we have been on our journey to the cloud m
 keywords: Puma, Ruby, AWS, ALB, Security
 authors:
   - name: Dalibor Nasevic
-    title: Principal Software Engineer
+    title: Sr. Principal Software Engineer
     url: https://dalibornasevic.com
     photo: https://avatars.githubusercontent.com/dalibor
 ---

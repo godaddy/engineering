@@ -9,7 +9,7 @@ excerpt: This blog post explores how we optimized our Email Batch API by using R
 keywords: rails, bulk insert, mysql,
 authors:
   - name: Dalibor Nasevic
-    title: Principal Software Engineer
+    title: Sr. Principal Software Engineer
     url: https://dalibornasevic.com
     photo: https://avatars.githubusercontent.com/dalibor
 ---
