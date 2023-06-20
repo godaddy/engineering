@@ -21,7 +21,7 @@ In 2019 GoDaddy launched Websites + Marketing. It integrates website building wi
 While GoDaddy Websites + Marketing was built on one of the fastest hosting platforms on the planet, we wanted to improve latency, availability, and reliability by leveraging AWS technologies. This article details how we rebuilt and rearchitected our hosting platform for Websites + Marketing from the ground up using AWS technologies.
 
 
- ## A brief history
+## A brief history
 
 GoDaddy has built several website builder products over the years, each building and refining on what we learned in the past. These products essentially consist of two distinct components: the website editor used to customize the site and the website hosting platform that serves the live site on the web. The website hosting platform for Websites + Marketing was originally built in 2013 as one of the company's first Node.js applications at scale. It leveraged Apache Cassandra as a globally-replicated and scalable data store, with Redis used for caching frequently used assets.
 
