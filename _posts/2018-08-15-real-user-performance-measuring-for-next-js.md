@@ -93,12 +93,10 @@ for the page navigation.
 
 ## Continuing the conversation
 
-We would love to hear your thoughts and feedback in the [GoDaddy OpenSource
-Slack channel][slack], or maybe even see your contributions to the project on
-GitHub: [https://github.com/godaddy/next-rum][rum]
+We would love to hear your thoughts and feedback and see your contributions to
+the project on GitHub: [https://github.com/godaddy/next-rum][rum]
 
 [next]: https://github.com/zeit/next.js
-[slack]: https://godaddy-oss-slack.herokuapp.com/
 [rum]: https://github.com/godaddy/next-rum
 [timing]: https://www.w3.org/TR/navigation-timing
 [model]: https://www.w3.org/TR/navigation-timing/#processing-model
