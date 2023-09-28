@@ -25,4 +25,4 @@ To read about how we continue to scale in order to deliver new value and feature
 If you want to be part of an awesome team that works to solve problems and build solutions for millions of small businesses, check out our [current open roles](https://careers.godaddy.com/search-jobs).
 
 
-*) Cover Photo Attribution: Photo by [William Bout](https://unsplash.com/@williambout) on [Unsplash](https://unsplash.com/photos/7cdFZmLlWOM).
+*Cover Photo Attribution: Photo by [William Bout](https://unsplash.com/@williambout) on [Unsplash](https://unsplash.com/photos/7cdFZmLlWOM).* 

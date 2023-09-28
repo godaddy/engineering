@@ -73,4 +73,4 @@ In a remarkable coincidence, just a few hours after I finally figured out and fi
 [🔎Julia Evans🔍 on Twitter: "a debugging manifesto pic.twitter.com/3eSOFQj1e1 / Twitter"](https://twitter.com/b0rk/status/1570060516839641092)
 
 
-_*) Cover Photo Attribution: Photo by unsplash: https://unsplash.com/photos/a4W1kvrMGXs_
+_Cover Photo Attribution: Photo by unsplash: https://unsplash.com/photos/a4W1kvrMGXs_

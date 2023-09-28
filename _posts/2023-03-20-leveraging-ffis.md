@@ -41,4 +41,4 @@ Given our results so far, we feel that despite the bumps along the way, our stra
 
 If helping solve the challenge of shared libraries interests you, check out our [current job openings](https://careers.godaddy.com/search-jobs).
 
-_*) Cover Photo Attribution: Photo by <a href="https://www.flickr.com/photos/nasawebbtelescope/52692145572/in/album-72177720305127361/">NASA’s Webb Reveals Intricate Networks of Gas and Dust in Nearby Galaxies</a> on <a href="https://www.flickr.com/photos/nasawebbtelescope/52692145572/in/album-72177720305127361/">NASA</a>_
+_Cover Photo Attribution: Photo by <a href="https://www.flickr.com/photos/nasawebbtelescope/52692145572/in/album-72177720305127361/">NASA’s Webb Reveals Intricate Networks of Gas and Dust in Nearby Galaxies</a> on <a href="https://www.flickr.com/photos/nasawebbtelescope/52692145572/in/album-72177720305127361/">NASA</a>_
