@@ -144,4 +144,4 @@ MySQL does not support a `RETURNING` clause for getting the auto-incrementing ID
 
 
 
-_*) Cover Photo Attribution: Photo by Marek Piwnicki: https://www.pexels.com/photo/train-in-motion-8991549/_
+_Cover Photo Attribution: Photo by Marek Piwnicki: https://www.pexels.com/photo/train-in-motion-8991549/_

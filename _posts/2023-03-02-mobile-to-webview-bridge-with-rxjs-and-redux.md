@@ -138,4 +138,4 @@ In this post, you learned how we take bridge messages and treat them as actions.
 The post doesn't go into the specifics of bridging because you can find a lot of information about that online. Hopefully you find this approach to bridging actions coupled with RxJS observables useful and can apply it to your own projects.
 
 
-_*) Cover Photo Attribution: Photo by <a href="https://unsplash.com/@modestasu?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Modestas Urbonas</a> on <a href="https://unsplash.com/photos/vj_9l20fzj0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>_
+_Cover Photo Attribution: Photo by <a href="https://unsplash.com/@modestasu?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Modestas Urbonas</a> on <a href="https://unsplash.com/photos/vj_9l20fzj0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>_

@@ -99,4 +99,4 @@ The GoDaddy GTR team is working on the next phase of GTR, which will include ser
 
 
 
-_*) Cover Photo Attribution: Photo by unsplash: https://unsplash.com/photos/Q1p7bh3SHj8_
+_Cover Photo Attribution: Photo by unsplash: https://unsplash.com/photos/Q1p7bh3SHj8_

@@ -22,4 +22,4 @@ Check out the blog post here: <https://medium.com/aws-in-plain-english/deploying
 
 If you want to be part of an awesome team that works to solve problems and build solutions for millions of small businesses, check out our [current open roles](https://careers.godaddy.com/search-jobs).
 
-*) Cover Photo Attribution: Photo by [Evgeni Tcherkasski](https://unsplash.com/@evgenit) on [Unsplash](https://unsplash.com/photos/SHA85I0G8K4).
+*Cover Photo Attribution: Photo by [Evgeni Tcherkasski](https://unsplash.com/@evgenit) on [Unsplash](https://unsplash.com/photos/SHA85I0G8K4).*

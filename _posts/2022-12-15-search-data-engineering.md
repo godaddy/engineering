@@ -134,7 +134,7 @@ While some of the larger tech companies like Google, Facebook, and Amazon probab
 If you want to be part of an awesome team that works to solve problems and build solutions for millions of small businesses, check out [our current open roles](https://careers.godaddy.com/search-jobs).
 
 
-_*) Cover Photo Attribution: Photo by <a href="https://unsplash.com/@deadframe?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jani Brumat</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>_
+_Cover Photo Attribution: Photo by <a href="https://unsplash.com/@deadframe?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jani Brumat</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>_
 
 
 
