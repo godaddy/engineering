@@ -2,7 +2,7 @@
 layout: post
 title: Improving Company Agility and Scale Using AWS Cloud Operations with GoDaddy
 date: 2023-04-26
-cover: /assets/improving-company-agility/cover.jpeg
+cover: /assets/images/improving-company-agility/cover.jpeg
 options:
   - full-bleed-cover
 excerpt: Learn how GoDaddy improved management, governance, and observability across its platforms using AWS.
