@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: Learn how GoDaddy is helping its developers provision infrastructure quickly and securely using AWS Cloud Development Kit.
 keywords: cloud platform, godaddy, agility, scale, aws, cdk, cloud development kit
+canonical: https://godaddy.com/resources/news/aws-cdk-adoption
 authors:
   - name: Ketan Patel
     title: Sr. Director of Software Development

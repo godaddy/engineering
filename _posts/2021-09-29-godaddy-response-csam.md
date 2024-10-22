@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: GoDaddy takes an unsparing stance when it comes to hosting CSAM (Child Sexual Abuse Material). We use many resources available to detect, remove, and report hosted CSAM on our platform(s). We do not allow content that sexually exploits or endangers minors. In this blog post we discuss how we’ve helped to protect children – within our systems and beyond – and how we watch for and fight this abhorrent crime.
 keywords: CSAM Investigation, CSEAI, Child Safety, Child Abuse, Grooming
+canonical: https://godaddy.com/resources/news/godaddy-response-csam
 authors:
   - name: Akshay Grover
     title: Mgr - Software Development

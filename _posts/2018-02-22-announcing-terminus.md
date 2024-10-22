@@ -4,7 +4,7 @@ title:  "Health Checks and Graceful Shutdown for Node.js Applications"
 date:   2018-02-22 11:16:01 -0800
 cover: /assets/images/headers/graceful-shutdown.jpg
 excerpt: Your application is serving requests constantly for your users. You and your team want to ship features and fixes as soon as they are ready, so you do continuous delivery. But what happens to your users who used your product at the time of the deployment? Chances are, the requests they have in progress are going to fail. This post helps you fix that.
-canonical: https://nemethgergely.com/nodejs-healthcheck-graceful-shutdown
+canonical: https://godaddy.com/resources/news/announcing-terminus
 authors:
   - name: Gergely Nemeth
     url: https://twitter.com/nthgergo

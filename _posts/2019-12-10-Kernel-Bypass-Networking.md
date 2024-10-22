@@ -4,6 +4,7 @@ title: "Kernel-Bypass Networking"
 date: 2019-12-10 09:00:00 -0700
 cover: /assets/images/kernel_bypass_networking.jpg
 excerpt: The DNS Team explored the possibility of using a software-based router instead of a hardware router. This post examines the reasons for using a software-based router with Kernel-Bypass Networking.
+canonical: https://godaddy.com/resources/news/kernel-bypass-networking
 authors:
   - name: Benjamin Bowen
     title: Senior Development Manager
@@ -32,7 +33,7 @@ For a server, this process is reversed. If that server is acting as a router, a 
     Layer 4 (Transport): Coordinates data transfer between system and hosts, including error-checking and data recovery.
     Layer 3 (Network): Determines how data is sent to the receiving device. It's responsible for packet forwarding, routing, and addressing.
     Layer 2 (Data Link): Translates binary into signals and allows upper layers to access media.
-    Layer 1 (Physical): Transmits signals over media. Actual hardware sits at this layer. 
+    Layer 1 (Physical): Transmits signals over media. Actual hardware sits at this layer.
 ```
 
 The design of the BSD imposes constraints on how the data from a network source is handled by the OS. When a packet arrives from the NIC, it’s wrapped in a buffer object. That allocation can interfere with the dynamic memory allocator of the OS. For example, the buffer object can be forwarded between CPU cores in a multi-CPU system and accessed from multiple threads, which then requires locks for concurrent accesses.

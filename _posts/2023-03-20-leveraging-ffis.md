@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: By leveraging foreign function interface and C shared libraries, GoDaddy can unify the implementation of libraries in Go or Rust and share those libraries with other languages.
 keywords: FFI
+canonical: https://godaddy.com/resources/news/leveraging-ffis
 authors:
   - name: Jeremiah Gowdy
     title: Senior Principal Architect

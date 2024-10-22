@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: DevSecFinOps (Development + Security + Finance + Operations) means developers are accountable for more and more disciplines related to the services they build. Organizations can ease this burden by building internal developer platforms that prioritize the developer experience.
 keywords: DevOps, DevSecFinOps, Automation, Developer Platform
+canonical: https://godaddy.com/resources/news/raising-the-bar-for-devsecops-beyond
 authors:
   - name: Keith Bartholomew
     title: Software Engineer

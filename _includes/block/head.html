@@ -31,9 +31,10 @@
   {% feed_meta %}
 
   {% if page.canonical %}
+  <meta http-equiv="refresh" content="0; URL={{ page.canonical }}">
   <link rel="canonical" href="{{ page.canonical }}">
   {% else %}
-  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+  <meta http-equiv="refresh" content="0; URL=https://www.godaddy.com/resources/category/engineering">
   {% endif %}
 
   <meta property="og:locale" content="en_US">

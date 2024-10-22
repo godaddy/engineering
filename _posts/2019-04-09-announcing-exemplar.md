@@ -4,6 +4,7 @@ title: "Creating better examples with @exemplar/storybook"
 date: 2019-04-09 09:00:00 -0700
 cover: /assets/images/exemplar/cover.png
 excerpt: We're announcing the release of @exemplar/storybook! Exemplar is a way to write examples for your React components with less boilerplate storybook config. Do more by writing less.
+canonical: https://godaddy.com/resources/news/announcing-exemplar
 authors:
   - name: Sivan Mehta
     title: Software Engineer, Experience Delivery

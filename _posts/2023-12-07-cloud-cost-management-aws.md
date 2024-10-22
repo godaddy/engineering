@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: Learn how GoDaddy instills a cost-accountable culture as it continues to scale quickly and securely using AWS.
 keywords: cloud, cost management, finops, godaddy, agility, scale, aws
+canonical: https://godaddy.com/resources/news/cloud-cost-management-aws
 authors:
   - name: Ketan Patel
     title: Sr. Director of Software Development

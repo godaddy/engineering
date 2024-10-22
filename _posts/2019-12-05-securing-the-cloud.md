@@ -9,6 +9,7 @@ excerpt: In March of 2018, GoDaddy and AWS announced a multi-year transition
   same on-premise tools and infrastructure to secure a cloud environment.  To
   address this, we developed a serverless containerized framework on AWS to
   continuously detect and track security issues.
+canonical: https://godaddy.com/resources/news/securing-the-cloud
 authors:
   - name: Greg Bailey
     title: Principal Software Engineer

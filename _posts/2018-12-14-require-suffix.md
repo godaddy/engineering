@@ -6,6 +6,7 @@ cover: /assets/images/require-suffix/cover.jpg
 excerpt: require-suffix is an opensource package to shim Node.js's require to optionally load different files based on platform and file extensions. It ships with custom presets for handling ios, android, and native files targeting react-native.
 options:
   - full-bleed-cover
+canonical: https://godaddy.com/resources/news/require-suffix
 authors:
   - name: Michael Luther
     url: https://github.com/msluther

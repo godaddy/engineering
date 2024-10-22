@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 summary: We go over a new API Management initiative at GoDaddy using a self-serve API Gateway.
 keywords: godaddy, api gateway, api management, envoy, oauth2, authentication, authorization, rate limiting, observability
+canonical: https://godaddy.com/resources/news/api-gateway-at-godaddy
 authors:
   - name: Carsten Blecken
     title: Sr. Principal Engineer
@@ -20,7 +21,7 @@ authors:
 
 From domain registrations to commerce, GoDaddy is known to be the platform that entrepreneurs build their businesses on. There's an obvious need to provide simple and great user experiences through web and mobile so our customers (and their customers) can access all the services we offer.
 
-While GoDaddy is the leader in registering domains for individual businesses, there is a large but lesser-known customer base of resellers and partners that rely on GoDaddy. These resellers and partners use different GoDaddy APIs to build their own offerings for various niche markets. The need to provide quality APIs to this group is essential for our customers to expand the reach of our solutions. 
+While GoDaddy is the leader in registering domains for individual businesses, there is a large but lesser-known customer base of resellers and partners that rely on GoDaddy. These resellers and partners use different GoDaddy APIs to build their own offerings for various niche markets. The need to provide quality APIs to this group is essential for our customers to expand the reach of our solutions.
 
 We laid the foundations for new omnichannel commerce solutions from GoDaddy in 2021 by building, consolidating, and optimizing various commerce services as a single, unified platform. This unified commerce platform drives all of our commerce solutions across all channels. Following standard modeling and design techniques like domain-driven design and an API-first approach has helped standardize all of our APIs and establish consistent authentication (authn) and authorization (authz) patterns. This ultimately led to building a common entry point for all our APIs to enforce consistent patterns and manage all APIs from a single location.
 
@@ -123,10 +124,10 @@ Running Envoy inside [Amazon Elastic Kubernetes Service](https://aws.amazon.com/
 
 Each region-based Kubernetes cluster is an AWS auto-scaling group, and nodes are easily scaled up through the cluster autoscaler. The cluster has three nodes in three different availability zones to maximize availability. Every 24 hours, these nodes are rotated to comply with our corporate security policy.
 
-The gateway is set up in five different environments: 
+The gateway is set up in five different environments:
 - Experimental - the cluster used for the internal gateway development.
 - Development -  the cluster used for the initial internal integration setup for services.
-- Test -  the cluster that allows service owners to run their automated integration tests. 
+- Test -  the cluster that allows service owners to run their automated integration tests.
 - Staging (or OTE) - the cluster primarily used to run load and automated end-to-end tests and provides services in a production-like, highly-performing environment.
 - Production - the cluster where live traffic occurs.
 

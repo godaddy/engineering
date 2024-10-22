@@ -4,6 +4,7 @@ title: "Eliminating Boilerplate and Increasing Reusability with Higher-Order Red
 date: 2018-08-24 12:00:00 -0800
 cover: /assets/images/redux-logo.png
 excerpt: My team has changed the way we write our redux reducers, choosing a more dynamic approach than the common switch statement. Creating reducers with higher-order factory functions gives us some great benefits. They can make the process of writing reducers faster and they're also flexible functions that can be used to generalize patterns and reduce repetition.
+canonical: https://godaddy.com/resources/news/higher-order-reducers
 authors:
   - name: Bill Heberer
     url: https://github.com/bheberer
@@ -14,7 +15,7 @@ authors:
 
 During my internship at GoDaddy, I've had the opportunity to work on the Account Homepage team, a Front-End centric team working on GoDaddy's new experience for logged in users. My team uses [Redux](https://redux.js.org/) to manage the state of this app.
 
-Most complaints about Redux are related to boilerplate code and verboseness. These complaints are well-founded, as Redux was intended to make state changes obvious, not concise. In smaller apps, this kind of code isn't as much of a problem, but it becomes a significant time sink in large-scale apps. 
+Most complaints about Redux are related to boilerplate code and verboseness. These complaints are well-founded, as Redux was intended to make state changes obvious, not concise. In smaller apps, this kind of code isn't as much of a problem, but it becomes a significant time sink in large-scale apps.
 
 Reducer functions were a pain point for my team. We used switch statements to write our reducers, which amounts to a lot of boilerplate. This boilerplate added up as our project progressed and we continued to add actions, so we ended up with some pretty large functions. These functions were cumbersome and often repetitive, so we decided to forego this static way of writing reducers for a more dynamic approach using higher-order reducers.
 
@@ -96,7 +97,7 @@ const reducer = createReducer({}, {
     ...action.payload
   }),
   ['DATA_FETCHED']: (state, action) => ({
-    ...state, 
+    ...state,
     ...action.payload
   }),
   ['FETCH_ERROR']: (state, action) => ({
@@ -120,9 +121,9 @@ const createReducer = (initialState, defaultHandler, actionTypes) =>
 Now ```createReducer``` takes in the initial state, an array full of potential action types and a default handler function, which will be called by each action type in the reducer. We use an array here for concision and because it's actually faster to use the array includes method than using a lookup table for smaller sample sizes. Using a ```defaultHandler``` makes adding an action type to a reducer is incredibly fast, all you have to do is add the new action type into your ```actionTypes``` parameter. The time needed to create the reducer has gone down, and the repetition has been elimated as well. Here's what our reducer looks like now.
 
 ```js
-const updateState = (state, action) => ({ 
-  ...state, 
-  ...action.payload 
+const updateState = (state, action) => ({
+  ...state,
+  ...action.payload
 })
 
 const reducer = createReducer({}, updateState, [
@@ -152,14 +153,14 @@ This version of ```createReducer``` takes in an extra parameter. This customHand
 Let's recreate our fetching reducer using this new function. Instead of having all the actions follow the same pattern, we're going to have the ```DATA_FETCHED``` action add the data we've fetched to the end of an array.
 
 ```js
-const updateState = (state, action) => ({ 
-  ...state, 
-  ...action.payload 
+const updateState = (state, action) => ({
+  ...state,
+  ...action.payload
 })
 
-const addToArray = (state, action) => ({ 
+const addToArray = (state, action) => ({
   ...state,
-  data: [...state.data, ...action.payload] 
+  data: [...state.data, ...action.payload]
 })
 
 const reducer = createReducer({}, updateState, [
@@ -175,7 +176,7 @@ So now we have a reducer that handles the first two actions with our default han
 
 To keep repetition at a minimum when using small reducers, you need to be aware of certian patterns that can arise. For example we've been writing a reducer for fetching some data for this whole article. Fetching data is a pretty common pattern, and we usually have three actions to handle fetching. An action to tell us we're fetching the data, an action to tell us we've fetched the data and an action to tell us that the fetching has failed. If you can identify these kind of patterns in your code, you can use the ```createReducer``` function to generalize them into reusable reducer functions.
 
-As an example, let's create a reusable fetching reducer. 
+As an example, let's create a reusable fetching reducer.
 
 ```js
 /* Without defaultHandler */
@@ -240,7 +241,7 @@ With our new, specialized ```fetchingReducer```, we were able to create slices o
 
 ### Conclusion
 
-* Default handlers can make the addition of new action types to your reducers trivial if they follow the correct pattern. 
+* Default handlers can make the addition of new action types to your reducers trivial if they follow the correct pattern.
 * Higher-order reducers decrease the amount of code that you have to write, leading to fewer small mistakes being made and a less tedious experience.
 * Higher-order reducers can be used to eliminate repetition amongst reducers with the use of specialized reducer functions like our `fetchingReducer` example.
 * These functions make it possible to have concise code while maintaining the predictable quality of Redux.

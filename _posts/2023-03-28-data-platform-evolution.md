@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: This technical blog provides an in-depth look at the evolution of data at GoDaddy, highlighting the challenges faced along the way and the journey towards building a modern, low-cost cloud data platform.
 keywords: data platform, godaddy, data lake
+canonical: https://godaddy.com/resources/news/data-platform-evolution
 authors:
   - name: Naren Parihar
     title: Sr. Director of Engineering

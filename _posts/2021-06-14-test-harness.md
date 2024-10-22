@@ -6,6 +6,7 @@ cover: /assets/images/test-harness/cover.jpg
 excerpt: Writing APIs around SDKs in multiple languages proves to be an effective method of implementing a language-agnostic integration test suite.
 options:
   - full-bleed-cover
+canonical: https://godaddy.com/resources/news/test-harness
 authors:
   - name: Joe Bergeron
     title: Software Engineer III

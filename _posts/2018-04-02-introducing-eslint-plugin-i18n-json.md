@@ -4,6 +4,7 @@ title:  "Introducing a fully extendable eslint plugin for JSON i18n translation 
 date:   2018-04-02 11:16:01 -0800
 cover: /assets/images/headers/eslint-plugin-i18n-json.png
 excerpt: Many web apps harness internationalization through frameworks such as React-Intl. This is awesome for the web and helps web apps obtain a global reach.
+canonical: https://godaddy.com/resources/news/introducing-eslint-plugin-i18n-json
 authors:
   - name: Mayank Jethva
     url: https://github.com/mayank23

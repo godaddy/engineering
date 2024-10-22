@@ -6,6 +6,7 @@ cover: /assets/images/lh4u/cover.jpg
 excerpt: Lighthouse4u is an opensource API for running
   Google Lighthouse tests at any scale, backed by Elasticsearch and Kibana
   for your search and visualization needs.
+canonical: https://godaddy.com/resources/news/google-lighthouse-as-a-service-lighthouse4u
 authors:
   - name: Aaron Silvas
     url: https://www.linkedin.com/in/aaron-silvas-5817626/
@@ -122,7 +123,7 @@ Both requirements are opensource and easy to setup if you're not already using t
 npm i -g lighthouse4u
 lh4u --config-dir ./app/config \
   --config-base defaults \
-  --config local \  
+  --config local \
   -- init
 ```
 
@@ -147,7 +148,7 @@ are available, but here is a summary of the more interesting bits:
   your own `custom` provider via `customPath`. We use this for JWT internally.
 * `http.routes` - Allows you to extend your LH4U instance with your own
   custom routes. This can be handy if you need to extend the behavior of your server.
-* `lighthouse.config` - All LH settings can be overridden to fit your needs. 
+* `lighthouse.config` - All LH settings can be overridden to fit your needs.
 * `lighthouse.validate` - A handy feature in cases where you need to verify that
   the responding page is who and what you think before you record the LH results of
   an incorrect page. Useful in cases where there may be DNS transitions. Plug in
@@ -161,7 +162,7 @@ are available, but here is a summary of the more interesting bits:
 
 
 
-## Dynamic Pipelines 
+## Dynamic Pipelines
 
 We've got a ton of useful data, but what can we do with it automagically? In the
 case of a CICD pipeline, instead of surfacing the results, nothing prevents you from

@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: Learn how GoDaddy improved the performance and reliability of its on-prem Websites + Marketing hosting platform by migrating to AWS.
 keywords: cloud platform, godaddy, agility, scale, aws, hosting
+canonical: https://godaddy.com/resources/news/hosting-in-aws
 authors:
   - name: Christopher Hinrichs
     title: Principal Software Engineer

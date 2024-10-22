@@ -6,6 +6,7 @@ cover: /assets/images/radpack-your-dependencies/cover.jpg
 excerpt: Bundlers like Webpack do a great job at providing a toolset needed to deliver an optimal out-of-the-box delivery solution. Loaders on the other hand are focused on delivering only the requested assets, as they are needed, and have a much higher cacheability. Radpack offers the best of both worlds.
 options:
   - full-bleed-cover
+canonical: https://godaddy.com/resources/news/radpack-your-dependencies
 authors:
   - name: Aaron Silvas
     title: Sr Principal Architect

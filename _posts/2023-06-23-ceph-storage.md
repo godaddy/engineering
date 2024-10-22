@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt:  Global Storage Engineering (GSE) migrated 2.5PB of Managed Word Press (MWP) data from vendor supported storage to opensource community supported Ceph storage utilizing CephFS in 9 months, resulting in improved customer experience.
 keywords: Ceph, CephFS, MWP, Managed Word Press, Storage
+canonical: https://godaddy.com/resources/news/ceph-storage
 authors:
   - name: Joe Bardgett
     title: SRE Sr. Manager

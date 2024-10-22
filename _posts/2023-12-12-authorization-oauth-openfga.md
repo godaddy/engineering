@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: In this post we discuss GoDaddy's adoption of OAuth and OpenFGA for fine-grained authorization.
 keywords: oauth, openfga, authentication, authorization, security, zanzibar
+canonical: https://godaddy.com/resources/news/authorization-oauth-openfga
 authors:
   - name: Jacob Brooks
     title: Principal Software Engineer

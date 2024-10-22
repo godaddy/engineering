@@ -4,6 +4,7 @@ title: "A Simple CNN Classifier for Domain Name Industrial Market Segmentation"
 date: 2019-07-16 09:00:00 -0700
 cover: /assets/images/domainclassifier/cover.jpg
 excerpt: A real-world example that develops a multi-class Convolutional Neural Network (CNN) Classifier that works well on very short texts -- domain names. Read more to see how we dealt with the noisiness in the data, clarified the project goal and improved the model iteratively.
+canonical: https://godaddy.com/resources/news/domain-vertial-classifier
 authors:
   - name: Raina Tian
     title: Data Scientist
@@ -15,13 +16,13 @@ authors:
 
 ## The Problem
 
-Many analytical and technical tasks in today's world can employ a classifier: a good classifier generalizes patterns and uncovers important hidden features in a data set. Over the years, as we've been focusing on providing engaging user experiences for small business owners, developing a good classifier that can accurately determine a domain name's industrial market segmentation is in high demand. Since we have a large amount of users on-board from GoDaddy Website Builder, we are finally in a good place to solve this problem by leveraging neural network technologies. 
+Many analytical and technical tasks in today's world can employ a classifier: a good classifier generalizes patterns and uncovers important hidden features in a data set. Over the years, as we've been focusing on providing engaging user experiences for small business owners, developing a good classifier that can accurately determine a domain name's industrial market segmentation is in high demand. Since we have a large amount of users on-board from GoDaddy Website Builder, we are finally in a good place to solve this problem by leveraging neural network technologies.
 
 ### A Closer Look
 
-Text classification is a common practice in the industry. For more information on text classification, this article written by [Mirończuk & Protasiewicz] gives an awesome review of the recent state-of-the-art elements of text classification. 
+Text classification is a common practice in the industry. For more information on text classification, this article written by [Mirończuk & Protasiewicz] gives an awesome review of the recent state-of-the-art elements of text classification.
 
-In most real-life applications, if the classifier is performed on a larger set of labels, it always helps the model to predict better if a longer text is given. The requirements for our task though is a little different. Do we have a long text input to run the classifier on? Absolutely not, a domain name on average has only 3-5 words -- that's even shorter than most sentences. Do we want to cover as many categories as possible? Yes! The whole point is to get a comprehensive view of domain industrial market segmentation. I hope you are with me now, this task is challenging and ambitious. 
+In most real-life applications, if the classifier is performed on a larger set of labels, it always helps the model to predict better if a longer text is given. The requirements for our task though is a little different. Do we have a long text input to run the classifier on? Absolutely not, a domain name on average has only 3-5 words -- that's even shorter than most sentences. Do we want to cover as many categories as possible? Yes! The whole point is to get a comprehensive view of domain industrial market segmentation. I hope you are with me now, this task is challenging and ambitious.
 
 The domain name dataset presents a number of other challenges; here are the the problems we dealt with when building this model:
 
@@ -48,8 +49,8 @@ Now, let's talk about [Problem 1](#problems). One important thing I learned from
 
 2. More Accurate at A Lower Resolution
 
-    The categories in this collection are organized in a hierarchical structure that are often not mutually exclusive. For example, "Himalayan or Nepalese Restaurant" is a subcategory of "Restaurant". Conceivably, we could create millions of features, add additional layers and complexities in the model, to make it perform across all these categories. However, the goal is to teach the model human intuition. Not to mention a more profound model usually requires a much larger data set, takes more time and resources to train and performs much slower. Therefore, we decided to only look at the very top level of the hierarchical structure, and reorganize it to keep the top levels mutually exclusive with each other. 
-    
+    The categories in this collection are organized in a hierarchical structure that are often not mutually exclusive. For example, "Himalayan or Nepalese Restaurant" is a subcategory of "Restaurant". Conceivably, we could create millions of features, add additional layers and complexities in the model, to make it perform across all these categories. However, the goal is to teach the model human intuition. Not to mention a more profound model usually requires a much larger data set, takes more time and resources to train and performs much slower. Therefore, we decided to only look at the very top level of the hierarchical structure, and reorganize it to keep the top levels mutually exclusive with each other.
+
     The reorganized category set is what's finally used for training the model, we will call it the **"model label set"** in the rest of the article. The raw data will be relabeled according to the **"model label set"** , and it will be called **"relabeled data"**.
 
 
@@ -58,27 +59,27 @@ Now, let's talk about [Problem 1](#problems). One important thing I learned from
 
 ### Woohoo, it comes with the label!
 
-Moving on to [Problem 2](#problems). Before I dive into the noisiness of the data, I want to first emphasize the convenience in obtaining a curated data set. A supervised classification problem requires a well labeled data set. In many real-world practices, this means heavy manual labeling work needs to be done by a group of trained annotators. It is usually time consuming and expensive. Luckily with GoDaddy Website Builder, a newly acquired customer will potentially contribute to the date set by providing a category label that best describes their own site. Therefore we are able to associate a piece of short text such as site name, domain name, site description and title, etc, with the self-report category label. It is such a beautiful convenience that saves us tremendous amount of time and effort in data labeling.  
+Moving on to [Problem 2](#problems). Before I dive into the noisiness of the data, I want to first emphasize the convenience in obtaining a curated data set. A supervised classification problem requires a well labeled data set. In many real-world practices, this means heavy manual labeling work needs to be done by a group of trained annotators. It is usually time consuming and expensive. Luckily with GoDaddy Website Builder, a newly acquired customer will potentially contribute to the date set by providing a category label that best describes their own site. Therefore we are able to associate a piece of short text such as site name, domain name, site description and title, etc, with the self-report category label. It is such a beautiful convenience that saves us tremendous amount of time and effort in data labeling.
 
 ### But wait a second...
 
-However, just like any self-reported data, the quality can be a concern. On top of that, unlike other self-reported data, the question we are trying to collect an answer for is very difficult -- as I mentioned earlier, the category collection has a very complicated hierarchical structure with over 1,600 choices in total. As you may imagine, a majority of people left their answers empty, or prematurely answered, without thinking through, in order to proceed to the next steps. Even when the answers were carefully filled out, inconsistencies are very likely to occur. 
+However, just like any self-reported data, the quality can be a concern. On top of that, unlike other self-reported data, the question we are trying to collect an answer for is very difficult -- as I mentioned earlier, the category collection has a very complicated hierarchical structure with over 1,600 choices in total. As you may imagine, a majority of people left their answers empty, or prematurely answered, without thinking through, in order to proceed to the next steps. Even when the answers were carefully filled out, inconsistencies are very likely to occur.
 
-Because of this we needed to massage the raw data to generate a higher quality relabeled data set to train the model on. The **"relabeled data"** can be obtained by repeating **Cleaning** and **Relabeling** steps iteratively, until it is converges to a stable stage. The set of categories covered by the relabeled data is the **"model label set"**. (see Figure below)                                    
-                                    
-                                    
+Because of this we needed to massage the raw data to generate a higher quality relabeled data set to train the model on. The **"relabeled data"** can be obtained by repeating **Cleaning** and **Relabeling** steps iteratively, until it is converges to a stable stage. The set of categories covered by the relabeled data is the **"model label set"**. (see Figure below)
+
+
 ![Data Cleaning and Relabeling]({{site.baseurl}}/assets/images/domainclassifier/data-relabeling-cleaning.png)
 
 
 1. **Cleaning** - Bad Data
-    
+
     A model learns patterns in the data. If the data itself is of low quality, the model will pick up poor knowledge and perform badly. Therefore, using techniques to identify and remove invalid or low quality data from the training set is very crucial to obtaining an optimal model. We consider a training example as valid when the short text consists of at least one English dictionary word, as well as when the original category label could be mapped to a label from the **"model label set"**.
-    
-2. **Relabeling** - Good Data with Disagreements 
-   
+
+2. **Relabeling** - Good Data with Disagreements
+
     Individuals can behave inconsistently: we observed this in so many examples where people use the same name for different industry categories; or choose different industry categories when the business names essentially describe the same thing. Relabeling the data completely manually is very tedious and error-prone and thus can easily introduce even more noise. Therefore, we chose to use the previous model to help assist the relabeling process. After we obtained a model from the last iteration, we will examine this model's prediction accuracies category by category, review wrong predictions with high confidence levels (see code below). This will allow us to quickly identify dominating mislabel trends in the previous **relabeled data**, so we can then correct and adjust to form a new set of **relabeled data** and **model label set** for the next iteration.
-   
-   
+
+
 
 ```python
  # Accuracy by Categories
@@ -163,11 +164,11 @@ Here are a few examples from the model:
     getfitwithraina.net     -->     Fitness & Gyms
     helpwithlaw.org         -->     Lawyer & Attorney
 
-This Domain Classifier is currently giving support to multiple teams within GoDaddy. For example, business intelligence team uses domain name industry category information to segment users and identify more industry-sensitive needs and potentials; domain name search team uses name industry category information to give industry related recommendations to improve user experiences. 
+This Domain Classifier is currently giving support to multiple teams within GoDaddy. For example, business intelligence team uses domain name industry category information to segment users and identify more industry-sensitive needs and potentials; domain name search team uses name industry category information to give industry related recommendations to improve user experiences.
 
 ## Conclusions
 
-This article details our experiences in developing and deploying a powerful model that can classify a domain name into an industry category. I hope it would be helpful for those considering a related problem. As there are so many great examples online regarding CNN classifiers for all different kinds of interesting problems, my goal here is to share my experience on how to identify the unique challenges for a specific real-life problem and how to solve them efficiently using the limited resources available. Please don't hesitate to reach out to me on LinkedIn. Your thoughts, contributions and questions are always welcome! 
+This article details our experiences in developing and deploying a powerful model that can classify a domain name into an industry category. I hope it would be helpful for those considering a related problem. As there are so many great examples online regarding CNN classifiers for all different kinds of interesting problems, my goal here is to share my experience on how to identify the unique challenges for a specific real-life problem and how to solve them efficiently using the limited resources available. Please don't hesitate to reach out to me on LinkedIn. Your thoughts, contributions and questions are always welcome!
 
 ## Acknowledgements
 [Wenbo Wang](https://www.linkedin.com/in/iwenbowang/) contributed to the development of the model, [Navraj Pannu](https://www.linkedin.com/in/navraj-pannu-746359177/) provided valuable feedback on this blog post.

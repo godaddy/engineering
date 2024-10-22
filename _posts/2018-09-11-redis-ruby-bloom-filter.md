@@ -6,6 +6,7 @@ cover: /assets/images/bloom_filter.png
 excerpt: In our email marketing products, we changed our bloom filter implementation by using a custom Redis and an in-memory bloom filter written in Ruby. We will go through iterations at solving a real problem and writing a custom bloom filter from scratch.
 options:
   - full-bleed-cover
+canonical: https://godaddy.com/resources/news/redis-ruby-bloom-filter
 authors:
   - name: Dalibor Nasevic
     title: Sr. Principal Software Engineer

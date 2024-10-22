@@ -4,6 +4,7 @@ title: "DNS-over-HTTPS: Privacy and Security Concerns"
 date: 2019-09-04 09:00:00 -0700
 cover: /assets/images/doh/DoH-blog-picture.png
 excerpt: New DNS privacy standards (DoH and DoT) have been published by the IETF. DNS also has had backwards-compatible security extensions added via DNSSEC, for several years. This post examines the browser-supported DoH and compares it to DoT, and examines privacy, security, and risks.
+canonical: https://godaddy.com/resources/news/doh-concerns
 authors:
   - name: Brian Dickson
     title: Principal Software Engineer
@@ -24,7 +25,7 @@ DNS was originally specified in the standards published by the [IETF](https://ww
 
 DNS has scaled extremely well, handling the growth of the Internet for the last 35 years. Client systems make use of intermediaries known as "resolvers", which do the bulk of the "look-up" work in DNS, and which implement caching to avoid duplication of look-ups. The actual data in DNS is hosted on what are known as "authoritative" servers. In addition, the namespace for DNS is hierarchical, with each level of the hierarchy only needing to serve/maintain information about the next level down in the "tree" of names.
 
-When a browser wants to access a website, such as www.example.com, the browser asks the local operating system to look up that name. The local system then sends a request to one of the configured DNS resolver(s) and waits for the response which will be an IP address that the browser needs. The resolver checks its cache for helpful answers, and whenever it does not find the information it needs, it talks to the corresponding authoritative DNS servers to get what it requires. It starts with the "root" servers, who tell it where to find the "com" top-level domain servers. Then it asks the "com" servers about "example.com", and finally it asks the "example.com" servers about www.example.com. 
+When a browser wants to access a website, such as www.example.com, the browser asks the local operating system to look up that name. The local system then sends a request to one of the configured DNS resolver(s) and waits for the response which will be an IP address that the browser needs. The resolver checks its cache for helpful answers, and whenever it does not find the information it needs, it talks to the corresponding authoritative DNS servers to get what it requires. It starts with the "root" servers, who tell it where to find the "com" top-level domain servers. Then it asks the "com" servers about "example.com", and finally it asks the "example.com" servers about www.example.com.
 
 If a site is popular, the resolver will typically have the data in its cache and return it immediately. This, in turn, not only ensures the DNS system is not overloaded, but also significantly improves the performance for the World Wide Web.
 
@@ -75,7 +76,7 @@ All four DNS transport protocols support DNSSEC in theory. In practice, the issu
 
 
 The main distinctions between the four _protocols_ are their channel security (visibility to on-path observers), and their interaction with network administrators for monitoring and blocking of DNS traffic. Both DoH and DoT provide channel security, since the DNS traffic itself is encrypted for both. All three of DNS/UDP, DNS/TCP, and DoT, are compatible with network monitoring and blocking at an IP level (address and port). However, DoT does encrypt the actual DNS queries, so only the existence of a DNS server would be visible to an observer (or possible to block).  Since DoH uses the same transport as HTTPS, it is (by design) not compatible with the network administrator's monitoring and blocking, as there is no way to distinguish DoH from other HTTPS traffic.
- 
+
 The other areas of comparison between DoH and DoT are the proposed deployment profiles, changes to the host "stack", and selection of DNS resolvers.
 
 DoT was developed as an "upgrade" to client-resolver DNS communications. It was intended to operate on a dedicated port, specifically so that both the client and server agreed that communication would be TLS-only (encrypted). This avoided some of the early problems when older protocols attempted to do "opportunistic TLS", via STARTTLS. By doing enforced TLS, many attack methods are impossible (e.g. downgrade attacks on the protocol). DoT was also intended to act as a drop-in replacement (or upgrade) to existing DNS clients at the system level, so that applications could continue interacting with the host operating system (OS) without requiring modifications. Thus, the whole application-OS-DNS part of the client stack was conceptually identical, including all of the security, deployment, and management mechanisms. While DoT was compatible with third party DNS resolvers, it was not specifically intended for them, and was effectively resolver-neutral. Theoretically, any DNS resolver could be upgraded to DoT, and likewise, any network operator could choose to allow or block DoT traffic to DNS resolvers to whom it did not want to allow access (e.g. so that internal DNS resolvers could be exclusively used, for enterprise DNS).
@@ -117,9 +118,9 @@ There are several important changes resulting from the DoH functionality as impl
 "If this had not been a test, you would have been instructed where to tune in your area for news and official information." - [paraphrased EBS text](https://en.wikipedia.org/wiki/Emergency_Broadcast_System)
 
 Browsers are **_already implementing_** DoH, although they do so as a "disabled" feature configurable via advanced user preference.
-This includes both Chrome (Google) and Firefox (Mozilla) browsers. 
+This includes both Chrome (Google) and Firefox (Mozilla) browsers.
 
-For Firefox, the code is present on releases since Firefox 62, and can be enabled and configured using the "about:config" method (browser bar entry), and looking for fields that start with "network.trr": 
+For Firefox, the code is present on releases since Firefox 62, and can be enabled and configured using the "about:config" method (browser bar entry), and looking for fields that start with "network.trr":
 * "network.trr.mode" being set as "2" turns on DoH.
 * The default DoH resolver is CloudFlare, "https://mozilla.cloudflare-dns.com/dns-query"
 * DoH resolver is selected via the "network.trr.uri" being configured as such
@@ -154,7 +155,7 @@ There are not a lot of good options for addressing any of these problems.
   * ...Particularly whenever there is an upgrade to browser software.
   * You may want to disable automatic updates
     * ...which in turn may result in a lowered security posture.
-    * Automatic updates are preferable since they avoid leaving known vulnerabilities unpatched. 
+    * Automatic updates are preferable since they avoid leaving known vulnerabilities unpatched.
 * It may be advisable (or even necessary) to "black list" particular browers (or browser versions), if you need to have a stricter security posture.
   * Browsers which expose DNS configuration to unprivileged users:
     * May be more vulerable to malware that changes DNS settings.

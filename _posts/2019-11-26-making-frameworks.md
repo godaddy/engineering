@@ -6,6 +6,7 @@ cover: /assets/images/making-frameworks/cover.jpg
 excerpt: A look at how we develop Node.js apps today and how we
   can do it better using Gasket to quickly compose reusable elements of apps
   into feature-rich frameworks.
+canonical: https://godaddy.com/resources/news/making-frameworks
 authors:
   - name: Andrew Gerard
     url: https://www.linkedin.com/in/andrewgerard/

@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: This blog post explores how we optimized our Email Batch API by using Rails bulk inserts with MySQL and how to calculate the auto-incrementing IDs for records, given MySQL does not support a RETURNING clause.
 keywords: rails, bulk insert, mysql,
+canonical: https://godaddy.com/resources/news/rails-bulk-insert-mysql
 authors:
   - name: Dalibor Nasevic
     title: Sr. Principal Software Engineer

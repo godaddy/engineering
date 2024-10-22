@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: Global Tech Registry (GTR) is a metadata registry service that provides insight into GoDaddy's AWS Cloud deployments. By combining metadata from various sources with active AWS health events, GTR is able to immediately discover the impact on GoDaddy products and notify the relevant teams with impacted services.
 keywords: globaltechregistry, gtr, cloud operations, goDaddy metadata registry, Observability, aws service outage, aws resources discovery, aws health events, aws config, aws lambda, sns, sqs
+canonical: https://godaddy.com/resources/news/track-aws-resources-using-globaltechregistry
 authors:
   - name: Jan-Erik Carlsen
     title: Principal Software Engineer

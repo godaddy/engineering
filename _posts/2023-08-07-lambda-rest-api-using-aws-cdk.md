@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: Explore the step-by-step process of deploying an AWS lambda backed API using AWS CDK in this detailed guide.
 keywords: aws, godaddy, cdk, api
+canonical: https://godaddy.com/resources/news/lambda-rest-api-using-aws-cdk
 authors:
   - name: Sushant Mimani
     title: Sr. Software Development Engineer

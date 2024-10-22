@@ -7,6 +7,7 @@ excerpt: This post explains why and how to mock the external REST and SOAP
   APIs in the functional tests of a service written in NodeJS to have a more
   robust CICD. In this post, We will write a simple functional tests and mock
   the external API using `nock` node module.
+canonical: https://godaddy.com/resources/news/mocking-soap-apis-in-functional-tests-using-nock
 authors:
   - name: Deepti Agrawal
     url: https://www.linkedin.com/in/adeepti10/
@@ -59,7 +60,7 @@ npm i --save-dev nock
 
 Assume the service under development has an endpoint `/user` which returns
 `fullname` derived from the response of the dependent service, the test snippet
-would be: 
+would be:
 
 ```js
 const nock = require('nock');
