@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: In the past couple of years, we have been on our journey to the cloud migrating our web services to AWS. In this blog post, we share what we learned about deploying Puma web server to AWS by migrating our email delivery service written in Ruby to AWS.
 keywords: Puma, Ruby, AWS, ALB, Security
+canonical: https://godaddy.com/resources/news/running-puma-in-aws
 authors:
   - name: Dalibor Nasevic
     title: Sr. Principal Software Engineer

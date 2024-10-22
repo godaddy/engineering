@@ -6,6 +6,7 @@ cover: /assets/images/sidekiq_scheduler.png
 excerpt: In some of our Ruby on Rails applications, we have migrated from using OS based cron to distributed cron using Sidekiq Scheduler. We will discuss the motivation for this change and the benefits from it.
 options:
   - full-bleed-cover
+canonical: https://godaddy.com/resources/news/distributed-cron-for-rails-apps-with-sidekiq-scheduler
 authors:
   - name: Dalibor Nasevic
     title: Sr. Principal Software Engineer

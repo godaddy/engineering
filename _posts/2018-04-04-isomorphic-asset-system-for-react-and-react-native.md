@@ -6,6 +6,7 @@ cover:  /assets/images/headers/isomorphic-asset-system.png
 excerpt: Introducing Asset System a cross platform asset rendering system for React and React-Native using SVG's.
 options:
   - full-bleed-cover
+canonical: https://godaddy.com/resources/news/isomorphic-asset-system-for-react-and-react-native
 authors:
   - name: Arnout Kazemier
     url: https://github.com/3rd-Eden

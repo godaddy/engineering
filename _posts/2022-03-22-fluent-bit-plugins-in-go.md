@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: Fluent Bit is a powerful tool for log management, filtering and exporting. Learn how you can extend its functionality even further using Go to build output plugins
 keywords: fluent-bit, logging, go, plugins
+canonical: https://godaddy.com/resources/news/fluent-bit-plugins-in-go
 authors:
   - name: Todd Kennedy
     title: Principal Software Developer

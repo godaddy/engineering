@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: In this post, we discuss how GoDaddy uses Layered Architecture to build its Data Lake.
 keywords: Enterprise Data Layers, Analytics
+canonical: https://godaddy.com/resources/news/layered-architecture-for-a-data-lake
 authors:
   - name: Kamran Ali
     title: former Principal Data Engineer

@@ -6,6 +6,7 @@ cover: /assets/images/reduxful/cover.png
 excerpt: Introducing Reduxful, an open source project which aims to reduce the
   boilerplate for managing RESTful data with Redux by generating
   actions, reducers, and selectors for you.
+canonical: https://godaddy.com/resources/news/reduxful-manage-restful-data-with-redux
 authors:
   - name: Andrew Gerard
     url: https://www.linkedin.com/in/andrewgerard/
@@ -16,7 +17,7 @@ As you may know, a web app's client-side state is often related to data
 requested from RESTful services. There are several approaches to managing this
 relationship, much of it depending on the technology stack you are working with.
 At GoDaddy, we have standardized on building web apps with React and using Redux
-for state management. We have recently open sourced a project to help manage 
+for state management. We have recently open sourced a project to help manage
 RESTful data with Redux which we are now introducing, titled **Reduxful**.
 
 Utilizing Redux to keep track of your requested data has many benefits.
@@ -173,7 +174,7 @@ logic put in place. While it may not appear to be a _ton_ of code above,
 remember that this is for requests to only two endpoints. This code will scale
 linearly as more endpoints are added to the app.
 
-The complexity grows when you start to add additional features. Say you need to 
+The complexity grows when you start to add additional features. Say you need to
 start tracking additional details of a request such as duration or start and
 end times. Also, note that we have no error handling above! This is an
 additional implementation detail that will also scale linearly with each
@@ -184,7 +185,7 @@ endpoint you need to add.
 Now that we have our Redux tools in place, let us see how we would use them in
 a simple React app. Our app will have a top-level component to select doodads
 from our list response, and a detail component to show our item response based
-on the selection. 
+on the selection.
 
 ```jsx
 // ViewDoodadDetails.js
@@ -358,7 +359,7 @@ To mitigate this, let us now take a look at the **Reduxful** project.
 
 ### Origins
 
-This project was born out of the development for the new hosting products 
+This project was born out of the development for the new hosting products
 web app. This new web app has the user experience goal of being a gateway for
 users to manage all their hosting products in a single space. The developer
 experience goal is to get product developers off of technology islands and to
@@ -408,7 +409,7 @@ export default new Reduxful('doodadApi', apiDesc, { requestAdapter });
 As you can see, setting up and interacting with a RESTful endpoint via Redux is
 simple and straightforward with Reduxful. No boilerplate required! Also note,
 you don't _have_ to use fetch. If there is another request library you prefer,
-as long as you make an adapter for it, it can be used with Reduxful. 
+as long as you make an adapter for it, it can be used with Reduxful.
 
 With this Reduxful setup, we can delete our first example setup files. Now let
 us see what needs to be updated in our React code to use our new Redux tools
@@ -421,7 +422,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 + import { isLoaded } from 'reduxful';
-+ import { resourceShape } from 'reduxful/react-addons' 
++ import { resourceShape } from 'reduxful/react-addons'
 
 - import { selectDoodad } from './selectors';
 - import * as actionCreators from './actionCreators';
@@ -492,7 +493,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 + import { isLoaded } from 'reduxful';
-+ import { resourceShape } from 'reduxful/react-addons' 
++ import { resourceShape } from 'reduxful/react-addons'
 
 import ViewDoodadDetails from './ViewDoodadDetails';
 - import { selectDoodadList } from './selectors';
@@ -609,9 +610,9 @@ different query or path parameters. As such, resources are keyed in state by an
 endpoint's name and the params passed to it. This allows tracking of multiple
 requests uniquely.
 
-Besides the generation of Redux tooling around your APIs, Reduxful also handles 
-throttling of repeated requests and debouncing in-flight requests, 
-along with several other features for working with RESTful data in Redux. 
+Besides the generation of Redux tooling around your APIs, Reduxful also handles
+throttling of repeated requests and debouncing in-flight requests,
+along with several other features for working with RESTful data in Redux.
 
 ### From here
 

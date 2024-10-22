@@ -5,8 +5,9 @@ date: 2021-11-05 00:00:00 -0700
 cover: /assets/images/android-state-management-mvi/cover.jpg
 options:
   - full-bleed-cover
-excerpt: In this post, we will look at the journey that the GoDaddy Studio Android team took with how UI state is managed across the app. We will cover MVVM and how it caused issues, the initial MVI implementation and the issues we faced. Finally, we will look at how we landed on using Spotify’s Mobius Framework for managing state. 
+excerpt: In this post, we will look at the journey that the GoDaddy Studio Android team took with how UI state is managed across the app. We will cover MVVM and how it caused issues, the initial MVI implementation and the issues we faced. Finally, we will look at how we landed on using Spotify’s Mobius Framework for managing state.
 keywords: Android, Architecture, MVI, MVVM, State machine, Mobius
+canonical: https://godaddy.com/resources/news/android-state-management-mvi
 authors:
   - name: Rebecca Franks
     title: Software Development Engineer IV
@@ -24,11 +25,11 @@ The GoDaddy Studio Android app began with a fresh codebase around the end of 201
 
 As time went on, we started facing issues with the MVI approach. The way we implemented it, unfortunately, allowed for race conditions and caused a lot of headaches for the team. It was at this point that we decided to investigate using existing frameworks for unidirectional data flow and see if they could solve the problems we were seeing. After evaluating a few, we settled on using the [Spotify Mobius Framework](https://github.com/spotify/mobius) for various reasons which we will dive into in this blog post.
 
-## State Management 
+## State Management
 
-Let’s step back a bit and learn about the issues we faced with our approaches over the past couple of years. What does it mean when we talk about State Management for UI? State management refers to keeping track of how a user interface should look and how it should react to different user inputs. On a complex screen with plenty of buttons, gestures and text input - managing the state is a full-time concern. 
+Let’s step back a bit and learn about the issues we faced with our approaches over the past couple of years. What does it mean when we talk about State Management for UI? State management refers to keeping track of how a user interface should look and how it should react to different user inputs. On a complex screen with plenty of buttons, gestures and text input - managing the state is a full-time concern.
 
-Take this screen for example: 
+Take this screen for example:
 {:refdef: style="text-align: center;"}
 ![]({{site.baseurl}}/assets/images/android-state-management-mvi/OverallState.gif){: width="250" }
 {: refdef}
@@ -39,15 +40,15 @@ There are plenty of concerns that need to be managed and tracked on this screen 
 - What is the currently selected tool on screen?
 - What are the layers and properties that should be displayed in this project?
 
-Not only is there the current state of what should be rendered on screen, but there are many different interactions that need to mutate this state - scaling gestures, button taps, colour changes, etc. 
+Not only is there the current state of what should be rendered on screen, but there are many different interactions that need to mutate this state - scaling gestures, button taps, colour changes, etc.
 
 ## MVVM and the issues we faced 😣
 
 A couple of years ago, the Android community began advocating for using **some kind of architecture,** as we all realized that placing all your logic inside the Activity, was a perfect recipe for the messiest spaghetti bolognaise you could imagine (delicious but not very elegant).
 
-First came **MVP** (Model-View-Presenter) and there were great benefits to applying this architecture to our apps: we got testability, separation of concerns and the ability to re-use logic on other screens. 
+First came **MVP** (Model-View-Presenter) and there were great benefits to applying this architecture to our apps: we got testability, separation of concerns and the ability to re-use logic on other screens.
 
-Then came along **MVVM** (Model-View-ViewModel), which solved a lot of issues that MVP had: mostly the ability to have the ViewModel unaware of the View or who was listening to any changes that are happening. 
+Then came along **MVVM** (Model-View-ViewModel), which solved a lot of issues that MVP had: mostly the ability to have the ViewModel unaware of the View or who was listening to any changes that are happening.
 
 We were using **MVVM** in certain places in our app, but we very quickly found issues with how we approached using MVVM.
 
@@ -79,7 +80,7 @@ class ProjectEditViewModel: ViewModel() {
 
 This example looks good - loading and setting a project. But think of this scenario: a user clicks on the “**create project**" button, and it fails, populating the “**error**" `LiveData`. They click "create project" again and it succeeds but the error value is still populated. Now we have a loaded project and an error screen shown at the same time, what is the correct state to show to a user?
 
-Some might solve this problem by saying: “You need to reset the `error.value` inside `onSuccess`“ and whilst that could help improve things, the very nature of these `LiveData` observables being separate objects, is the **bigger** issue here. Let’s go a bit deeper into why multiple observables can be problematic. 
+Some might solve this problem by saying: “You need to reset the `error.value` inside `onSuccess`“ and whilst that could help improve things, the very nature of these `LiveData` observables being separate objects, is the **bigger** issue here. Let’s go a bit deeper into why multiple observables can be problematic.
 
 This is how we would typically observe these `LiveData` objects for changes inside the Fragment:
 
@@ -100,7 +101,7 @@ class ProjectFragment: Fragment() {
 }
 ```
 
-From this example, it is difficult to know what the UI of the screen will look like at any point because each `LiveData`  observable can emit a new state at **any point in time**. If we start adding new functions to our `ViewModel` that emit new loading or error states, would you be able to describe what the UI will look like at a single point in time? 
+From this example, it is difficult to know what the UI of the screen will look like at any point because each `LiveData`  observable can emit a new state at **any point in time**. If we start adding new functions to our `ViewModel` that emit new loading or error states, would you be able to describe what the UI will look like at a single point in time?
 
 This can result in a [race condition](https://en.wikipedia.org/wiki/Race_condition) since these separate observables can emit state changes independently. What would the state look like if an error is emitted but there is currently a project loaded?
 
@@ -117,7 +118,7 @@ There are several drawbacks when using this approach of MVVM with separate LiveD
 - There is no single snapshot to be able to recreate the UI from easily.
 - This also then begs the question, are we handling all the potential cases here?
 
-One way to potentially improve on this behaviour, is to use data classes that contain the state information in one class and expose only a singular LiveData object to the UI. This would help solve the issue of having multiple observables emitting different state that we’d need to keep track of, and it's a building block of how MVI can work, as we will explore next. 
+One way to potentially improve on this behaviour, is to use data classes that contain the state information in one class and expose only a singular LiveData object to the UI. This would help solve the issue of having multiple observables emitting different state that we’d need to keep track of, and it's a building block of how MVI can work, as we will explore next.
 
 # MVI / Unidirectional Data Flow
 
@@ -149,7 +150,7 @@ As mentioned at the start of this post, we took inspiration for our MVI implemen
 </figure>
 {: refdef}
 
-With this mechanism in mind, the code looked as follows. The `EditorAction` ‘s were fired from the UI, and the `EditorState` is an example of what the single state of the UI could look like: 
+With this mechanism in mind, the code looked as follows. The `EditorAction` ‘s were fired from the UI, and the `EditorState` is an example of what the single state of the UI could look like:
 
 ```kotlin
 sealed class EditorAction {
@@ -227,7 +228,7 @@ class EditorViewModel : ViewModel() {
 }
 ```
 
-Then, inside our fragment, we were now observing only the **single state** that was emitted from the `ViewModel`, and not a bunch of observables as shown inside the MVVM example. 
+Then, inside our fragment, we were now observing only the **single state** that was emitted from the `ViewModel`, and not a bunch of observables as shown inside the MVVM example.
 
 ```kotlin
 class MainActivity : Fragment() {
@@ -253,15 +254,15 @@ class MainActivity : Fragment() {
 
 This approach that we initially went with had many benefits and advantages over multiple `LiveData` observables as we saw in the MVVM example earlier. Some of the advantages include:
 
-- We are now avoiding issues with different states being emitted from different `LiveData` objects that can emit at any time. We have a **single state** controlling this. 
-- Using the data class `.copy()`  mechanism to update parts of the state that have changed, helped to not lose data along the way, as you only change parts of the object that need to change. 
-- Our UI layer is minimal now - it only fires actions that have happened and there is not any logic sitting inside the view. 
-- There is a clearer separation of concerns, Actions, Processors, Reducers controlling the UI state. Nothing external is changing the state. This makes it easier to test and ensure it is doing the correct thing. 
+- We are now avoiding issues with different states being emitted from different `LiveData` objects that can emit at any time. We have a **single state** controlling this.
+- Using the data class `.copy()`  mechanism to update parts of the state that have changed, helped to not lose data along the way, as you only change parts of the object that need to change.
+- Our UI layer is minimal now - it only fires actions that have happened and there is not any logic sitting inside the view.
+- There is a clearer separation of concerns, Actions, Processors, Reducers controlling the UI state. Nothing external is changing the state. This makes it easier to test and ensure it is doing the correct thing.
 - There is also a clear pattern that keeps the code clean and allowed us to separate actions into different files, so we didn’t have all the logic inside the ViewModel file either. (We have over 200 unique actions that can happen on a single screen)
 
-But not everything worked as expected with this MVI setup either! 😩 Although for the most part things seemed to work well on the surface, we started observing strange crashes in production and a few race conditions along the way. 
+But not everything worked as expected with this MVI setup either! 😩 Although for the most part things seemed to work well on the surface, we started observing strange crashes in production and a few race conditions along the way.
 
-Let’s talk a bit about the issues we faced with this particular MVI approach. (Did we mention, it has been a long journey?😅) 
+Let’s talk a bit about the issues we faced with this particular MVI approach. (Did we mention, it has been a long journey?😅)
 
 ## Issues with our MVI implementation
 
@@ -303,7 +304,7 @@ Our MVI implementation was fine when events were sent sporadically and were proc
 
 Having identified all the shortcomings of our current implementation, we came up with a new set of requirements for the new implementation:
 
-- Unidirectional flow of data: actions in, state out - we knew this was a good assumption and wanted to stick with it. 
+- Unidirectional flow of data: actions in, state out - we knew this was a good assumption and wanted to stick with it.
 - Concurrency
   - Synchronized state access - we couldn’t let multiple concurrent jobs read and write state as they pleased
   - Non-blocking events processing - receiving events had to be as fast as possible, however, processing could be much slower (i.e. requiring slow I/O operations, like network calls) and should not block the processing of new events
@@ -403,16 +404,16 @@ After digging through and learning the ins and outs of Mobius, we decided to sta
 
 With every new framework or architecture decision, there is likely never going to be the solution that fits everyone, and adopting something like the Mobius Framework also comes with these disadvantages to adopting:
 
-- It requires quite a bit of boilerplate code to set up. We’ve solved this using shared code templates to generate most of the classes we need. 
-- New framework for people to learn. Any new engineer needs to spend a bit of time learning about the framework, working through some examples and implementing a feature with it. 
+- It requires quite a bit of boilerplate code to set up. We’ve solved this using shared code templates to generate most of the classes we need.
+- New framework for people to learn. Any new engineer needs to spend a bit of time learning about the framework, working through some examples and implementing a feature with it.
 
 # Summary 🎉
 
-We’ve learnt a lot over the past couple of years, and I don’t doubt that we won’t learn more in the future. 
+We’ve learnt a lot over the past couple of years, and I don’t doubt that we won’t learn more in the future.
 
-Right now, we have been successfully using Spotify’s Mobius Framework in our app for the past year and have migrated our largest piece of work - the Canvas Editor to use it too. After switching to Mobius in the Canvas Editor, we observed fewer bugs and race conditions with state were resolved. The level of testing and separation of concerns we’ve achieved using MVI over the years has improved our code quality and eliminated the “god class” activity/view Model that we’ve seen in the past. 
+Right now, we have been successfully using Spotify’s Mobius Framework in our app for the past year and have migrated our largest piece of work - the Canvas Editor to use it too. After switching to Mobius in the Canvas Editor, we observed fewer bugs and race conditions with state were resolved. The level of testing and separation of concerns we’ve achieved using MVI over the years has improved our code quality and eliminated the “god class” activity/view Model that we’ve seen in the past.
 
-We hope this write-up of our journey can help you think a bit more about state management and the potential for race conditions with complicated state. 
+We hope this write-up of our journey can help you think a bit more about state management and the potential for race conditions with complicated state.
 
 Have any questions or feedback? Feel free to reach out to [Rebecca](https://twitter.com/riggaroo), [Kamil](https://www.linkedin.com/in/kamilslesinski/) or [@GoDaddyOSS](https://twitter.com/godaddyoss)!
 

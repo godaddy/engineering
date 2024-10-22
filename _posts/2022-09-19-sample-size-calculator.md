@@ -8,6 +8,7 @@ options:
 usemathjax: true
 excerpt: GoDaddy's Hivemind team built a Python sample size calculator that handles a wide variety of experiment metric types and multiple testing scenarios.
 keywords: sample size calculator, A/B test, false discovery rate adjustment, Python
+canonical: https://godaddy.com/resources/news/sample-size-calculator
 authors:
   - name: Xinyu Zou
     title: Data Scientist-Experimentation Platform

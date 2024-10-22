@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: How to keep learning new skills while meeting deadlines at work and maintaining a good work-life balance.
 keywords: skill development, certification, procrastination, conflicting priorities
+canonical: https://godaddy.com/resources/news/study-group-framework
 authors:
   - name: Mayur Jain
     title: Director of Engineering

@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: In this post, we'll take a look at how our team built a robust duplex bridge between our mobile and webview code. We'll also take a look at how we use RxJS observables to deal with messages from the bridge combined with actions dispatched from our React app that runs in the webview.
 keywords: RxJS, JavaScript, Promises, UI, Mobile, React, Redux
+canonical: https://godaddy.com/resources/news/mobile-to-webview-bridge-with-rxjs-and-redux
 authors:
   - name: Hendrik Swanepoel
     title: Principal Engineer, Software Development

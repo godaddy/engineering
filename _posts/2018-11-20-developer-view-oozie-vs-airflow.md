@@ -3,16 +3,17 @@ layout: post
 title: "Data pipeline job scheduling in GoDaddy: Developer’s point of view on Oozie vs Airflow"
 date: 2018-11-15 12:00:00 -0800
 cover: /assets/images/time.png
-excerpt: This blog discusses the pros and cons of Oozie and Airflow to help you choose which scheduler to use for your data pipeline jobs. 
+excerpt: This blog discusses the pros and cons of Oozie and Airflow to help you choose which scheduler to use for your data pipeline jobs.
          It also contains a sample plugin which implements the Airflow operator.
+canonical: https://godaddy.com/resources/news/developer-view-oozie-vs-airflow
 authors:
   - name: Anusha Buchireddygari
     url: https://www.linkedin.com/in/anushabuchireddygari/
     photo: /assets/images/anusha-buchireddygari.png
 ---
 
-On the Data Platform team at GoDaddy we use both Oozie and Airflow for scheduling jobs. 
-In the past we've found each tool to be useful for managing data pipelines but are migrating all of our jobs to Airflow because of the reasons discussed below. 
+On the Data Platform team at GoDaddy we use both Oozie and Airflow for scheduling jobs.
+In the past we've found each tool to be useful for managing data pipelines but are migrating all of our jobs to Airflow because of the reasons discussed below.
 In this article, I'll give an overview of the pros and cons of using Oozie and Airflow to manage your data pipeline jobs.
 To help you get started with pipeline scheduling tools I've included some sample plugin code to show how simple it is to modify or add functionality in Airflow.
 
@@ -32,7 +33,7 @@ With cron, you have to write code for the above functionality, whereas Oozie and
 
 ### Oozie ###
 
-[Apache Oozie](https://github.com/apache/Oozie) is a workflow scheduler which uses Directed Acyclic Graphs (DAG) to schedule Map Reduce Jobs (e.g. Pig, Hive, Sqoop, Distcp, Java functions). 
+[Apache Oozie](https://github.com/apache/Oozie) is a workflow scheduler which uses Directed Acyclic Graphs (DAG) to schedule Map Reduce Jobs (e.g. Pig, Hive, Sqoop, Distcp, Java functions).
 It's an open source project written in Java.
 When we develop Oozie jobs, we write bundle, coordinator, workflow, properties file. A workflow file is required whereas others are optional.
 * The workflow file contains the actions needed to complete the job. Some of the common actions we use in our team are the Hive action to run hive scripts, ssh action, shell action, pig action and fs action for creating, moving, and removing files/folders
@@ -50,7 +51,7 @@ At GoDaddy, we use Hue UI for monitoring Oozie jobs.
     * SLA checks can be added
 
 * Cons:
-    * Less flexibility with actions and dependency, for example: Dependency check for partitions should be in MM, dd, YY format, if you have integer partitions in M or d, it’ll not work. 
+    * Less flexibility with actions and dependency, for example: Dependency check for partitions should be in MM, dd, YY format, if you have integer partitions in M or d, it’ll not work.
     * Actions are limited to allowed actions in Oozie like fs action, pig action, hive action, ssh action and shell action.
     * All the code should be on HDFS for map reduce jobs.
     * Limited amount of data (2KB) can be passed from one action to another.
@@ -68,31 +69,31 @@ Some of the features in Airflow are:
 At GoDaddy, Customer Knowledge Platform team is working on creating docker for Airflow, so other teams can develop and maintain their own Airflow scheduler.
 
 * Pros:
-    * The Airflow UI is much better than Hue (Oozie UI),for example: Airflow UI has a Tree view to track task failures unlike Hue, which tracks only job failure. 
+    * The Airflow UI is much better than Hue (Oozie UI),for example: Airflow UI has a Tree view to track task failures unlike Hue, which tracks only job failure.
     * The Airflow UI also lets you view your workflow code, which the Hue UI does not.
     * More flexibility in the code, you can write your own operator plugins and import them in the job.
     * Allows dynamic pipeline generation which means you could write code that instantiates a pipeline dynamically.
-    * Contains both event-based trigger and time-based trigger. 
-    Event based trigger is so easy to add in Airflow unlike Oozie. 
-    Event based trigger is particularly useful with data quality checks. 
-    Suppose you have a job to insert records into database but you want to verify whether an insert operation is successful so you would write a query to check record count is not zero. 
+    * Contains both event-based trigger and time-based trigger.
+    Event based trigger is so easy to add in Airflow unlike Oozie.
+    Event based trigger is particularly useful with data quality checks.
+    Suppose you have a job to insert records into database but you want to verify whether an insert operation is successful so you would write a query to check record count is not zero.
     In Airflow, you could add a data quality operator to run after insert is complete where as in Oozie, since it's time based, you could only specify time to trigger data quality job.
     * Lots of functionalities like retry, SLA checks, Slack notifications, all the functionalities in Oozie and more.
     * Disable jobs easily with an on/off button in WebUI whereas in Oozie you have to remember the jobid to pause or kill the job.
-    
+
 
 * Cons:
     * In 2018, Airflow code is still an incubator. There is large community working on the code.
     * Manually delete the filename from meta information if you change the filename.
-    * You need to learn python programming language for scheduling jobs. 
+    * You need to learn python programming language for scheduling jobs.
     For Business analysts who don't have coding experience might find it hard to pick up writing Airflow jobs but once you get hang of it, it becomes easy.
-    * When concurrency of the jobs increases, no new jobs will be scheduled. 
-    Sometimes even though job is running, tasks are not running , this is due to number of jobs running at a time can affect new jobs scheduled. 
+    * When concurrency of the jobs increases, no new jobs will be scheduled.
+    Sometimes even though job is running, tasks are not running , this is due to number of jobs running at a time can affect new jobs scheduled.
     This also causes confusion with Airflow UI because although your job is in run state, tasks are not in run state.
 
 ### What works for your Organization? (Oozie or Airflow)
 
-Airflow has so many advantages and there are many companies moving to Airflow. 
+Airflow has so many advantages and there are many companies moving to Airflow.
 There is an active community working on enhancements and bug fixes for Airflow.
 A few things to remember when moving to Airflow:
 * You have to take care of scalability using Celery/Mesos/Dask.
@@ -125,7 +126,7 @@ class FileSensorOperator(BaseSensorOperator):
         super(FileSensorOperator, self).__init__(*args, **kwargs)
         self.file_path = file_path
         self.file_pattern = file_pattern
-    
+
     # poke is standard method used in built-in operators
     def poke(self, context):
         file_location = self.file_path
@@ -147,12 +148,12 @@ class FilePlugin(AirflowPlugin):
 
 ###### Airflow DAG
 
-The below code uses an Airflow DAGs (Directed Acyclic Graph) to demonstrate how we call the sample plugin implemented above. 
-In this code the default arguments include details about the time interval, start date, and number of retries. 
+The below code uses an Airflow DAGs (Directed Acyclic Graph) to demonstrate how we call the sample plugin implemented above.
+In this code the default arguments include details about the time interval, start date, and number of retries.
 You can add additional arguments to configure the DAG to send email on failure, for example.
 
 The DAG is divided into 3 tasks.
-* The first task is to call the sample plugin which checks for the file pattern in the path every 5 seconds and get the exact file name. 
+* The first task is to call the sample plugin which checks for the file pattern in the path every 5 seconds and get the exact file name.
 * The second task is to write to the file.
 * The third task is to archive the file.
 
@@ -198,7 +199,7 @@ def process_file(**context):
 
 # Call python function which writes to file
 proccess_task = PythonOperator(
-    task_id='process_the_file', 
+    task_id='process_the_file',
     python_callable=process_file,
     dag=dag)
 
@@ -208,9 +209,9 @@ archive_task = ArchiveFileOperator(
     filepath=file_path,
     archivepath=archive_path,
     dag=dag)
-    
+
 # This line tells the sequence of tasks called
-sensor_task >> proccess_task >> archive_task  # ">>" is airflow operator used to indicate sequence of the workflow 
+sensor_task >> proccess_task >> archive_task  # ">>" is airflow operator used to indicate sequence of the workflow
 ```
 
 Our team has written similar plugins for data quality checks. Unlike Oozie, Airflow code allows code flexibility for tasks which makes development easy. If you're thinking about scaling your data pipeline jobs I'd recommend Airflow as a great place to get started.

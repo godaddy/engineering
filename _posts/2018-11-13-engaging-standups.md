@@ -7,6 +7,7 @@ excerpt: When team members become disengaged in a daily scrum meeting, it can be
   question the value of the ceremony. By committing to decrease siloing and help
   each other with blockers, a team can achieve a more healthy culture and become
   more engaged in each others' progress.
+canonical: https://godaddy.com/resources/news/engaging-standups
 authors:
   - name: Conor Fellin
     url: https://github.com/cfellin1
@@ -33,7 +34,7 @@ Below are a few techniques that we found helped improve our communication as a t
 
 If people are not interested in others' status updates, it may be a sign that the team is breaking into silos. Some specialization is fine, but in the case of a production incident (or someone winning the lottery and quitting) you need the whole team to have at least a shallow knowledge of all of the team's projects.
 
-The risk of siloing increases for distributed teams, where the convenience of hallway conversations can encourage people to form informal sub-teams that share knowledge within themselves rather than with the team as a whole.  
+The risk of siloing increases for distributed teams, where the convenience of hallway conversations can encourage people to form informal sub-teams that share knowledge within themselves rather than with the team as a whole.
 
 There are plenty of ways to break team members out of their silos. To some extent, it should happen naturally if you are following the scrum adage of focusing on one goal at a time. It's unlikely that a contributor will be able to stick with their pet codebase if the team is collectively moving from one goal to another in order of priority.
 

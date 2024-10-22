@@ -4,6 +4,7 @@ title: "Dynamic Configuration for Node.js Applications"
 date: 2019-03-06 12:00:00 -0700
 cover: /assets/images/headers/flipr.jpg
 excerpt: Dynamic configuration is a powerful tool for software applications. Use it to solve problems like authorization, feature flags, and A/B tests, in addition to normal application configuration. See how GoDaddy uses a library called flipr to achieve this for some of its Node.js applications.
+canonical: https://godaddy.com/resources/news/dynamic-configuration-for-nodejs
 authors:
   - name: Grant Shively
     url: https://github.com/gshively11

@@ -4,6 +4,7 @@ title: "Four tips for developing sound experimentation practices"
 date: 2020-05-13 08:00:00 -0800
 cover: /assets/images/experimentation-practices/person-holding-blue-ballpoint-pen-on-white-notebook-669610.jpg
 excerpt: Best practices and lessons learned for teams moving towards experiment-driven development.
+canonical: https://godaddy.com/resources/news/experimentation-practices
 authors:
   - name: Ellen O'Connor
     title: Senior Software Engineer

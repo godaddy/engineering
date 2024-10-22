@@ -6,6 +6,7 @@ cover: /assets/images/headers/next-rum.jpg
 excerpt: With the introduction of navigation timing in browsers it has become a lot easier to measure performance of your front-end application. With the introduction of the `next-rum` component you will be able to gather the same metrics for your Next.js based application as well.
 options:
   - full-bleed-cover
+canonical: https://godaddy.com/resources/news/real-user-performance-measuring-for-next-js
 authors:
   - name: Arnout Kazemier
     url: https://github.com/3rd-Eden

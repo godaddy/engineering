@@ -6,6 +6,7 @@ cover: /assets/images/android-animated-pride-rainbow/cover.jpg
 excerpt: In this post, we take a deep dive look into how we created a Pride-themed easter egg inside the Over Android App. The easter egg is a rainbow bounding box that is drawn using OpenGL. We take a look at how to setup the required code in order to get OpenGL to render the rainbow box on screen and learn a bit more about OpenGL along the way!
 options:
   - full-bleed-cover
+canonical: https://godaddy.com/resources/news/android-animated-pride-rainbow
 authors:
   - name: Rebecca Franks
     title: Principal Software Engineer
@@ -101,7 +102,7 @@ version:
 
 ```kotlin
 val surfaceView = findViewById<GLSurfaceView>(R.id.surface)
-// We use OpenGLES 3.0 because it has more features than 2.0 
+// We use OpenGLES 3.0 because it has more features than 2.0
 // It has a couple of nice newer features like - vertex array objects etc - more information [here](https://stackoverflow.com/a/38163130)
 surfaceView.setEGLContextClientVersion(3)
 surfaceView.setRenderer(RainbowBoxRenderer())
@@ -142,8 +143,8 @@ stored in the same array and we will inform GL of the stride length (ie the numb
 a standard box, this is the geometry we would use:
 
 ```kotlin
-// each line represents a "vertex" that GL will read. In this example there are 4 vertices to draw a square. 
-// The first two values represent X,Y coords. The second two represent the corresponding coordinates of a texture/bitmap that should be loaded up at that point. 
+// each line represents a "vertex" that GL will read. In this example there are 4 vertices to draw a square.
+// The first two values represent X,Y coords. The second two represent the corresponding coordinates of a texture/bitmap that should be loaded up at that point.
 val attributeValues = floatArrayOf(
             -1.0f, 1.0f, 0.0f, 1.0f,
             -1.0f, -1.0f, 0.0f, 0.0f,
@@ -311,9 +312,9 @@ const vec4 COLORS[7] = vec4[](
 out vec4 oColor;
 
 void main() {
-    // vProgress is interpolated between 0 - 1 by the vertex shader. 
+    // vProgress is interpolated between 0 - 1 by the vertex shader.
     // We multiply by uTimeOffset to give the animation over time.
-    // We multiply uTimeOffset by 16 to make the speed of the animation a bit faster, and 0.125 to stretch out the gradient a bit more. 
+    // We multiply uTimeOffset by 16 to make the speed of the animation a bit faster, and 0.125 to stretch out the gradient a bit more.
     float progress = (vProgress + uTimeOffset * 16.0) * 0.125;
     float colorIndex = mod(uDashCount * progress / 4.0, 6.0); // There are actually 6 colors, not 7
     vec4 currentColor = COLORS[int(floor(colorIndex))];
@@ -394,7 +395,7 @@ At GoDaddy everyone is welcome, we strongly believe that diverse teams build bet
 representation from all different groups. So for pride month, we are highlighting the GoDaddy United (LGBQT+) group,
 which is designed to ensure that within the walls of our company, everyone is able to be themselves, feels safe and is
 informed with regard to issues relating to the Lesbian, Gay, Bisexual, Transgender and Queer communities. For more
-information about this and other initiatives - head to our website [here](https://careers.godaddy.com/diversity). 
+information about this and other initiatives - head to our website [here](https://careers.godaddy.com/diversity).
 
 We love adding little bits of user delight and we hope this puts a bit of a smile on people’s faces when they encounter
 it in the app. If you have any questions or feedback, feel free to reach out to me on Twitter

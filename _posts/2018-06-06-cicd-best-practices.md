@@ -4,6 +4,7 @@ title: "Jenkins Best Practices - Practical Continuous Deployment in the Real Wor
 date: 2018-06-05 08:53:01 -0800
 cover: /assets/images/ninjenkins.png
 excerpt: This post describes how we use best practices for CICD pipelines using Jenkins.
+canonical: https://godaddy.com/resources/news/cicd-best-practices
 authors:
   - name: Jeff Pearce
     url: https://www.linkedin.com/in/jeffpea/

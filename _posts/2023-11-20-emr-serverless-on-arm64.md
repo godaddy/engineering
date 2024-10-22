@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: Learn how GoDaddy is helping its developers provision infrastructure quickly and securely using AWS Cloud Development Kit.
 keywords: Amazon EMR, Analytics, Best Practices, Graviton, Serverless
+canonical: https://godaddy.com/resources/news/emr-serverless-on-arm64
 authors:
   - name: Mukul Sharma
     title: Software Development Engineer

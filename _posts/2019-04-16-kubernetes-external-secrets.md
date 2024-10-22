@@ -4,6 +4,7 @@ title: "Kubernetes External Secrets"
 date: 2019-04-16 09:00:00 -0700
 cover: /assets/images/kubernetes-external-secrets/cover.jpg
 excerpt: Engineering teams at GoDaddy use Kubernetes with secret management systems, like AWS Secrets Manager. "External" secret management systems often provide useful features, such as rotation, that the native Kubernetes Secret object does not support. Kubernetes External Secrets is a new open source project that introduces the ExternalSecret object type. With an ExternalSecret object, an engineering team can manage its secret data in an external system and access that data in the same way they would if they were using a Secret object.
+canonical: https://godaddy.com/resources/news/kubernetes-external-secrets
 authors:
   - name: Silas Boyd-Wickizer
     title: Sr. Director of Engineering

@@ -4,6 +4,7 @@ title:  "Kubernetes - A Practical Introduction for Application Developers"
 date:   2018-05-02 05:16:01 -0800
 cover: /assets/images/headers/kubernetes-intro.jpg
 excerpt: A collection of resources / best practices that help you become a more productive developer working with Kubernetes.
+canonical: https://godaddy.com/resources/news/kubernetes-introduction-for-developers
 authors:
   - name: Gergely Nemeth
     url: https://twitter.com/nthgergo

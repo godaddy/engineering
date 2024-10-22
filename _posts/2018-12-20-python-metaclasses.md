@@ -7,6 +7,7 @@ cover-source: https://www.flickr.com/photos/yukop/6822664892/
 excerpt: Python's metaclasses are an obscure and often misunderstood feature of the language. This post introduces readers to metaclasses hands-on by implementing interfaces, motivated by Python's abstract base class, or ABC.
 options:
   - full-bleed-cover
+canonical: https://godaddy.com/resources/news/python-metaclasses
 authors:
   - name: Joseph Bergeron
     url: http://joebergeron.io
@@ -122,7 +123,7 @@ def abstractfunc(func):
     return func
 ```
 
-With our decorator in place, let's fill in some boilerplate. We'll want to define a custom metaclass, with dummy methods `__init__` and `__new__`, and have our desired abstract base class inherit from it. Note that the name `Interface` for our metaclass below has nothing to do with the "Interface" in our `NetworkInterface` class -- we could've named `Interface` anything we want. 
+With our decorator in place, let's fill in some boilerplate. We'll want to define a custom metaclass, with dummy methods `__init__` and `__new__`, and have our desired abstract base class inherit from it. Note that the name `Interface` for our metaclass below has nothing to do with the "Interface" in our `NetworkInterface` class -- we could've named `Interface` anything we want.
 
 ```python
 class Interface(type):

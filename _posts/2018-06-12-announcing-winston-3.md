@@ -4,6 +4,7 @@ title: "Announcing winston@3.0.0!"
 date: 2018-06-12 05:53:01 -0800
 cover: /assets/images/typeset-cover.jpg
 excerpt: After several years the winston team is happy to announce the latest version – 3.0.0! Learn more about the latest version of the most popular logging library for Node.js along with what Node.js LTS means to maintainers of popular npm packages.
+canonical: https://godaddy.com/resources/news/announcing-winston-3
 authors:
   - name: Charlie Robbins
     url: https://www.github.com/indexzero

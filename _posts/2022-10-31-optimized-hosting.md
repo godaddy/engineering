@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: Did you ever wonder how GoDaddy runs your website? Or how one might go about hosting millions of websites? How about running a hundred thousand Virtual Private Servers (VPS)?
 keywords: webhosting, vps, virtual private server, hosting, vserver, scale, reliability, availability
+canonical: https://godaddy.com/resources/news/optimized-hosting
 authors:
   - name: Robert Breker
     title: Senior Director, Software Development

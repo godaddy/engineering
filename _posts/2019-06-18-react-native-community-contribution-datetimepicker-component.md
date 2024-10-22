@@ -4,6 +4,7 @@ title: "React Native Community contribution"
 date: 2019-06-17 09:00:00 -0700
 cover: /assets/images/datetimepicker/calendar.jpg
 excerpt:  GoDaddy contributed to the lean-core initiative by extracting and merging the DatePicker and TimePicker components so that we could us them in our mobile app. The new Component has fewer platform-specific implementations and is easier to maintain and use.
+canonical: https://godaddy.com/resources/news/react-native-community-contribution-datetimepicker-component
 authors:
   - name: Martijn Swaagman
     title: Principal Software Engineer

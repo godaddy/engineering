@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: Case study on how we improved performance and speed in Website + Marketing.
 keywords: website, performance, speed
+canonical: https://godaddy.com/resources/news/websites-and-marketing-case-study
 authors:
   - name: Simon Le Parc
     title: Sr. Mgr - Software Development

@@ -6,6 +6,7 @@ cover: /assets/images/serverless-aws-servicecatalog-plugin/cover.jpg
 excerpt: The serverless-aws-servicecatalog plugin provides developers with the power of Serverless deployments while allowing companies to maintain governance over AWS resources by using AWS Service Catalog. This is one step on the path to unlock the power of no-managed-resource applications for enterprise uses. By taking advantage of higher order abstractions over CloudFormation, such as Service Catalog, teams working with self-created and managed custom products can also make use of Serverless to develop, maintain and deploy these innovative new runtimes.
 options:
   - full-bleed-cover
+canonical: https://godaddy.com/resources/news/serverless-aws-servicecatalog-plugin
 authors:
   - name: John Smey
     title: Senior Software Engineer
@@ -14,7 +15,7 @@ authors:
 
 The serverless design pattern made possible by Amazon API Gateway and AWS Lambda allows developers to build and run applications without having to maintain any persistent infrastructure. Serverless applications are becoming increasingly popular as more organizations move to cloud providers.  Some of the core use cases for serverless applications include: auto-scaling web-sites and APIs, event processing and streaming, image or video processing and CICD.
 
-The serverless architecture is a good fit for applications that fit the following criteria: 
+The serverless architecture is a good fit for applications that fit the following criteria:
 1. You want the cloud provider to manage resources, availability and scaling
 2. Some per-request latency isn’t a problem
 3. You only want to pay for resources in active use
@@ -32,7 +33,7 @@ In AWS, the design principle of "infrastructure as code" is achieved by using Cl
 
 ## Serverless and Service Catalog
 
-**Serverless** generates a CloudFormation template which is used to deploy the AWS products required by a Serverless application. This will not work for developers that are restricted to using only Service Catalog products. 
+**Serverless** generates a CloudFormation template which is used to deploy the AWS products required by a Serverless application. This will not work for developers that are restricted to using only Service Catalog products.
 
 To solve this problem, GoDaddy and AWS joined forces to create the [serverless-aws-servicecatalog](https://github.com/godaddy/serverless-aws-servicecatalog) plugin. This plugin allows an AWS admin to deploy a custom serverless product in Service Catalog. This product ID is then added to the Serverless configuration file. The plugin overrides the Serverless package:compileFunctions hook and inserts the CloudFormation templates from the specified Service Catalog product.
 
@@ -48,12 +49,12 @@ Create a Serverless Service Catalog CloudFormation template to create the Servic
 
 1. Install the Serverless framework
     ```
-    npm install -g serverless 
+    npm install -g serverless
     ```
 
 
 2. Create a Serverless project and add the plugin.
-    ``` 
+    ```
     serverless create --template aws-nodejs
     npm install serverless-aws-servicecatalog
     ```
@@ -75,7 +76,7 @@ Create a Serverless Service Catalog CloudFormation template to create the Servic
 
 4. Run the following to create the stack.
     ```
-    serverless deploy 
+    serverless deploy
     ```
 
 Developers can then write CICD tools to encapsulate stages of this process and automate the deployment and management of their serverless services.
@@ -83,4 +84,4 @@ Developers can then write CICD tools to encapsulate stages of this process and a
 ### Summary
 
 The serverless-aws-servicecatalog plugin provides developers with the power of Serverless deployments while allowing companies to maintain governance over AWS resources by using AWS Service Catalog. This is one step on the path to unlock the power of no-managed-resource applications for enterprise uses. By taking advantage of higher order abstractions over CloudFormation, such as Service Catalog, teams working with self-created and managed custom products can also make use of Serverless to develop, maintain and deploy these innovative new runtimes.
- 
+

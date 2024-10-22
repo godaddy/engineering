@@ -4,6 +4,7 @@ title: "Secrets, GPG, BlackBox, and Docker - an Experimental Approach"
 date: 2019-07-19 09:00:00 -0700
 cover: /assets/images/secrets-gpg-blackbox-docker-an-experimental-approach/cover.png
 excerpt: This article describes an experimental approach on how Blackbox and Docker can be used in combination to manage secrets.
+canonical: https://godaddy.com/resources/news/secrets-gpg-blackbox-docker-an-experimental-approach
 authors:
   - name: Mayank Jethva
     title: Software Engineer
@@ -53,14 +54,14 @@ At its core, it relies on Gnu Privacy Guard (GPG) to encrypt/decrypt files using
 - A public key which you give to the....public. (i.e, other entities which you want to communicate with).
 - Assume Alice has generated a GPG public/private keypair, (often just denoted as a GPG keypair).
 - Alice can send a message to Bob by encrypting a message (i.e, plaintext) with Bob's public key. Only Bob can decrypt this message since he has the corresponding private key.
-- Bob can send a message to Alice by encrypting a message using Alice's public key. Only Alice can decrypt this message because she has the corresponding private key. 
-- But the question remains about how Alice and Bob can verify the authenticity and integrity of the message. 
-- Alice can first construct the following: 
+- Bob can send a message to Alice by encrypting a message using Alice's public key. Only Alice can decrypt this message because she has the corresponding private key.
+- But the question remains about how Alice and Bob can verify the authenticity and integrity of the message.
+- Alice can first construct the following:
   1. plain original message (i.e, "Hey, what's up?")
   2. A signed secure hash of the original message using her private key
   3. hashing algortihm details (i.e, SHA256)
 - Alice can combine all of these individual pieces and encrypt it with Bob's public key, then send the result to Bob.
-- Once Bob decrypts the received message he can has three pieces. 
+- Once Bob decrypts the received message he can has three pieces.
 - Bob can verify the authenticity and integrity by first computing a secure hash based off the algorithm details sent by Alice of the plain original message, followed by using Alice's public key to verify the signed hash which was received. If the received signed hash and the computed hash match, the message was not tampered with. Also, since only Alice's private key could be used generate the received signed hash, Bob knows this message is actually from Alice.
 
 There are a few algorithms which support asymmetric encryption/decryption. A prominent one is RSA. We'll be using GPG to create RSA public/private key pairs which will then be used by Blackbox to handle encrypting/decrypting our secrets. The secrets are placed in version control.
@@ -469,7 +470,7 @@ exec "$@"
 
 Run:
 
-> `docker-compose -f docker-compose.yml build blackbox-containerized` 
+> `docker-compose -f docker-compose.yml build blackbox-containerized`
 > `docker-compose -f docker-compose.yml run blackbox-containerized`
 
 ### Conclusion

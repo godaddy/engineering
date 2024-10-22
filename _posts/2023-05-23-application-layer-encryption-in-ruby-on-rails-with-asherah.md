@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: This article explores how we implement Application Layer Encryption in Ruby on Rails applications to protect customer-sensitive data with Asherah.
 keywords: ruby, ruby on rails, application layer encryption, security
+canonical: https://godaddy.com/resources/news/application-layer-encryption-in-ruby-on-rails-with-asherah
 authors:
   - name: Dalibor Nasevic
     title: Sr. Principal Software Engineer

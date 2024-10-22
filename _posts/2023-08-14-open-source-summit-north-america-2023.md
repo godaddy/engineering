@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: The 2023 Linux Foundation Open Source Summit in Vacouver, WA was one of the key events for open source developers. GoDaddy sent representatives to the conference and 3 of them share their experiences.
 keywords: Open Source Summit, Linux Foundation, OpenJS Foundation, OSS
+canonical: https://godaddy.com/resources/news/open-source-summit-north-america-2023
 authors:
   - name: Courtney Robertson
     title: Open Source Developer Advocate

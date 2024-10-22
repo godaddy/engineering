@@ -4,6 +4,7 @@ title: "Testing React-Native using ekke"
 date: 2019-05-22 09:00:00 -0700
 cover: /assets/images/ekke/react-phone.png
 excerpt: Introducing `ekke`, a new, unique test runner for React-Native. It allows you to execute your test code directly on the device, eliminating the need for imperfect mocks and enabling you to test in the same environment as your production users.
+canonical: https://godaddy.com/resources/news/testing-react-native-using-ekke
 authors:
   - name: Arnout Kazemier
     title: Principal Software Engineer

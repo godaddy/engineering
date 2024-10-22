@@ -7,6 +7,7 @@ excerpt: You put some files on a server and users grab them; that’s hosting, r
   Sure, if you’re stuck in the 90’s. While there have been significant innovations in this space,
   it’s been largely uneventful in the last 10 years. This post aims to enlighten and educate on
   innovations in this industry.
+canonical: https://godaddy.com/resources/news/is-my-host-fast-yet
 authors:
   - name: Aaron Silvas
     url: https://www.linkedin.com/in/aaron-silvas-5817626/
@@ -36,7 +37,7 @@ This report qualifies less than 200ms TTFB (Time To First Byte) as fast, 200-100
 ## What is this wizardry?
 
 No tricks, just physics. Approximately [every 100km (~62mi) from data centers adds 1ms of latency](https://cloud.google.com/solutions/best-practices-compute-engine-region-selection) to client requests (RTT). Based on the worst case distance (half the circumference of earth), round trips can theoretically reach upwards of 200ms over fiber. This is before factoring in indirect routes, two to three round trips to establish connections (predominantly secured), and last-mile latencies from Internet Service Providers. If you’re serving all users from a single data center, parts of the world are likely to see roughly an overhead of 600-800ms simply due to distance. Add in the overhead of host response, and this can quickly reach 1000ms and beyond before your users begin to see something render.
-If you’re still not sold on how critical TTFB is between your host and your client, let's look at this problem through another lens. Client latencies have a far greater (and linear) impact [compared to that of bandwidth](https://www.igvita.com/2012/07/19/latency-the-new-web-performance-bottleneck/). This means optimizing response times between client and host often will have a greater impact than reducing the size of your applications -- though naturally you should do both. Why then are we so obsessed with “fat pipes”? 
+If you’re still not sold on how critical TTFB is between your host and your client, let's look at this problem through another lens. Client latencies have a far greater (and linear) impact [compared to that of bandwidth](https://www.igvita.com/2012/07/19/latency-the-new-web-performance-bottleneck/). This means optimizing response times between client and host often will have a greater impact than reducing the size of your applications -- though naturally you should do both. Why then are we so obsessed with “fat pipes”?
 
 
 ## Custom stack
@@ -45,7 +46,7 @@ Surely you didn’t think physics was the only hand at play here? After all, you
 
 ![Diagram](https://w3c.github.io/navigation-timing/timestamp-diagram.svg)
 
-When we designed the hosting stack for GoDaddy Website Builder over 6 years ago, there were numerous off the shelf technologies we could have leveraged to get the job done, and done well. That was the easy and most obvious path. Instead we approached the problem as an opportunity to cater the solution specifically to the needs of users spanning the globe, and ultimately to provide a world class platform from which our customers could be proud to host their ideas and accelerate their ventures. Running a hosting platform on Node.js, which is JavaScript running in Google’s V8 engine, was fraught with skepticism. After all, fast JavaScript is an oxymoron, right?       
+When we designed the hosting stack for GoDaddy Website Builder over 6 years ago, there were numerous off the shelf technologies we could have leveraged to get the job done, and done well. That was the easy and most obvious path. Instead we approached the problem as an opportunity to cater the solution specifically to the needs of users spanning the globe, and ultimately to provide a world class platform from which our customers could be proud to host their ideas and accelerate their ventures. Running a hosting platform on Node.js, which is JavaScript running in Google’s V8 engine, was fraught with skepticism. After all, fast JavaScript is an oxymoron, right?
 
 Runtime language matters, especially for CPU bound operations. But when it comes to I/O bound tasks, which is often the case with hosting, your runtime plays an important but less significant role. Instead of chaining together general purpose technologies - that range from load balancers, to web servers, and caching - we approached the problem with a single cohesive stack that has full control over the quality experience throughout the process required to serve a customers request. This approach has allowed us to emphasize customer experience over throughput by performing all necessary computations in parallel.
 

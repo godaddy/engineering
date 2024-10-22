@@ -4,6 +4,7 @@ title: "Frontend Caching Quick Start"
 date: 2019-11-19 09:00:00 -0700
 cover: /assets/images/2019-11-19-frontend-caching-quick-start/cover.jpg
 excerpt:  This post provides a quick start guide to front end caching, helping developers create an optimal caching strategy.
+canonical: https://godaddy.com/resources/news/frontend-caching-quick-start
 authors:
   - name: Mayank Jethva
     title: Software Engineer
@@ -136,7 +137,7 @@ _On the other hand, if the file has newer content, the following flow between th
 > Side Note: The [HTTP 1.1 Specification](https://tools.ietf.org/html/rfc2616) states: "To mark a response as 'never expires', an origin server sends an
 > Expires date approximately one year from the time the response is
 > sent. HTTP/1.1 servers SHOULD NOT send Expires dates more than one
-> year in the future." 
+> year in the future."
 > **Hence, the recommended `max-age` value for a resource which never expires is 1 year.** By setting `max-age: 31536000`, we're telling the client to cache it for up to 31536000 seconds, which is 1 year from the time of the request.
 
 - `healthcheck.html`

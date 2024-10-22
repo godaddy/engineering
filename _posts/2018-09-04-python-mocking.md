@@ -4,6 +4,7 @@ title: "Making mocking mistakes in Python"
 date: 2018-09-04 12:00:00 -0800
 cover: /assets/images/python-kitten.jpg
 excerpt: Python mocking is tricky. See if you can diagnose and correct four example mocking mistakes, all of which I've made while learning the mock library in the past few months.
+canonical: https://godaddy.com/resources/news/python-mocking
 authors:
   - name: Raphey Holmes
     url: https://github.com/raphey
@@ -111,7 +112,7 @@ class TestIsCatPerson(unittest.TestCase):
             'meyers_briggs_type': 'INTJ',
             'likes_laser_pointers': True,
             'dresses_like_a_cat': True,
-            'validation_id': 'h19d8w22' 
+            'validation_id': 'h19d8w22'
         }
         self.assertTrue(is_cat_person('path/to/person'))
 ```

@@ -4,6 +4,7 @@ title: "Connecting an On-Premises Data Center to AWS with HA Software VPN Tunnel
 date: 2019-02-26 09:00:00 -0800
 cover: /assets/images/ha-openvpn/cover.jpg
 excerpt: When our team started to deploy our services to Amazon cloud, there was a demand to connect from Amazon VPC back to our On-Premises data center. This post describes how we build HA software VPN tunnels.
+canonical: https://godaddy.com/resources/news/software-vpn-channel
 authors:
   - name: Kewei Lu
     url: https://www.linkedin.com/in/kewei-lu-216b433a
@@ -20,7 +21,7 @@ In general, there are two ways to build the connection: [AWS direct connect](htt
 
 To configure a high-availability OpenVPN server on AWS, we used the Active-Passive HA configuration. We set up two OpenVPN servers, one primary and one secondary. We ran them simultaneously on two container instances/EC2 instances in the ECS cluster. Each container instance belonged to an auto-scaling group with a desired count 1. For each auto-scaling group, there was a dedicated auto-scaling launch configuration associated with it. In the launch configuration, we copied the OpenVPN server certs from an S3 bucket to the instance. Also, we assigned an Elastic IP to the container instance to make sure its IP address is persistent after reboot. Then, we connected each OpenVPN Server to an OpenVPN client set up on a GoDaddy VM. This gave us two OpenVPN tunnels.
 
-To facilitate the OpenVPN server and client setup, we also created server and client side docker images. We pushed the images to the docker registry. Then, we could set up the server or client by pulling and running the docker images.  
+To facilitate the OpenVPN server and client setup, we also created server and client side docker images. We pushed the images to the docker registry. Then, we could set up the server or client by pulling and running the docker images.
 
 During any time, only one OpenVPN server (Primary OpenVPN Server) is actively being used. All traffic from AWS to the On-Premises data centers will go through that OpenVPN server. We have a CloudWatch rule defined for AWS ECS task state change event. Based on the event received, the rule will trigger a lambda function to update the route table and promote the secondary server as the primary server if the primary OpenVPN server is down. The figure below shows one such event.
 

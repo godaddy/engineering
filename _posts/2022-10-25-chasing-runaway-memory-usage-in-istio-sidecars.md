@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: When a service on our Kubernetes cluster started using too much memory, I thought the service itself was to blame. After a long debugging journey, I found that a misconfigured Istio sidecar proxy was actually to blame.
 keywords: kubernetes, istio, service mesh, cloudwatch, prometheus, bug
+canonical: https://godaddy.com/resources/news/chasing-runaway-memory-usage-in-istio-sidecars
 authors:
   - name: Keith Bartholomew
     title: Senior Software Engineer

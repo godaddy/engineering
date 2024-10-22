@@ -6,12 +6,12 @@ cover: /assets/images/gasket-api-preset/cover.jpg
 excerpt: Create a simple API with Node.js and Express, using the Gasket API Preset. We'll also get a glimpse into generating API documentation with the new Gasket Swagger Plugin!
 options:
   - full-bleed-cover
+canonical: https://godaddy.com/resources/news/gasket-api-preset
 authors:
   - name: Kawika Bader
     title: Senior Software Engineer
     url: https://www.linkedin.com/in/kawikabader
     photo: /assets/images/gasket-api-preset/kawikabader.jpg
-canonical: https://blog.gasket.dev/api-preset/
 ---
 
 In this article, we'll learn how to create a simple API with Node.js and Express, using the Gasket API Preset. We'll also get a glimpse into generating API documentation with the new Gasket Swagger Plugin!
@@ -247,7 +247,7 @@ Here we are defining a route using the `GET` method. This route will log a messa
 
 ### Starting Up The API
 
-To start the API, run `npm run local` from the root of the `./fingerstache-coffee` directory (you may need to navigate to the project root directory, before running): 
+To start the API, run `npm run local` from the root of the `./fingerstache-coffee` directory (you may need to navigate to the project root directory, before running):
 ```bash
 cd fingerstache-coffee
 ```
@@ -390,7 +390,7 @@ module.exports = (app) => {
 
 Here we have documented the route using a JSDoc-style format that the swagger-jsdoc module can parse and render. More information on the various doc parameters can be found on the [swagger-jsdoc github](https://github.com/Surnet/swagger-jsdoc/blob/master/docs/GETTING-STARTED.md).
 
-Now if we stop and restart the API 
+Now if we stop and restart the API
 ```bash
 control+c
 npm run local

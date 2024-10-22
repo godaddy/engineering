@@ -7,6 +7,7 @@ options:
   - full-bleed-cover
 excerpt: GoDaddy provides best in class search experience for people looking for domain names. Search data engineering is the critical plumbing behind the seamless search experience on the GoDaddy search page. In this blog post, we provide some insights into the inner workings of the data pipelines by delving into the architecture and the implementation of the search data infrastructure.
 keywords: Data Pipeline DataEngineering, Data Engineering Jobs, Data Mart, Domain search, Machine Learning, AWS, Airflow, EMR
+canonical: https://godaddy.com/resources/news/search-data-engineering
 authors:
   - name: Ankush Prasad
     title: Principal Software Engineer

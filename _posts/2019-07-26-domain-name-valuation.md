@@ -4,6 +4,7 @@ title: "Using Deep Learning for Domain Name Valuation"
 date: 2019-07-26 09:00:00 -0700
 cover: /assets/images/domain-name-valuation/neuralnetwork.png
 excerpt: How we built GoDaddy Domain Appraisals (GoValue) with deep neural networks and achieved accuracy better than a human expert.
+canonical: https://godaddy.com/resources/news/domain-name-valuation
 authors:
   - name: Jason Ansel
     title: Senior Principal Engineer
